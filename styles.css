@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #222;
+  color: #fff;
+}
+
+a {
+  color: #0FF;
+  text-decoration: none;
+}
+
+#game-settings {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#game-settings h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#game-settings label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+#game-settings input {
+  font-size: 16px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+}
+
+#game-settings button {
+  font-size: 16px;
+  padding: 8px 16px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#game-settings button:hover {
+  background-color: #45a049;
+}
+
+#cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#num-cards {
+  width: 50px;
+}
+
+#names-input {
+  width: 80%;
+}
+
+.card {
+  width: 300px;
+  height: 500px;
+  margin: 10px;
+  perspective: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.card .front {
+  background-color: #333;
+}
+
+.card .back {
+  background-color: #333;
+  transform: rotateY(180deg);
+}
+
+.spy {
+  color: #800000;
+}
+
+.civilian {
+  color: #fff;
+}
