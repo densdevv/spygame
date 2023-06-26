@@ -51,14 +51,14 @@ document.addEventListener("DOMContentLoaded", function() {
         card.querySelector(".back").style = "color: red;"
       } else {
         const location = card.dataset.location;
-        card.querySelector(".back").innerHTML = location + "<span class='line-break'></span>Köylüsün.";
+        card.querySelector(".back").innerHTML = location + "<br>(Köylüsün)";
       }
 
       setTimeout(() => {
         card.classList.remove("flipped");
         card.querySelector(".back").textContent = "";
       }, 2000);
-    }, 300);
+    });
   }
 
   function createCards(numCards, names) {
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  function assignSpyCard(numCards) {
+  function assignSpyCard() {
     const cards = document.querySelectorAll(".card");
     const randomIndex = getRandomInt(0, cards.length - 1);
     const randomLocation = getRandomLocation();
