@@ -51,8 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
         card.querySelector(".back").style = "color: red;"
       } else {
         const location = card.dataset.location;
-        card.querySelector(".back").innerHTML = location + "<br>&nbsp;(Köylüsün)";
-
+        card.querySelector(".back").innerHTML = location + "<span class='line-break'></span>Köylüsün.";
       }
 
       setTimeout(() => {
