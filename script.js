@@ -30,6 +30,40 @@ document.addEventListener("DOMContentLoaded", function() {
         "Müze"
       ];
 
+      let countdownTimer; // Variable to hold the countdown timer
+      const countdownMinutes = 6; // Set the countdown duration in minutes
+    
+      function startCountdown() {
+        const countdownElement = document.getElementById("countdown");
+        const endTime = new Date().getTime() + countdownMinutes * 60 * 1000; // Calculate the end time
+    
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const timeRemaining = endTime - now;
+    
+          const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+    
+          countdownElement.textContent = `${minutes.toString().padStart(2, "0")}:${seconds
+            .toString()
+            .padStart(2, "0")}`;
+    
+          if (timeRemaining > 0) {
+            requestAnimationFrame(updateCountdown);
+          } else {
+            countdownElement.textContent = "00:00";
+          }
+        }
+    
+        updateCountdown();
+      }
+    
+      function resetCountdown() {
+        clearInterval(countdownTimer);
+        const countdownElement = document.getElementById("countdown");
+        countdownElement.textContent = "05:00"; // Set the initial countdown time
+      }
+
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
@@ -99,6 +133,9 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   function initializeGame() {
+    
+    resetCountdown();
+    startCountdown();
     const numCardsInput = document.getElementById("num-cards");
     const numCards = parseInt(numCardsInput.value, 10);
 

@@ -1,8 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -25,17 +23,17 @@ a {
 }
 
 #game-settings h2 {
-  font-size: 24px;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
 #game-settings label {
-  font-size: 18px;
+  font-size: 1.5rem;
   margin-right: 10px;
 }
 
 #game-settings input {
-  font-size: 16px;
+  font-size: 1.2rem;
   padding: 5px 10px;
   margin-bottom: 10px;
   background-color: #333;
@@ -44,7 +42,7 @@ a {
 }
 
 #game-settings button {
-  font-size: 16px;
+  font-size: 1.2rem;
   padding: 8px 16px;
   background-color: red;
   color: #fff;
@@ -63,7 +61,7 @@ a {
   justify-content: center;
 }
 
-#num-cards {
+#num-cards, #countdown-input {
   width: 50px;
 }
 
@@ -101,7 +99,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 2rem;
   border-radius: 16px;
 }
 
@@ -121,3 +119,54 @@ a {
 .civilian {
   color: #fff;
 }
+
+/* Media queries for different screen sizes */
+@media screen and (max-width: 768px) {
+  /* Adjust font sizes for smaller screens */
+  #game-settings h2 {
+    font-size: 1.8rem;
+  }
+  
+  #game-settings label {
+    font-size: 1.3rem;
+  }
+  
+  #game-settings input {
+    font-size: 1.1rem;
+  }
+  
+  #game-settings button {
+    font-size: 1.1rem;
+  }
+  
+  .card .front,
+  .card .back {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Adjust font sizes for even smaller screens */
+  #game-settings h2 {
+    font-size: 1.5rem;
+  }
+  
+  #game-settings label {
+    font-size: 1.2rem;
+  }
+  
+  #game-settings input {
+    font-size: 1rem;
+  }
+  
+  #game-settings button {
+    font-size: 1rem;
+  }
+  
+  .card .front,
+  .card .back {
+    font-size: 1.5rem;
+  }
+}
+
+/* Add more media queries as needed for different screen sizes */
