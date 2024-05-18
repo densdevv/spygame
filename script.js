@@ -58,7 +58,27 @@ document.addEventListener("DOMContentLoaded", function() {
         "Anıtkabir",
         "Kuş yuvası",
         "Araba fabrikası",
-        "Yatak"
+        "Yatak",
+        "Kökle'nin beyaz donu",
+        "Tuvalet",
+        "Uludağ",
+        "Tutam Tutam Matematik Festivali",
+        "Sport en Fete",
+        "Migros",
+        "Çöl",
+        "Kuzey Kutbu",
+        "Kuzey Kore",
+        "Vergi Dairesi",
+        "Erdoğan'ın Lap'i",
+        "Enes'in Keşfeti",
+        "Volkan'ın Arabası",
+        "Yunanistan",
+        "Kürdistan",
+        "Dünya'nın Çekirdeği",
+        "Olimpiyatlar",
+        "Beyzat'ın Litterbox'u",
+        "Utku Aytaç'ın Odası",
+
       ];
 
       let countdownTimer; // Variable to hold the countdown timer
