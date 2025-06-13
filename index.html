@@ -2,35 +2,120 @@
 <html>
 
 <head>
-    <title>Casus Kim?</title>
+    <title>Casus Kim Oyna</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Casus Kim? Oyunu - Casusları Bul ve Kazan!">
+    <meta name="keywords" content="Casus kim, casus kim oyna, casus kim oyunu, casus kim online, casus oyunu oyna">
+    <meta name="author" content="densdev">
+    <link rel="icon" href="casus-icon-black.png" type="image/x-icon" >
+    <link rel="icon" href="casus-icon-white.png" type="image/x-icon" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,700,900" rel="stylesheet">
 </head>
 
 <body>
-    <section id="game-settings">
-        <h2>Casus Kim?</h2>
-        <p>Bu oyunda, oyunculardan birisi rastgele olarak casus seçilir. <br>
-            Bu casus dışındaki herkese (köylülere), yine rastgele bir şekilde belirlenmiş bir yer ismi verilir. <br>
-            Köylüler, diğerlerine bu yer hakkında sorular sorarak casusun kim olduğunu bilmeye çalışır. <br>
-            Süre bitene kadar köylüler casusu bulamazsa, casus kazanır.</p>
-        <label for="num-cards">Oyuncu sayısı:</label>
-        <input type="number" id="num-cards">
-        <br>
-        <label for="names-input">İsimler (Virgüllerle ayrılır. Örneğin: Ahmet, Mehmet, ...)</label>
-        <br>
-        <input type="text" id="names-input">
-        <br>
-        <button id="start-button">OYUNA BAŞLA</button>
-    </section>
+    <div class="page-wrapper">
+        <!-- SECTION 1: Title & Info -->
+        <section id="title-info-section" class="game-section">
+            <h2 class="accent-color">Casus Kim?</h2>
+            <p>Oyunda iki rol vardır: Köylüler ve casuslar. Köylülerin temel amacı, casusların kim olduğunu bulmaktır.
+                Köylülere bir yer ismi verilir. Casuslar ise bu yer ismini bilmezler. Casuslar, köylülerin
+                söylediklerini dinleyerek bu yer ismini doğru tahmin etmeye çalışırlar. Köylüler ise casusların kim olduğunu bulmaya çalışırlar.
+            </p>
+        </section>
 
-    <section id="cards-container"></section>
+        <!-- SECTION 2: Game Parameters -->
+        <section id="game-parameters-section" class="game-section">
+            <h3 class="section-title">Oyun Ayarları</h3>
 
-    <p id="countdown" style="text-align: center; font-size: 2rem; margin-top: 20px;">06:00</p>
+            <div class="param-group counter-selection-group">
+                <div class="counter-row">
+                    <div class="counter-item">
+                        <label for="player-count-display">Oyuncu Sayısı</label>
+                        <div class="counter-control">
+                            <button type="button" class="decrease-button" id="decrease-players">-</button>
+                            <span id="player-count-display" class="count-display">4</span>
+                            <button type="button" class="increase-button" id="increase-players">+</button>
+                        </div>
+                    </div>
+                    <div class="counter-item">
+                        <label for="spy-count-display">Casus Sayısı</label>
+                        <div class="counter-control">
+                            <button type="button" class="decrease-button" id="decrease-spies">-</button>
+                            <span id="spy-count-display" class="count-display">1</span>
+                            <button type="button" class="increase-button" id="increase-spies">+</button>
+                        </div>
+                        <p id="recommended-spy-count" class="info-text small-info">Önerilen: 1</p>
+                    </div>
+                    <div class="counter-item">
+                        <label for="duration-display">Süre</label>
+                        <div class="counter-control">
+                            <button type="button" class="decrease-button" id="decrease-duration">-</button>
+                            <span id="duration-display" class="count-display">05:00</span>
+                            <button type="button" class="increase-button" id="increase-duration">+</button>
+                        </div>
+                        <p id="recommended-duration-count" class="info-text small-info">Önerilen: 05:00</p>
+                    </div>
+                </div>
+            </div>
 
-    <p style="text-align: center;"><br><br><br><br>
-        © 2024 (v1.1) <a href="https://dens.dev" target="_blank">densdev</a> <br>
-        Bu site ChatGPT yardımıyla 1 saat içinde hazırlanmıştır.
-    </p>
+            <div id="name-inputs-container" class="param-group name-inputs-group">
+                <!-- Name input fields will be dynamically added here by JavaScript -->
+            </div>
+
+            <div id="location-categories" class="param-group category-group">
+                <h4 class="category-title accent-color">Mekan Kategorileri</h4>
+                <p>İstediğiniz tüm kategorileri seçebilirsiniz.</p>
+                <div class="category-grid">
+                    <div class="category-box">
+                        <input type="checkbox" class="category-toggle" value="dailyLife" checked>
+                        <span>Günlük Hayat</span>
+                    </div>
+                    <div class="category-box">
+                        <input type="checkbox" class="category-toggle" value="sciFi">
+                        <span>Bilim Kurgu</span>
+                    </div>
+                    <div class="category-box">
+                        <input type="checkbox" class="category-toggle" value="middleAges">
+                        <span>Orta Çağ</span>
+                    </div>
+                    <div class="category-box">
+                        <input type="checkbox" class="category-toggle" value="turkey">
+                        <span>Türkiye</span>
+                    </div>
+                    <div class="category-box">
+                        <input type="checkbox" class="category-toggle" value="europe">
+                        <span>Avrupa</span>
+                    </div>
+                    <div class="category-box">
+                        <input type="checkbox" class="category-toggle" value="saintJoseph">
+                        <span>Saint-Joseph</span>
+                    </div>
+                    <div class="category-box">
+                        <input type="checkbox" class="category-toggle" value="naughty">
+                        <span>+18</span>
+                    </div>
+                </div>
+            </div>
+            
+
+            <button id="start-button" class="action-button">OYNA!</button>
+        </section>
+
+        <!-- SECTION 3: Main Game Interface -->
+        <section id="game-interface-section" class="game-section hidden">
+            <p id="countdown" class="accent-color countdown-display">06:00</p>
+            <!-- NEW: Start Countdown Button -->
+            <button id="commence-countdown-button" class="action-button hidden" style="margin-bottom: 20px;">BAŞLA!</button>
+            <div id="cards-container"></div>
+            <button id="reset-button" class="action-button reset-game-button">YENİ OYUN</button>
+        </section>
+
+        <p class="footer-text">
+            Casus Kim v2 25w24a | © 2025 <a href="https://dens.dev" target="_blank">densdev</a>
+        </p>
+    </div>
 
     <script src="script.js"></script>
 </body>
