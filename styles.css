@@ -20,7 +20,6 @@
 
 * {
   box-sizing: border-box;
-  /* Include padding and border in the element's total width and height */
 }
 
 body {
@@ -32,13 +31,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  /* Align to top, allow content to push down */
   min-height: 100vh;
-  /* Full viewport height */
   overflow-y: auto;
-  /* Allow scrolling for longer content */
   overflow-x: hidden;
-  /* Prevent horizontal scrolling */
 }
 
 a {
@@ -49,17 +44,13 @@ a {
 
 a:hover {
   color: #ff6660;
-  /* Slightly lighter accent on hover */
 }
 
 /* Page Wrapper for overall structure */
 .page-wrapper {
   width: 100%;
   max-width: 800px;
-  /* Max width for the entire content area */
   padding: 20px;
-  margin: 20px auto;
-  /* Center the wrapper with top/bottom margin */
 }
 
 /* Common Section Styling */
@@ -75,7 +66,6 @@ a:hover {
 
 .hidden {
   display: none !important;
-  /* Force hide element */
 }
 
 /* Title & Info Section */
@@ -84,7 +74,6 @@ a:hover {
   margin-top: 0;
   margin-bottom: 15px;
   text-shadow: 0 0 8px rgba(230, 68, 62, 0.5);
-  /* Subtle glow */
 }
 
 #title-info-section p {
@@ -108,7 +97,6 @@ a:hover {
   margin-bottom: 20px;
   padding-bottom: 15px;
   border-bottom: 1px dashed var(--subtle-border-color);
-  /* Dashed separator for param groups */
 }
 
 .param-group:last-of-type {
@@ -169,7 +157,7 @@ a:hover {
   padding: 13px 20px;
   font-size: 1.6rem;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease-out;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
   box-shadow: 0 0px 0 #791b17;
   flex-shrink: 0;
 }
@@ -211,9 +199,7 @@ a:hover {
   font-size: 0.95rem;
   color: #aaa;
   margin-top: 10px;
-  /* Space above recommended spy count */
   margin-bottom: 0;
-  /* No bottom margin, contained by .counter-item's margin-bottom */
 }
 
 /* Name Inputs */
@@ -245,12 +231,10 @@ a:hover {
 }
 
 /* Location Categories */
-
-
 .category-title {
   font-size: 1.5rem;
   margin-top: 0;
-  margin-bottom: 20px; /* Adjusted from -20px to 20px for better spacing */
+  margin-bottom: -20px;
   padding-bottom: 8px;
 }
 
@@ -259,6 +243,9 @@ a:hover {
   columns: 3;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 10px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .category-box {
@@ -339,7 +326,7 @@ a:hover {
   padding: 0;
   text-align: center;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 80vh;
   margin-left: 50%;
   transform: translateX(-50%);
 }
@@ -397,7 +384,6 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 2.2rem;
   border-radius: 15px;
   word-break: break-word;
   line-height: 1.2;
@@ -408,6 +394,8 @@ a:hover {
   color: var(--text-color);
   font-weight: 600;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  padding: 20px; /* Keep padding */
+  justify-content: center; /* Center content vertically */
 }
 
 .card .back {
@@ -415,27 +403,92 @@ a:hover {
   transform: rotateY(180deg);
   font-weight: 500;
   color: var(--text-color);
+  padding: 15px 20px; /* Adjust padding for better content fit */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+/* Card content styling for front */
+.card .front .card-player-info {
+    display: flex;
+    flex-direction: column; /* Stack icon and name */
+    align-items: center;
+    gap: 5px; /* Space between icon and name */
+}
+
+.card .front .user-icon {
+    font-size: 3rem; /* Large icon for front */
+    margin-bottom: 10px;
+}
+
+.card .front .player-name-front {
+    font-size: 2.2rem; /* Original large size for name on front */
+    color: var(--text-color);
+}
+
+
+/* Card content styling for back */
+.card .back .card-player-info {
+    display: flex;
+    gap: 8px; /* Space between icon and name */
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--subtle-border-color);
+    padding-bottom: 10px;
+    width: 90%; /* Line across width */
+    justify-content: center;
+    align-items: center;
+}
+
+.card .back .user-icon {
+    font-size: 1.8rem; /* Smaller icon for back */
+    color: #ccc;
+}
+
+.card .back .player-name-back {
+    font-size: 1.1rem; /* Smaller text size for player name on back */
+    color: #aaa; /* Gray text */
+    font-weight: 400;
+}
+
+.card .back .card-role-label {
+    font-size: 1.2rem; /* Bigger text for "Köylüsün" / "Casus sensin" */
+    color: var(--text-color); /* White text */
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.card .back .card-location-name {
+    font-size: 2.2rem; /* Bigger text for place name */
+    color: var(--text-color); /* White text */
+    font-weight: 600;
+}
+
 
 /* Specific colors for spy and civilian text on back of card */
-.card .back p {
-  margin: 0;
-  padding: 0;
-}
-
 .spy-text {
   color: var(--accent-color);
   text-shadow: 0 0 5px rgba(230, 68, 62, 0.6);
   font-weight: 700;
+  font-size: 2.4rem;
+}
+
+/* Game Interface Buttons Wrapper */
+.game-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Space between buttons */
+  margin-top: 30px;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
 }
 
 /* Reset Button in Game Interface */
 .reset-game-button {
-  margin-top: 30px;
   background-color: var(--border-color);
   border-color: var(--border-color);
   font-size: 1.1rem;
   padding: 10px 20px;
+  margin-top: 0; /* Remove top margin as it's now in wrapper */
 }
 
 .reset-game-button:hover {
@@ -448,13 +501,39 @@ a:hover {
   border-color: #333;
 }
 
+/* Specific styling for new "Tekrar Oyna" button */
+#restart-button {
+  background-color: var(--border-color);
+  border-color: var(--border-color);
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  margin-top: 0;
+}
+
+#restart-button:hover {
+  background-color: #555;
+  border-color: #555;
+}
+
+#restart-button:active {
+  background-color: #333;
+  border-color: #333;
+}
+
+/* Specific styling for "Casusları Göster" button */
+#show-spies-button {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  margin-top: 0;
+}
+
+
 /* Footer */
 .footer-text {
   font-size: 0.85rem;
   color: #777;
   text-align: center;
   margin-top: 40px;
-  padding-bottom: 20px;
 }
 
 /* Accent Color Class for general use */
@@ -466,6 +545,3 @@ a:hover {
   color: #aaa;
   font-size: 0.9em;
 }
-
-
-/* Media queries for different screen sizes */

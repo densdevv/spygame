@@ -57,6 +57,12 @@ document.addEventListener("DOMContentLoaded", function() {
     let spyCount = 1;
     let gameDurationSeconds; // This will hold the current selected duration
 
+    // Store game state variables for "Tekrar Oyna"
+    let lastPlayersNames = [];
+    let lastPlayerCount = 0;
+    let lastSpyCount = 0;
+    let lastGameDurationSeconds = 0;
+
     // DOM Elements
     const titleInfoSection = document.getElementById('title-info-section');
     const gameParametersSection = document.getElementById('game-parameters-section');
@@ -72,7 +78,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const cardsContainer = document.getElementById("cards-container");
     const startButton = document.getElementById("start-button");
     const resetButton = document.getElementById("reset-button");
-    const commenceCountdownButton = document.getElementById('commence-countdown-button'); // NEW
+    const restartButton = document.getElementById('restart-button');
+    const commenceCountdownButton = document.getElementById('commence-countdown-button');
+    const showSpiesButton = document.getElementById('show-spies-button');
 
     // Helper functions for time formatting
     function secondsToMMSS(totalSeconds) {
@@ -249,6 +257,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (timeRemaining <= 0) {
                 countdownElement.textContent = "00:00";
+                cancelAnimationFrame(animationFrameId);
+                showSpiesButton.classList.remove('hidden'); // Show the "Casusları Göster" button
+                showSpiesButton.disabled = false;
+                commenceCountdownButton.classList.add('hidden'); // Hide the start button if still visible
                 return;
             }
 
@@ -288,22 +300,41 @@ document.addEventListener("DOMContentLoaded", function() {
 
         setTimeout(() => {
             const isSpy = card.dataset.spy === "true";
+            const playerName = card.querySelector('.player-name-front').textContent;
             const backContentDiv = card.querySelector(".back");
 
+            backContentDiv.innerHTML = ''; // Clear previous content
+
+            // Add player info to the back
+            const playerInfoDiv = document.createElement('div');
+            playerInfoDiv.classList.add('card-player-info');
+            playerInfoDiv.innerHTML = `<span class="user-icon">👤</span><span class="player-name-back">${playerName}</span>`;
+            backContentDiv.appendChild(playerInfoDiv);
+
+            // Add role label
+            const roleLabelDiv = document.createElement('div');
+            roleLabelDiv.classList.add('card-role-label');
             if (isSpy) {
-                backContentDiv.innerHTML = '<span class="spy-text">Casus sensin.</span>';
+                roleLabelDiv.innerHTML = '<span class="spy-text">CASUS</span>';
             } else {
-                const location = card.dataset.location;
-                backContentDiv.innerHTML = `${location}<br>(Köylüsün)`;
-                backContentDiv.style.color = 'var(--text-color)';
+                roleLabelDiv.textContent = 'Köylüsün';
+            }
+            backContentDiv.appendChild(roleLabelDiv);
+
+            // Add location if not a spy
+            if (!isSpy) {
+                const locationNameDiv = document.createElement('div');
+                locationNameDiv.classList.add('card-location-name');
+                locationNameDiv.textContent = card.dataset.location;
+                backContentDiv.appendChild(locationNameDiv);
             }
 
             setTimeout(() => {
                 card.classList.remove("flipped");
                 setTimeout(() => {
-                    backContentDiv.innerHTML = "";
+                    backContentDiv.innerHTML = ""; // Clear back content when flipped back
                 }, 300);
-            }, 2000);
+            }, 2000); // Card stays flipped for 2 seconds
         }, 100);
     }
 
@@ -317,7 +348,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const front = document.createElement("div");
             front.classList.add("front");
-            front.textContent = names[i];
+            
+            const frontPlayerInfo = document.createElement('div');
+            frontPlayerInfo.classList.add('card-player-info');
+            frontPlayerInfo.innerHTML = `<span class="user-icon">👤</span><span class="player-name-front">${names[i]}</span>`;
+            front.appendChild(frontPlayerInfo);
             card.appendChild(front);
 
             const back = document.createElement("div");
@@ -363,11 +398,10 @@ document.addEventListener("DOMContentLoaded", function() {
         return true;
     }
 
-    // NEW: Function to commence the countdown
     function startActualCountdown() {
         startCountdown(gameDurationSeconds);
-        commenceCountdownButton.classList.add('hidden'); // Hide the button after starting
-        commenceCountdownButton.disabled = true; // Disable it just in case
+        commenceCountdownButton.classList.add('hidden');
+        commenceCountdownButton.disabled = true;
     }
 
     // Main Game Flow Functions
@@ -384,21 +418,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const currentDurationSeconds = gameDurationSeconds;
 
         const nameInputs = document.querySelectorAll('#name-inputs-container input[type="text"]');
-        // NEW: Fill in blank names
         const names = Array.from(nameInputs).map((input, index) => {
             const trimmedName = input.value.trim();
             if (trimmedName === '') {
-                input.value = `Oyuncu ${index + 1}`; // Update the DOM input field
-                return `Oyuncu ${index + 1}`;       // Use this default name for logic
+                input.value = `Oyuncu ${index + 1}`;
+                return `Oyuncu ${index + 1}`;
             }
-            return trimmedName; // Use the user-provided name
+            return trimmedName;
         });
 
-        // Basic validation after filling in default names
-        if (names.some(name => name === '')) { // Should not happen if default names are set
-            alert("Lütfen tüm oyuncuların isimlerini girin.");
-            return;
-        }
         if (names.length !== currentNumPlayers) {
             alert("Girdiğiniz isim sayısı oyuncu sayısına eşit olmalı.");
             return;
@@ -412,19 +440,30 @@ document.addEventListener("DOMContentLoaded", function() {
             return;
         }
 
+        // Store current settings for "Tekrar Oyna"
+        lastPlayersNames = names;
+        lastPlayerCount = currentNumPlayers;
+        lastSpyCount = currentNumSpies;
+        lastGameDurationSeconds = currentDurationSeconds;
+
         // Hide settings, show game interface
         titleInfoSection.classList.add('hidden');
         gameParametersSection.classList.add('hidden');
         gameInterfaceSection.classList.remove('hidden');
 
-        // NEW: Scroll to the top of the page
+        // Scroll to the top of the page
         window.scrollTo(0, 0);
 
         resetCountdownDisplay(); // Display initial time, but don't start countdown yet
 
-        // NEW: Show and enable the "BAŞLA!" button
+        // Show and enable the "BAŞLA!" button
         commenceCountdownButton.classList.remove('hidden');
         commenceCountdownButton.disabled = false;
+        
+        // Hide "Casusları Göster" button and "Tekrar Oyna" until needed
+        showSpiesButton.classList.add('hidden');
+        showSpiesButton.disabled = true;
+        restartButton.classList.add('hidden');
 
         createCards(currentNumPlayers, names);
         const rolesAssigned = assignRoles(currentNumPlayers, currentNumSpies);
@@ -441,6 +480,9 @@ document.addEventListener("DOMContentLoaded", function() {
         cards.forEach((card) => {
             card.addEventListener("click", cardClickHandler);
         });
+
+        // Show "Tekrar Oyna" button after game setup
+        restartButton.classList.remove('hidden');
     }
 
     function resetGame() {
@@ -450,14 +492,106 @@ document.addEventListener("DOMContentLoaded", function() {
         titleInfoSection.classList.remove('hidden');
         gameParametersSection.classList.remove('hidden');
         gameInterfaceSection.classList.add('hidden');
-
-        // NEW: Make sure "BAŞLA!" button is ready for next game
+        
         commenceCountdownButton.classList.remove('hidden');
         commenceCountdownButton.disabled = false;
+
+        showSpiesButton.classList.add('hidden');
+        showSpiesButton.disabled = true;
+        restartButton.classList.add('hidden'); // Hide restart button when going back to settings
+    }
+
+    function restartGameSameSettings() {
+        if (lastPlayersNames.length === 0) {
+            alert("Önce bir oyun başlatmalısınız!");
+            resetGame(); // Go back to settings if no previous game state
+            return;
+        }
+
+        resetCountdownDisplay();
+        cardsContainer.innerHTML = "";
+
+        // Ensure currentLocationsPool is updated based on saved category selections
+        // (Category selections are not changed when restarting, so this is fine)
+        updateLocationPool(); 
+        if (currentLocationsPool.length === 0) {
+            alert("Mekan seçimi için en az bir kategori seçili olmalı. Ayarları değiştirin.");
+            resetGame(); 
+            return;
+        }
+
+        // Show and enable the "BAŞLA!" button again
+        commenceCountdownButton.classList.remove('hidden');
+        commenceCountdownButton.disabled = false;
+
+        // Hide "Casusları Göster" button, it should only appear when timer ends
+        showSpiesButton.classList.add('hidden');
+        showSpiesButton.disabled = true;
+
+        // Re-create cards with stored data
+        createCards(lastPlayerCount, lastPlayersNames);
+        const rolesAssigned = assignRoles(lastPlayerCount, lastSpyCount);
+
+        if (!rolesAssigned) {
+            // This case is unlikely if initializeGame() already passed this check
+            // If it happens, go back to initial screen.
+            resetGame();
+            return;
+        }
+
+        const cards = document.querySelectorAll(".card");
+        cards.forEach((card) => {
+            card.addEventListener("click", cardClickHandler);
+        });
+
+        // Ensure "Tekrar Oyna" button remains visible
+        restartButton.classList.remove('hidden');
     }
 
     // Event Listeners
     startButton.addEventListener("click", initializeGame);
     resetButton.addEventListener("click", resetGame);
-    commenceCountdownButton.addEventListener("click", startActualCountdown); // NEW
+    restartButton.addEventListener("click", restartGameSameSettings);
+    commenceCountdownButton.addEventListener("click", startActualCountdown);
+
+    showSpiesButton.addEventListener('click', () => {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            card.classList.add('flipped'); // Flip all cards
+            const isSpy = card.dataset.spy === "true";
+            const playerName = card.querySelector('.player-name-front').textContent;
+            const backContentDiv = card.querySelector(".back");
+
+            backContentDiv.innerHTML = ''; // Clear previous content
+
+            // Add player info to the back
+            const playerInfoDiv = document.createElement('div');
+            playerInfoDiv.classList.add('card-player-info');
+            playerInfoDiv.innerHTML = `<span class="user-icon">👤</span><span class="player-name-back">${playerName}</span>`;
+            backContentDiv.appendChild(playerInfoDiv);
+
+            // Add role label
+            const roleLabelDiv = document.createElement('div');
+            roleLabelDiv.classList.add('card-role-label');
+            if (isSpy) {
+                roleLabelDiv.innerHTML = '<span class="spy-text">CASUS</span>';
+            } else {
+                roleLabelDiv.textContent = 'Köylüsün';
+            }
+            backContentDiv.appendChild(roleLabelDiv);
+
+            // Add location if not a spy
+            if (!isSpy) {
+                const locationNameDiv = document.createElement('div');
+                locationNameDiv.classList.add('card-location-name');
+                locationNameDiv.textContent = card.dataset.location;
+                backContentDiv.appendChild(locationNameDiv);
+            }
+
+            // Remove click listener from this card to prevent further individual flips/unflips
+            card.removeEventListener('click', cardClickHandler);
+        });
+        showSpiesButton.classList.add('hidden'); // Hide the button after use
+        showSpiesButton.disabled = true;
+    });
 });
