@@ -17,6 +17,7 @@
 
 <body>
     <div class="page-wrapper">
+        <div id="top-banner" class="top-banner" role="note"></div>
         <!-- SECTION 1: Title & Info -->
         <section id="title-info-section" class="game-section">
             <h2 class="accent-color">Casus Kim?</h2>
@@ -30,6 +31,17 @@
         <!-- SECTION 2: Game Parameters -->
         <section id="game-parameters-section" class="game-section">
             <h3 class="section-title">Oyun Ayarları</h3>
+
+                        <div class="language-select-wrapper">
+                            <label id="language-label" for="language-select"></label>
+                            <select id="language-select" aria-label="Select language">
+                                <option value="tr">Türkçe</option>
+                                <option value="en">English</option>
+                                <option value="fr">Français</option>
+                                <option value="it">Italiano</option>
+                                <option value="de">Deutsch</option>
+                            </select>
+                        </div>
 
             <div class="param-group counter-selection-group">
                 <div class="counter-row">
@@ -98,7 +110,13 @@
                         <input type="checkbox" class="category-toggle" value="naughty">
                         <span>+18</span>
                     </div>
+                    <div class="category-box">
+                        <input type="checkbox" class="category-toggle" value="custom">
+                        <span>Özel</span>
+                    </div>
                 </div>
+                <!-- Custom places inputs (hidden until "Özel" is selected) -->
+                <div id="custom-places-container" class="custom-places-group hidden"></div>
             </div>
 
 
@@ -116,6 +134,14 @@
               <button id="show-spies-button" class="action-button hidden">Casusları Göster</button>
               <button id="reset-button" class="action-button reset-game-button"><i class="fa-solid fa-sliders"></i> &nbsp; Ayarları değiştir</button>
             </div>
+                        <div class="in-game-options" style="margin-top:12px;">
+                            <label class="switch-label">
+                                <input type="checkbox" id="remove-played-toggle">
+                                <span class="switch-slider"></span>
+                                <span class="switch-text">Oynanmış mekanı havuzdan çıkar (Tekrar Oynama)</span>
+                            </label>
+                            <p id="no-places-message" class="info-text" style="display:none;margin-top:8px;color:#ffb3b0;">Havuz boşaldı; yeni bir tur başlatmak için kategori seçimlerini veya ayarları değiştirin.</p>
+                        </div>
         </section>
 
         <p class="footer-text">

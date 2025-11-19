@@ -545,3 +545,142 @@ a:hover {
   color: #aaa;
   font-size: 0.9em;
 }
+
+/* Custom places inputs shown when 'Özel' category is selected */
+.custom-places-group {
+  max-width: 720px;
+  margin: 12px auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+#custom-places-container input[type="text"] {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: var(--card-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1.05rem;
+  outline: none;
+}
+
+#custom-places-container input[type="text"]:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(230, 68, 62, 0.5);
+}
+
+/* Toggle switch for in-game option */
+.switch-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch-label input[type="checkbox"] {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+.switch-slider {
+  width: 44px;
+  height: 24px;
+  background: var(--border-color);
+  border-radius: 20px;
+  position: relative;
+  transition: background 0.15s ease;
+  flex-shrink: 0;
+}
+
+.switch-slider::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.15s ease;
+}
+
+.switch-label input[type="checkbox"]:checked + .switch-slider {
+  background: var(--accent-color);
+}
+
+.switch-label input[type="checkbox"]:checked + .switch-slider::after {
+  transform: translateX(20px);
+}
+
+.switch-text {
+  font-size: 0.95rem;
+  color: #ddd;
+}
+
+/* Language selector styling */
+#language-select {
+  background: var(--card-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 6px 8px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+#language-select:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(230,68,62,0.3);
+  border-color: var(--accent-color);
+}
+
+/* Language selector wrapper, centered and styled to match other labels */
+.language-select-wrapper {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.language-select-wrapper label {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  font-weight: 600;
+  /* Capitalize first letter visually (translations are stored lowercase) */
+  text-transform: capitalize;
+}
+
+.language-select-wrapper select {
+  min-width: 140px;
+  padding: 6px 10px;
+  background: var(--card-bg-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+/* Top banner announcement */
+.top-banner {
+  background: linear-gradient(90deg, rgba(230,68,62,0.16), rgba(230,68,62,0.08));
+  border: 1px solid rgba(230,68,62,0.18);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.top-banner a {
+  color: #fff;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Make sure banner is visible by default; JS will hide if empty */
+#top-banner[style] { display: block; }
