@@ -98,17 +98,17 @@ document.addEventListener("DOMContentLoaded", function() {
             "Moscou","Saint-Pétersbourg","Cracovie","Dubrovnik","Édimbourg","Venise",
         ],
         naughty: [
-          "Taxi Bidon","Bordel","Chambre","Baignoire","Salle de Bain","Balcon","Plage de la Mode",
-          "Boutique Érotique","Quartier Rouge","Escort","Plage Naturiste","Club de Strip-tease",
-          "Fête Orgie","Studio Adulte","PornHub",
+          "Fake Taxi","Maison Close","Chambre","Baignoire","Salle de Bain","Balcon","Plage de Mode",
+          "Boutique Érotique","Quartier Rouge","Escorte","Plage Nudiste","Club de Strip-tease",
+          "Partie Fine","Studio Adulte","PornHub",
         ],
       },
       it: {
         dailyLife: [
             "Supermercato","Parco","Cinema","Scuola","Ospedale","Ristorante","Hotel","Aeroporto",
             "Banca","Spiaggia","Caffetteria","Moschea","Circo","Tribunale","Fabbrica","Foresta","Lago",
-            "Mare","Villaggio","Officina","Biblioteca","Museo","Centro Studio","Stazione di Polizia",
-            "Bagno","Agenzia delle Entrate",
+            "Mare","Villaggio","Autofficina","Biblioteca","Museo","Centro Ripetizioni","Stazione di Polizia",
+            "Bagno","Ufficio delle Imposte",
         ],
         sciFi: [
             "Universo Parallelo","Atlantide","Hogwarts","Nucleo della Terra","Stazione Spaziale",
@@ -116,14 +116,14 @@ document.addEventListener("DOMContentLoaded", function() {
         ],
         middleAges: [
             "Castello","Prigione","Mercato","Chiesa","Piazza del Villaggio","Via della Seta","Caravanserraglio",
-            "Palazzo Ottomano","Impero Bizantino","Villaggio Vichingo","Officina del Fabbro",
-            "Torni di Cavalieri","Esecuzione di Strega","Casa Contadina","Fontana del Villaggio","Carovana Commerciale",
+            "Palazzo Ottomano","Impero Bizantino","Villaggio Vichingo","Bottega del Fabbro",
+            "Torneo di Cavalieri","Esecuzione della Strega","Casa Contadina","Fontana del Villaggio","Carovana Commerciale",
         ],
         turkey: [
             "Istanbul","Kadıköy","Konya","Heybeliada","Anıtkabir","Uludağ","Çanakkale",
-            "Bodrum","Parlamento","Torre della Fanciulla","Efeso","Pamukkale","Cappadocia",
-            "Statua di Nasreddin Hoca","Santa Sofia","Bosphorus","Palazzo Topkapı",
-            "Torre di Galata","Moschea di Süleymaniye","Beyoğlu","Kalkan","Fethiye","Antalya",
+            "Bodrum","Parlamento","Torre di Leandro","Efeso","Pamukkale","Cappadocia",
+            "Statua di Nasreddin Hoca","Santa Sofia","Bosforo","Palazzo Topkapı",
+            "Torre di Galata","Moschea di Solimano","Beyoğlu","Kalkan","Fethiye","Antalya",
         ],
         europe: [
             "Londra","Parigi","Grecia","Berlino","Roma","Barcellona","Amsterdam",
@@ -132,32 +132,32 @@ document.addEventListener("DOMContentLoaded", function() {
             "Mosca","San Pietroburgo","Cracovia","Dubrovnik","Edimburgo","Venezia",
         ],
         naughty: [
-          "Fake Taxi","Bordello","Camera da Letto","Vasca","Bagno","Balcone","Spiaggia della Moda",
-          "Negozio Erotico","Quartiere a Luci Rosse","Escort","Spiaggia Nudisti","Strip Club",
-          "Festa Orgia","Studio Adulto","PornHub",
+          "Fake Taxi","Bordello","Camera da Letto","Vasca da Bagno","Bagno","Balcone","Spiaggia alla Moda",
+          "Negozio Erotico","Quartiere a Luci Rosse","Escort","Spiaggia Nudista","Strip Club",
+          "Orgia","Studio per Adulti","PornHub",
         ],
       },
       de: {
         dailyLife: [
             "Supermarkt","Park","Kino","Schule","Krankenhaus","Restaurant","Hotel","Flughafen",
             "Bank","Strand","Café","Moschee","Zirkus","Gericht","Fabrik","Wald","See",
-            "Meer","Dorf","Autowerkstatt","Bibliothek","Museum","Lernzentrum","Polizeistation",
+            "Meer","Dorf","Autowerkstatt","Bibliothek","Museum","Nachhilfezentrum","Polizeistation",
             "Toilette","Finanzamt",
         ],
         sciFi: [
-            "Paralleles Universum","Atlantis","Hogwarts","Erdkern","Raumstation",
+            "Paralleluniversum","Atlantis","Hogwarts","Erdkern","Raumstation",
             "Mars","Raumschiff","Galaxie","Schwarzes Loch","Eiszeit","Postapokalyptische Welt",
         ],
         middleAges: [
-            "Burg","Kerker","Markt","Kirche","Dorfsplatz","Seidenstraße","Karawanserei",
+            "Schloss","Verlies","Markt","Kirche","Dorfplatz","Seidenstraße","Karawanserei",
             "Osmanischer Palast","Byzantinisches Reich","Wikingerdorf","Schmiedewerkstatt",
-            "Ritterturnier","Hexenverbrennung","Bauernhaus","Dorfbrunnen","Handelskarawane",
+            "Ritterturnier","Hexenhinrichtung","Bauernhaus","Dorfbrunnen","Handelskarawane",
         ],
         turkey: [
             "Istanbul","Kadıköy","Konya","Heybeliada","Anıtkabir","Uludağ","Çanakkale",
-            "Bodrum","Parlament","Mädchenturm","Ephesus","Pamukkale","Kappadokien",
-            "Nasreddin Hoca Statue","Hagia Sophia","Bosporus","Topkapı Palast",
-            "Galata Turm","Süleymaniye Moschee","Beyoğlu","Kalkan","Fethiye","Antalya",
+            "Bodrum","Parlament","Leanderturm","Ephesos","Pamukkale","Kappadokien",
+            "Nasreddin Hodscha Statue","Hagia Sophia","Bosporus","Topkapı-Palast",
+            "Galataturm","Süleymaniye-Moschee","Beyoğlu","Kalkan","Fethiye","Antalya",
         ],
         europe: [
             "London","Paris","Griechenland","Berlin","Rom","Barcelona","Amsterdam",
@@ -166,242 +166,280 @@ document.addEventListener("DOMContentLoaded", function() {
             "Moskau","Sankt Petersburg","Krakau","Dubrovnik","Edinburgh","Venedig",
         ],
         naughty: [
-          "Fake Taxi","Bordell","Schlafzimmer","Wanne","Badezimmer","Balkon","Mode Strand",
-          "Erotik Shop","Rotlichtviertel","Escort","Nacktbadestrand","Stripclub",
-          "Orgie Party","Adult Studio","PornHub",
+          "Fake Taxi","Bordell","Schlafzimmer","Badewanne","Badezimmer","Balkon","Modestrand",
+          "Erotikshop","Rotlichtviertel","Escort","FKK-Strand","Stripclub",
+          "Orgie","Erwachsenenstudio","PornHub",
         ],
-      }
+      },
     };
 
-    let currentLocationsPool = [];
-    let countdownInterval;
-    // track removed locations across rounds (empty until user starts removing)
-    window.removedLocations = new Set();
-    window.lastAssignedLocation = null;
-
-    const MIN_PLAYERS = 2;
-    const MAX_PLAYERS = 50;
+    // Constants
+    const MIN_PLAYERS = 3;
+    const MAX_PLAYERS = 15;
     const MIN_SPIES = 1;
-
-    const MIN_DURATION_SECONDS = 30; // 00:30
-    const MAX_DURATION_SECONDS = 59 * 60 + 30; // 59:30
+    const MIN_DURATION_SECONDS = 60;
+    const MAX_DURATION_SECONDS = 900; // 15 minutes
     const DURATION_STEP_SECONDS = 30;
 
-    const BASE_SECONDS_PER_CIVILIAN = 90;
-
-
+    // State Variables
     let playerCount = 4;
     let spyCount = 1;
-    let gameDurationSeconds; // This will hold the current selected duration
-
-    // Store game state variables for "Tekrar Oyna"
+    let gameDurationSeconds = 300; // 5 minutes default
+    let currentLocationsPool = [];
     let lastPlayersNames = [];
-    let lastPlayerCount = 0;
-    let lastSpyCount = 0;
-    let lastGameDurationSeconds = 0;
+    let lastPlayerCount = 4;
+    let lastSpyCount = 1;
+    let lastGameDurationSeconds = 300;
+    let gameCardsData = [];
+    let currentPlayerIndex = 0;
+    let scores = {}; // Object to store scores: { "PlayerName": score }
 
     // DOM Elements
+    const playerCountDisplay = document.getElementById('player-count-display');
+    const spyCountDisplay = document.getElementById('spy-count-display');
+    const durationDisplay = document.getElementById('duration-display');
+    const recommendedSpyCount = document.getElementById('recommended-spy-count');
+    const recommendedDurationDisplay = document.getElementById('recommended-duration-count');
+    const nameInputsContainer = document.getElementById('name-inputs-container');
+    const startButton = document.getElementById('start-button');
     const titleInfoSection = document.getElementById('title-info-section');
     const gameParametersSection = document.getElementById('game-parameters-section');
     const gameInterfaceSection = document.getElementById('game-interface-section');
-
-    const playerCountDisplay = document.getElementById('player-count-display');
-    const spyCountDisplay = document.getElementById('spy-count-display');
-    const recommendedSpyCountDisplay = document.getElementById('recommended-spy-count');
-    const durationDisplay = document.getElementById('duration-display');
-    const recommendedDurationDisplay = document.getElementById('recommended-duration-count');
-    const nameInputsContainer = document.getElementById('name-inputs-container');
+    const countdownElement = document.getElementById('countdown');
+    const commenceCountdownButton = document.getElementById('commence-countdown-button');
+    const cardsContainer = document.getElementById('cards-container');
+    const restartButton = document.getElementById('restart-button');
+    const resetButton = document.getElementById('reset-button');
+    const showSpiesButton = document.getElementById('show-spies-button');
     const customPlacesContainer = document.getElementById('custom-places-container');
     const removePlayedToggle = document.getElementById('remove-played-toggle');
     const noPlacesMessage = document.getElementById('no-places-message');
-    const countdownElement = document.getElementById("countdown");
-    const cardsContainer = document.getElementById("cards-container");
-    const startButton = document.getElementById("start-button");
-    const resetButton = document.getElementById("reset-button");
-    const restartButton = document.getElementById('restart-button');
-    const commenceCountdownButton = document.getElementById('commence-countdown-button');
-    const showSpiesButton = document.getElementById('show-spies-button');
     const languageSelect = document.getElementById('language-select');
+    const revealTitle = document.getElementById('reveal-title'); // New element
+    const scoreboardContainer = document.getElementById('scoreboard-container'); // New element
+    const winnerSelectionContainer = document.getElementById('winner-selection-container'); // New element
 
-    // i18n strings
+    // Localization Data
     const i18n = {
         tr: {
             title: 'Casus Kim?',
-            description: `Oyunda herkese rastgele atanan iki rol vardır: Köylüler ve casuslar. <br>
-                Köylülere bir yer ismi verilir. Casuslar ise bu yer ismini bilmezler. Casuslar, köylülerin
-                söylediklerini dinleyerek bu yer ismini doğru tahmin etmeye çalışırlar. Köylüler ise süre dolmadan casusların kim
-                olduğunu bulmaya çalışırlar.`,
+            description: 'Oyunda herkese rastgele atanan iki rol vardır: Köylüler ve casuslar. <br>Köylülere bir yer ismi verilir. Casuslar ise bu yer ismini bilmezler. Casuslar, köylülerin söylediklerini dinleyerek bu yer ismini doğru tahmin etmeye çalışırlar. Köylüler ise süre dolmadan casusların kim olduğunu bulmaya çalışırlar.',
             settingsTitle: 'Oyun Ayarları',
             playerCountLabel: 'Oyuncu Sayısı',
             spyCountLabel: 'Casus Sayısı',
             durationLabel: 'Süre',
-            startButton: 'OYNA!',
-            commenceButton: 'BAŞLA!',
-            restartButton: 'Tekrar Oyna',
-            showSpiesButton: 'Casusları Göster',
-            resetButton: 'Ayarları değiştir',
             categoryTitle: 'Mekan Kategorileri',
             categoryInfo: 'İstediğiniz tüm kategorileri seçebilirsiniz.',
-            switchText: 'Oynanmış mekanı havuzdan çıkar (Tekrar Oynama)',
-            noPlacesMessage: 'Havuz boşaldı; yeni bir tur başlatmak için kategori seçimlerini veya ayarları değiştirin.',
-            playerNamePlaceholder: 'Oyuncu {n} Adı',
-            customPlacePlaceholder: 'Özel mekan ismi',
+            startButton: 'OYNA!',
+            commenceButton: 'BAŞLA!',
+            showSpiesButton: 'Casusları Göster',
+            restartButton: 'Tekrar Oyna',
+            resetButton: 'Ayarlar',
+            playerNamePlaceholder: 'Oyuncu {n}',
             alerts: {
-                noCategory: 'Oyun başlatılamadı: Mekan seçimi için en az bir kategori seçili olmalı!',
-                namesCountMismatch: 'Girdiğiniz isim sayısı oyuncu sayısına eşit olmalı.',
-                spiesTooMany: 'Casus sayısı oyuncu sayısından az olmalı!',
-                tooManySpies: 'Çok fazla casus seçtiniz!',
-                playFirst: 'Önce bir oyun başlatmalısınız!',
-                cardsNotCreated: 'Kartlar oluşturulamadı, oyuncu sayısını kontrol edin.',
+                noCategory: 'Lütfen en az bir kategori seçin!',
+                namesCountMismatch: 'İsim sayısı oyuncu sayısı ile uyuşmuyor!',
+                spiesTooMany: 'Casus sayısı oyuncu sayısına eşit veya fazla olamaz!',
+                tooManySpies: 'Maksimum casus sayısı aşıldı!',
+                playFirst: 'Önce bir oyun oynamalısınız!',
+                cardsNotCreated: 'Kartlar oluşturulamadı!'
             },
             categories: {
-                dailyLife: 'Günlük Hayat', sciFi: 'Bilim Kurgu', middleAges: 'Orta Çağ', turkey: 'Türkiye', europe: 'Avrupa', saintJoseph: 'Saint-Joseph', naughty: '+18', custom: 'Kendin Ekle'
+                dailyLife: 'Günlük Hayat',
+                sciFi: 'Bilim Kurgu',
+                middleAges: 'Orta Çağ',
+                turkey: 'Türkiye',
+                europe: 'Avrupa',
+                saintJoseph: 'Saint-Joseph',
+                naughty: '+18',
+                custom: 'Özel'
             },
-            roles: { spy: 'CASUS', civilian: 'Köylüsün' }
-            ,
-            languageLabel: 'dil',
-            banner: 'casus.dens.dev yakında yeni adresine taşınacak: casuskim.net',
-            footer: `<b>Casus Kim? v2.1</b> 25w47a | © 2025 densdev\nAlexandr Ushan'ın Spyfall oyunu üzerine kurulmuştur.`
+            switchText: 'Tekrar oynarken aynı mekan gelmesin',
+            noPlacesMessage: 'Havuz boşaldı; yeni bir tur başlatmak için kategori seçimlerini veya ayarları değiştirin.',
+            roles: { spy: 'Casus sensin', civilian: 'Köylüsün' },
+            languageLabel: 'Dil',
+            banner: '🎉 casus.dens.dev artık casuskim.net!',
+            revealTitle: 'Bakalım kimsin...',
+            civiliansWin: 'Köylüler Kazandı',
+            spiesWin: 'Casuslar Kazandı',
+            scoreboardTitle: 'Skor Tablosu',
+            footerCredits: 'Alexandr Ushan\'ın Spyfall oyunu üzerine kurulmuştur.'
         },
         en: {
-            title: 'Who\'s the Spy?',
-            description: `Players are randomly assigned two roles: Civilians and Spies. <br>
-                Civilians are given a location name. Spies do not know the location. Spies listen to clues
-                and try to guess the location while civilians try to identify the spies before time runs out.`,
+            title: 'Who is the Spy?',
+            description: 'There are two roles randomly assigned to everyone in the game: Civilians and Spies. <br>Civilians are given a place name. Spies do not know this place name. Spies try to guess this place name correctly by listening to what the civilians say. Civilians try to find out who the spies are before the time runs out.',
             settingsTitle: 'Game Settings',
-            playerCountLabel: 'Players',
-            spyCountLabel: 'Spies',
+            playerCountLabel: 'Player Count',
+            spyCountLabel: 'Spy Count',
             durationLabel: 'Duration',
+            categoryTitle: 'Location Categories',
+            categoryInfo: 'You can select all the categories you want.',
             startButton: 'PLAY!',
             commenceButton: 'START!',
-            restartButton: 'Play Again',
             showSpiesButton: 'Show Spies',
-            resetButton: 'Change Settings',
-            categoryTitle: 'Location Categories',
-            categoryInfo: 'You can select any categories you want.',
-            switchText: 'Remove played location from pool (no repeats)',
-            noPlacesMessage: 'Pool is empty; change categories or settings to continue playing.',
-            playerNamePlaceholder: 'Player {n} Name',
-            customPlacePlaceholder: 'Custom place name',
+            restartButton: 'Play Again',
+            resetButton: 'Settings',
+            playerNamePlaceholder: 'Player {n}',
             alerts: {
-                noCategory: 'Cannot start: at least one category must be selected!',
-                namesCountMismatch: 'Number of entered names must match player count.',
-                spiesTooMany: 'Number of spies must be less than players!',
-                tooManySpies: 'Too many spies selected!',
-                playFirst: 'You must start a game first!',
-                cardsNotCreated: 'Cards could not be created, check player count.',
+                noCategory: 'Please select at least one category!',
+                namesCountMismatch: 'Name count does not match player count!',
+                spiesTooMany: 'Spy count cannot be equal to or greater than player count!',
+                tooManySpies: 'Maximum spy count exceeded!',
+                playFirst: 'You must play a game first!',
+                cardsNotCreated: 'Cards could not be created!'
             },
-            categories: { dailyLife: 'Daily Life', sciFi: 'Sci-Fi', middleAges: 'Middle Ages', turkey: 'Turkey', europe: 'Europe', saintJoseph: 'Saint-Joseph', naughty: '18+', custom: 'Add Custom' },
-            roles: { spy: 'SPY', civilian: 'You are a Civilian' }
-            ,
-            languageLabel: 'language',
-            banner: 'casus.dens.dev will soon move to its new address: casuskim.net',
-            footer: `<b>Casus Kim? v2.1</b> 25w71a | © 2025 densdev\nBased on Alexandr Ushan's Spyfall game.`
+            categories: {
+                dailyLife: 'Daily Life',
+                sciFi: 'Sci-Fi',
+                middleAges: 'Middle Ages',
+                turkey: 'Turkey',
+                europe: 'Europe',
+                saintJoseph: 'Saint-Joseph',
+                naughty: '+18',
+                custom: 'Custom'
+            },
+            switchText: 'Don\'t replay the same location',
+            noPlacesMessage: 'Pool is empty; change category selections or settings to start a new round.',
+            roles: { spy: 'You are the Spy', civilian: 'You are a Civilian' },
+            languageLabel: 'Language',
+            banner: '🎉 casus.dens.dev is now casuskim.net!',
+            revealTitle: "Let's see who you are...",
+            civiliansWin: 'Civilians Won',
+            spiesWin: 'Spies Won',
+            scoreboardTitle: 'Scoreboard',
+            footerCredits: 'Based on the game Spyfall by Alexandr Ushan.'
         },
         fr: {
             title: 'Qui est l\'Espion ?',
-            description: `Les joueurs reçoivent deux rôles aléatoires : Civils et Espions. <br>
-                Les Civils reçoivent un nom de lieu. Les Espions ne connaissent pas le lieu. Les espions écoutent
-                les indices et essaient de deviner le lieu pendant que les civils tentent d'identifier les espions.`,
-            settingsTitle: 'Paramètres du jeu',
-            playerCountLabel: 'Joueurs',
-            spyCountLabel: 'Espions',
+            description: 'Il y a deux rôles attribués au hasard à tout le monde dans le jeu : Civils et Espions. <br>Les civils reçoivent un nom de lieu. Les espions ne connaissent pas ce nom de lieu. Les espions essaient de deviner correctement ce nom de lieu en écoutant ce que disent les civils. Les civils essaient de découvrir qui sont les espions avant la fin du temps imparti.',
+            settingsTitle: 'Paramètres du Jeu',
+            playerCountLabel: 'Nombre de Joueurs',
+            spyCountLabel: 'Nombre d\'Espions',
             durationLabel: 'Durée',
-            startButton: 'JOUER!',
-            commenceButton: 'DÉMARRER!',
-            restartButton: 'Rejouer',
-            showSpiesButton: 'Montrer les espions',
-            resetButton: 'Modifier les paramètres',
-            categoryTitle: 'Catégories de lieux',
+            categoryTitle: 'Catégories de Lieux',
             categoryInfo: 'Vous pouvez sélectionner toutes les catégories que vous souhaitez.',
-            switchText: 'Retirer le lieu joué de la réserve (pas de répétition)',
-            noPlacesMessage: 'La réserve est vide ; changez les catégories ou paramètres pour continuer.',
-            playerNamePlaceholder: 'Joueur {n} Nom',
-            customPlacePlaceholder: 'Nom de lieu personnalisé',
+            startButton: 'JOUER !',
+            commenceButton: 'COMMENCER !',
+            showSpiesButton: 'Montrer les Espions',
+            restartButton: 'Rejouer',
+            resetButton: 'Paramètres',
+            playerNamePlaceholder: 'Joueur {n}',
             alerts: {
-                noCategory: 'Impossible de démarrer : au moins une catégorie doit être sélectionnée !',
-                namesCountMismatch: "Le nombre de noms saisis doit correspondre au nombre de joueurs.",
-                spiesTooMany: "Le nombre d'espions doit être inférieur au nombre de joueurs !",
-                tooManySpies: "Trop d'espions sélectionnés !",
-                playFirst: "Vous devez d'abord lancer une partie !",
-                cardsNotCreated: "Les cartes n'ont pas pu être créées, vérifiez le nombre de joueurs.",
+                noCategory: 'Veuillez sélectionner au moins une catégorie !',
+                namesCountMismatch: 'Le nombre de noms ne correspond pas au nombre de joueurs !',
+                spiesTooMany: 'Le nombre d\'espions ne peut pas être égal ou supérieur au nombre de joueurs !',
+                tooManySpies: 'Nombre maximum d\'espions dépassé !',
+                playFirst: 'Vous devez d\'abord jouer une partie !',
+                cardsNotCreated: 'Les cartes n\'ont pas pu être créées !'
             },
-            categories: { dailyLife: 'Vie quotidienne', sciFi: 'Science-Fiction', middleAges: 'Moyen Âge', turkey: 'Turquie', europe: 'Europe', saintJoseph: 'Saint-Joseph', naughty: '18+', custom: 'Ajouter personnalisé' },
-            roles: { spy: 'ESPION', civilian: 'Tu es un Civil' }
-            ,
-            languageLabel: 'langue',
-            banner: 'casus.dens.dev va bientôt déménager vers sa nouvelle adresse : casuskim.net',
-            footer: `<b>Casus Kim? v2.1</b> 25w71a | © 2025 densdev\nBasé sur le jeu Spyfall d'Alexandr Ushan.`
+            categories: {
+                dailyLife: 'Vie Quotidienne',
+                sciFi: 'Science-Fiction',
+                middleAges: 'Moyen Âge',
+                turkey: 'Turquie',
+                europe: 'Europe',
+                saintJoseph: 'Saint-Joseph',
+                naughty: '+18',
+                custom: 'Personnalisé'
+            },
+            switchText: 'Ne pas rejouer le même lieu',
+            noPlacesMessage: 'Le pool est vide ; changez les sélections de catégories ou les paramètres pour commencer une nouvelle manche.',
+            roles: { spy: 'Tu es l\'Espion', civilian: 'Tu es un Civil' },
+            languageLabel: 'Langue',
+            banner: '🎉 casus.dens.dev est maintenant casuskim.net !',
+            revealTitle: 'Voyons qui tu es...',
+            civiliansWin: 'Les Civils ont Gagné',
+            spiesWin: 'Les Espions ont Gagné',
+            scoreboardTitle: 'Tableau des Scores',
+            footerCredits: 'Basé sur le jeu Spyfall d\'Alexandr Ushan.'
         },
         it: {
             title: 'Chi è la Spia?',
-            description: `I giocatori ricevono ruoli casuali: Cittadini e Spie. <br>
-                I Cittadini ricevono il nome di un luogo. Le Spie non conoscono il luogo. Le spie ascoltano gli indizi
-                e cercano di indovinare il luogo mentre i cittadini cercano di trovare le spie.`,
-            settingsTitle: 'Impostazioni di gioco',
-            playerCountLabel: 'Giocatori',
-            spyCountLabel: 'Spie',
+            description: 'Ci sono due ruoli assegnati casualmente a tutti nel gioco: Civili e Spie. <br>Ai civili viene dato un nome di luogo. Le spie non conoscono questo nome di luogo. Le spie cercano di indovinare correttamente questo nome di luogo ascoltando ciò che dicono i civili. I civili cercano di scoprire chi sono le spie prima che scada il tempo.',
+            settingsTitle: 'Impostazioni di Gioco',
+            playerCountLabel: 'Numero di Giocatori',
+            spyCountLabel: 'Numero di Spie',
             durationLabel: 'Durata',
-            startButton: 'GIOCA!',
-            commenceButton: 'AVVIA!',
-            restartButton: 'Rigioca',
-            showSpiesButton: 'Mostra le spie',
-            resetButton: 'Cambia impostazioni',
-            categoryTitle: 'Categorie di luoghi',
+            categoryTitle: 'Categorie di Luoghi',
             categoryInfo: 'Puoi selezionare tutte le categorie che desideri.',
-            switchText: 'Rimuovi il luogo giocato dalla riserva (no ripetizioni)',
-            noPlacesMessage: 'La riserva è vuota; cambia categorie o impostazioni per continuare.',
-            playerNamePlaceholder: 'Giocatore {n} Nome',
-            customPlacePlaceholder: 'Nome luogo personalizzato',
+            startButton: 'GIOCA!',
+            commenceButton: 'INIZIA!',
+            showSpiesButton: 'Mostra Spie',
+            restartButton: 'Gioca Ancora',
+            resetButton: 'Impostazioni',
+            playerNamePlaceholder: 'Giocatore {n}',
             alerts: {
-                noCategory: 'Impossibile avviare: almeno una categoria deve essere selezionata!',
-                namesCountMismatch: 'Il numero di nomi inseriti deve corrispondere al numero di giocatori.',
-                spiesTooMany: 'Il numero di spie deve essere inferiore ai giocatori!',
-                tooManySpies: 'Troppe spie selezionate!',
-                playFirst: 'Devi prima avviare una partita!',
-                cardsNotCreated: 'Impossibile creare le carte, controlla il numero di giocatori.',
+                noCategory: 'Seleziona almeno una categoria!',
+                namesCountMismatch: 'Il numero di nomi non corrisponde al numero di giocatori!',
+                spiesTooMany: 'Il numero di spie non può essere uguale o superiore al numero di giocatori!',
+                tooManySpies: 'Numero massimo di spie superato!',
+                playFirst: 'Devi prima giocare una partita!',
+                cardsNotCreated: 'Impossibile creare le carte!'
             },
-            categories: { dailyLife: 'Vita quotidiana', sciFi: 'Fantascienza', middleAges: 'Medioevo', turkey: 'Turchia', europe: 'Europa', saintJoseph: 'Saint-Joseph', naughty: '18+', custom: 'Aggiungi personalizzato' },
-            roles: { spy: 'SPIA', civilian: 'Sei un Civile' }
-            ,
-            languageLabel: 'lingua',
-            banner: 'casus.dens.dev presto si trasferirà al suo nuovo indirizzo: casuskim.net',
-            footer: `<b>Casus Kim? v2.1</b> 25w71a | © 2025 densdev\nBasato sul gioco Spyfall di Alexandr Ushan.`
+            categories: {
+                dailyLife: 'Vita Quotidiana',
+                sciFi: 'Fantascienza',
+                middleAges: 'Medioevo',
+                turkey: 'Turchia',
+                europe: 'Europa',
+                saintJoseph: 'Saint-Joseph',
+                naughty: '+18',
+                custom: 'Personalizzato'
+            },
+            switchText: 'Non ripetere lo stesso luogo',
+            noPlacesMessage: 'Il pool è vuoto; cambia le selezioni delle categorie o le impostazioni per iniziare un nuovo round.',
+            roles: { spy: 'Sei la Spia', civilian: 'Sei un Civile' },
+            languageLabel: 'Lingua',
+            banner: '🎉 casus.dens.dev è ora casuskim.net!',
+            revealTitle: 'Vediamo chi sei...',
+            civiliansWin: 'I Civili hanno Vinto',
+            spiesWin: 'Le Spie hanno Vinto',
+            scoreboardTitle: 'Tabellone Punti',
+            footerCredits: 'Basato sul gioco Spyfall di Alexandr Ushan.'
         },
         de: {
             title: 'Wer ist der Spion?',
-            description: `Den Spielern werden zufällig zwei Rollen zugewiesen: Zivilisten und Spione. <br>
-                Zivilisten erhalten einen Ortsnamen. Spione kennen den Ort nicht. Spione hören Hinweise
-                und versuchen, den Ort zu erraten, während die Zivilisten die Spione aufdecken wollen.`,
-            settingsTitle: 'Spiel Einstellungen',
-            playerCountLabel: 'Spieler',
-            spyCountLabel: 'Spione',
+            description: 'Es gibt zwei Rollen, die jedem im Spiel zufällig zugewiesen werden: Zivilisten und Spione. <br>Zivilisten erhalten einen Ortsnamen. Spione kennen diesen Ortsnamen nicht. Spione versuchen, diesen Ortsnamen richtig zu erraten, indem sie zuhören, was die Zivilisten sagen. Zivilisten versuchen herauszufinden, wer die Spione sind, bevor die Zeit abläuft.',
+            settingsTitle: 'Spieleinstellungen',
+            playerCountLabel: 'Spieleranzahl',
+            spyCountLabel: 'Spionanzahl',
             durationLabel: 'Dauer',
+            categoryTitle: 'Ortkategorien',
+            categoryInfo: 'Sie können alle gewünschten Kategorien auswählen.',
             startButton: 'SPIELEN!',
-            commenceButton: 'START!',
-            restartButton: 'Nochmal spielen',
-            showSpiesButton: 'Spione zeigen',
-            resetButton: 'Einstellungen ändern',
-            categoryTitle: 'Ortskategorien',
-            categoryInfo: 'Sie können beliebige Kategorien auswählen.',
-            switchText: 'Gespielte Orte aus Pool entfernen (keine Wiederholung)',
-            noPlacesMessage: 'Pool ist leer; ändern Sie Kategorien oder Einstellungen, um weiterzuspielen.',
-            playerNamePlaceholder: 'Spieler {n} Name',
-            customPlacePlaceholder: 'Benutzerdefinierter Ortsname',
+            commenceButton: 'STARTEN!',
+            showSpiesButton: 'Spione Anzeigen',
+            restartButton: 'Nochmal Spielen',
+            resetButton: 'Einstellungen',
+            playerNamePlaceholder: 'Spieler {n}',
             alerts: {
-                noCategory: 'Kann nicht starten: mindestens eine Kategorie muss ausgewählt sein!',
-                namesCountMismatch: 'Anzahl der eingetragenen Namen muss der Spielerzahl entsprechen.',
-                spiesTooMany: 'Anzahl der Spione muss kleiner als die Spieleranzahl sein!',
-                tooManySpies: 'Zu viele Spione ausgewählt!',
-                playFirst: 'Sie müssen zuerst ein Spiel starten!',
-                cardsNotCreated: 'Karten konnten nicht erstellt werden, überprüfen Sie die Spieleranzahl.',
+                noCategory: 'Bitte wählen Sie mindestens eine Kategorie aus!',
+                namesCountMismatch: 'Die Anzahl der Namen stimmt nicht mit der Spieleranzahl überein!',
+                spiesTooMany: 'Die Anzahl der Spione darf nicht gleich oder größer als die Spieleranzahl sein!',
+                tooManySpies: 'Maximale Spionanzahl überschritten!',
+                playFirst: 'Sie müssen zuerst ein Spiel spielen!',
+                cardsNotCreated: 'Karten konnten nicht erstellt werden!'
             },
-            categories: { dailyLife: 'Alltag', sciFi: 'Sci-Fi', middleAges: 'Mittelalter', turkey: 'Türkei', europe: 'Europa', saintJoseph: 'Saint-Joseph', naughty: '18+', custom: 'Benutzerdefiniert' },
-            roles: { spy: 'SPION', civilian: 'Du bist ein Zivilist' }
-            ,
-            languageLabel: 'sprache',
-            banner: 'casus.dens.dev wird bald an seine neue Adresse umziehen: casuskim.net',
-            footer: `<b>Casus Kim? v2.1</b> 25w71a | © 2025 densdev\nBasierend auf dem Spyfall-Spiel von Alexandr Ushan.`
+            categories: {
+                dailyLife: 'Alltag',
+                sciFi: 'Sci-Fi',
+                middleAges: 'Mittelalter',
+                turkey: 'Türkei',
+                europe: 'Europa',
+                saintJoseph: 'Saint-Joseph',
+                naughty: '+18',
+                custom: 'Benutzerdefiniert'
+            },
+            switchText: 'Gleichen Ort nicht erneut spielen',
+            noPlacesMessage: 'Der Pool ist leer; ändern Sie die Kategorieauswahl oder die Einstellungen, um eine neue Runde zu beginnen.',
+            roles: { spy: 'Du bist der Spion', civilian: 'Du bist ein Zivilist' },
+            languageLabel: 'Sprache',
+            banner: '🎉 casus.dens.dev ist jetzt casuskim.net!',
+            revealTitle: 'Mal sehen, wer du bist...',
+            civiliansWin: 'Zivilisten haben Gewonnen',
+            spiesWin: 'Spione haben Gewonnen',
+            scoreboardTitle: 'Punktetabelle',
+            footerCredits: 'Basiert auf dem Spiel Spyfall von Alexandr Ushan.'
         }
     };
 
@@ -425,6 +463,50 @@ document.addEventListener("DOMContentLoaded", function() {
         updateRecommendedDurationDisplay();
         
         generateNameInputs();
+    }
+
+    function updateSpyCountDisplay() {
+        spyCountDisplay.textContent = spyCount;
+    }
+
+    function updateDurationDisplay() {
+        durationDisplay.textContent = secondsToMMSS(gameDurationSeconds);
+    }
+
+    function updateRecommendedSpyCount() {
+        const recommended = Math.max(1, Math.floor(playerCount / 4));
+        recommendedSpyCount.textContent = `Önerilen: ${recommended}`;
+    }
+
+    function calculateRecommendedDuration() {
+        // Base time: 3 minutes for 3 players
+        // Add 30 seconds for each additional player
+        let duration = 180 + (playerCount - 3) * 30;
+        return Math.min(Math.max(duration, MIN_DURATION_SECONDS), MAX_DURATION_SECONDS);
+    }
+
+    function updateRecommendedDurationDisplay() {
+        const recommended = calculateRecommendedDuration();
+        recommendedDurationDisplay.textContent = `Önerilen: ${secondsToMMSS(recommended)}`;
+    }
+
+    function updateMaxSpyCount() {
+        const maxAllowedSpies = Math.max(MIN_SPIES, playerCount - 1);
+        if (spyCount > maxAllowedSpies) {
+            spyCount = maxAllowedSpies;
+            updateSpyCountDisplay();
+        }
+    }
+
+    function generateNameInputs() {
+        nameInputsContainer.innerHTML = '';
+        for (let i = 0; i < playerCount; i++) {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.id = `player-name-${i}`;
+            input.placeholder = t('playerNamePlaceholder', { n: i + 1 });
+            nameInputsContainer.appendChild(input);
+        }
     }
 
     // Helper to get translated text
@@ -492,207 +574,42 @@ document.addEventListener("DOMContentLoaded", function() {
         if (switchTextEl) switchTextEl.textContent = t('switchText');
         if (noPlacesMessage) noPlacesMessage.textContent = t('noPlacesMessage');
 
+        // Reveal Title
+        const revealTitleEl = document.getElementById('reveal-title');
+        if (revealTitleEl) revealTitleEl.textContent = t('revealTitle');
+
+        // Winner Buttons
+        const civWinBtn = document.getElementById('civilians-win-btn');
+        const spyWinBtn = document.getElementById('spies-win-btn');
+        if (civWinBtn) civWinBtn.textContent = t('civiliansWin');
+        if (spyWinBtn) spyWinBtn.textContent = t('spiesWin');
+
+        // Scoreboard Title
+        const scoreboardTitleEl = document.querySelector('#scoreboard-container h4');
+        if (scoreboardTitleEl) scoreboardTitleEl.textContent = t('scoreboardTitle');
+
         // Language label and banner
         const langLabelEl = document.getElementById('language-label');
-        if (langLabelEl) langLabelEl.textContent = t('languageLabel');
+        if (langLabelEl) langLabelEl.textContent = '🌍 ' + t('languageLabel');
         const bannerEl = document.getElementById('top-banner');
         if (bannerEl) {
-            const text = t('banner') || '';
-            bannerEl.textContent = text;
-            bannerEl.style.display = text ? 'block' : 'none';
+            const txt = t('banner');
+            bannerEl.textContent = txt || '';
+            bannerEl.style.display = txt ? 'block' : 'none';
         }
 
-        // Update name input placeholders
-        generateNameInputs();
-
-        // Update custom input placeholder text for any existing custom inputs
-        const customInputs = document.querySelectorAll('#custom-places-container input[type="text"]');
-        customInputs.forEach(inp => inp.placeholder = t('customPlacePlaceholder'));
-
-        // Update footer text minimally (keep credit link)
-        const footer = document.querySelector('.footer-text');
-        if (footer) {
-            const f = t('footer') || '';
-            // Replace 'densdev' token with a clickable link, then convert newlines to <br>
-            const linked = f.replace(/densdev/g, '<a href="https://dens.dev" target="_blank" rel="noopener noreferrer">densdev</a>');
-            footer.innerHTML = linked.replace(/\n/g, '<br>');
+        // Footer credits
+        const footerCreditsEl = document.getElementById('footer-credits');
+        if (footerCreditsEl) {
+            footerCreditsEl.textContent = t('footerCredits');
         }
     }
 
-    function updateSpyCountDisplay() {
-        spyCountDisplay.textContent = spyCount;
-        updateRecommendedSpyCount();
-
-        gameDurationSeconds = calculateRecommendedDuration();
-        updateDurationDisplay();
-        updateRecommendedDurationDisplay();
-    }
-
-    function updateDurationDisplay() {
-        durationDisplay.textContent = secondsToMMSS(gameDurationSeconds);
-    }
-
-    function calculateRecommendedDuration() {
-        const numCivilians = Math.max(1, playerCount - spyCount); 
-        const rawSeconds = numCivilians * BASE_SECONDS_PER_CIVILIAN;
-
-        const roundedSeconds = Math.round(rawSeconds / DURATION_STEP_SECONDS) * DURATION_STEP_SECONDS;
-
-        return Math.max(MIN_DURATION_SECONDS, Math.min(MAX_DURATION_SECONDS, roundedSeconds));
-    }
-
-    function updateRecommendedSpyCount() {
-        const recommended = Math.ceil(playerCount / 5);
-        recommendedSpyCountDisplay.textContent = `Önerilen: ${recommended}`;
-    }
-
-    function updateRecommendedDurationDisplay() {
-        const recommended = calculateRecommendedDuration();
-        recommendedDurationDisplay.textContent = `Önerilen: ${secondsToMMSS(recommended)}`;
-    }
-
-    function updateMaxSpyCount() {
-        const maxAllowedSpies = Math.max(MIN_SPIES, playerCount - 1);
-        if (spyCount > maxAllowedSpies) {
-            spyCount = maxAllowedSpies;
-            updateSpyCountDisplay();
-        }
-    }
-
-    function generateNameInputs() {
-        nameInputsContainer.innerHTML = '';
-        for (let i = 0; i < playerCount; i++) {
-            const input = document.createElement('input');
-            input.type = 'text';
-            input.id = `player-name-${i}`;
-            input.placeholder = t('playerNamePlaceholder', { n: i + 1 });
-            nameInputsContainer.appendChild(input);
-        }
-    }
-
-    // Initialize display and inputs on load
-    gameDurationSeconds = calculateRecommendedDuration();
-    updatePlayerCountDisplay();
-    updateSpyCountDisplay();
-    updateDurationDisplay();
-    updateRecommendedSpyCount();
-    updateRecommendedDurationDisplay();
-
-
-    // Event Listeners for Player Count Buttons
-    document.getElementById('decrease-players').addEventListener('click', () => {
-        if (playerCount > MIN_PLAYERS) {
-            playerCount--;
-            updatePlayerCountDisplay();
-        }
-    });
-
-    document.getElementById('increase-players').addEventListener('click', () => {
-        if (playerCount < MAX_PLAYERS) {
-            playerCount++;
-            updatePlayerCountDisplay();
-        }
-    });
-
-    // Event Listeners for Spy Count Buttons
-    document.getElementById('decrease-spies').addEventListener('click', () => {
-        if (spyCount > MIN_SPIES) {
-            spyCount--;
-            updateSpyCountDisplay();
-        }
-    });
-
-    document.getElementById('increase-spies').addEventListener('click', () => {
-        const maxAllowedSpies = playerCount - 1;
-        if (spyCount < maxAllowedSpies) {
-            spyCount++;
-            updateSpyCountDisplay();
-        }
-    });
-
-    // Event Listeners for Duration Count Buttons
-    document.getElementById('decrease-duration').addEventListener('click', () => {
-        if (gameDurationSeconds - DURATION_STEP_SECONDS >= MIN_DURATION_SECONDS) {
-            gameDurationSeconds -= DURATION_STEP_SECONDS;
-            updateDurationDisplay();
-        } else {
-            gameDurationSeconds = MIN_DURATION_SECONDS;
-            updateDurationDisplay();
-        }
-    });
-
-    document.getElementById('increase-duration').addEventListener('click', () => {
-        if (gameDurationSeconds + DURATION_STEP_SECONDS <= MAX_DURATION_SECONDS) {
-            gameDurationSeconds += DURATION_STEP_SECONDS;
-            updateDurationDisplay();
-        } else {
-            gameDurationSeconds = MAX_DURATION_SECONDS;
-            updateDurationDisplay();
-        }
-    });
-
-    // Location Pool Logic
-    function updateLocationPool() {
-        currentLocationsPool = [];
-        const categoryToggles = document.querySelectorAll('.category-toggle');
-        categoryToggles.forEach(toggle => {
-            if (toggle.checked) {
-                const categoryKey = toggle.value;
-                const langLocations = (locationsByLang[currentLang] || locationsByLang['tr']);
-                if (langLocations && langLocations[categoryKey]) {
-                    currentLocationsPool.push(...langLocations[categoryKey]);
-                }
-            }
-        });
-
-        // If custom category selected, include custom places entered by the user
-        const customToggle = document.querySelector('.category-toggle[value="custom"]');
-        if (customToggle && customToggle.checked && customPlacesContainer) {
-            const inputs = customPlacesContainer.querySelectorAll('input[type="text"]');
-            inputs.forEach(input => {
-                const val = input.value.trim();
-                if (val !== '') currentLocationsPool.push(val);
-            });
-        }
-
-        // If the "remove played" option is enabled, filter out already-used locations
-        if (removePlayedToggle && removePlayedToggle.checked && window.removedLocations instanceof Set) {
-            currentLocationsPool = currentLocationsPool.filter(loc => !window.removedLocations.has(loc));
-        }
-
-        // Update UI availability if in-game
-        checkPoolAvailability();
-    }
-
-    const categoryBoxes = document.querySelectorAll('.category-box');
-    categoryBoxes.forEach(box => {
-        const checkbox = box.querySelector('.category-toggle');
-
-        if (checkbox.checked) {
-            box.classList.add('selected');
-        }
-
-        box.addEventListener('click', function() {
-            checkbox.checked = !checkbox.checked;
-            this.classList.toggle('selected', checkbox.checked);
-
-            updateLocationPool();
-            // Show/hide custom places inputs when the custom category is toggled
-            if (checkbox.value === 'custom' && customPlacesContainer) {
-                customPlacesContainer.classList.toggle('hidden', !checkbox.checked);
-                // initialize at least one input when shown
-                if (checkbox.checked) {
-                    ensureCustomInputsInitialized();
-                }
-            }
-        });
-    });
-
-    // Custom places dynamic inputs
+    // Custom Inputs Logic
     function createCustomInput() {
         const input = document.createElement('input');
         input.type = 'text';
-        input.placeholder = t('customPlacePlaceholder');
+        input.placeholder = '...';
         input.addEventListener('input', onCustomInputChange);
         return input;
     }
@@ -748,8 +665,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 countdownElement.textContent = "00:00";
                 cancelAnimationFrame(animationFrameId);
                 showSpiesButton.classList.remove('hidden'); // Show the "Casusları Göster" button
+                showSpiesButton.classList.add('fade-in');
                 showSpiesButton.disabled = false;
-                commenceCountdownButton.classList.add('hidden'); // Hide the start button if still visible
+                
+                // Ensure other buttons are hidden
+                winnerSelectionContainer.classList.add('hidden');
+                restartButton.classList.add('hidden');
+                resetButton.classList.add('hidden');
                 return;
             }
 
@@ -781,80 +703,6 @@ document.addEventListener("DOMContentLoaded", function() {
         return currentLocationsPool[index];
     }
 
-    // Keep track of the last assigned non-spy location so we can remove it on replay if needed
-    // window.lastAssignedLocation will be set inside assignRoles
-
-    function cardClickHandler(event) {
-        const card = event.currentTarget;
-        if (card.classList.contains("flipped")) return;
-
-        card.classList.add("flipped");
-
-        setTimeout(() => {
-            const isSpy = card.dataset.spy === "true";
-            const playerName = card.querySelector('.player-name-front').textContent;
-            const backContentDiv = card.querySelector(".back");
-
-            backContentDiv.innerHTML = ''; // Clear previous content
-
-            // Add player info to the back
-            const playerInfoDiv = document.createElement('div');
-            playerInfoDiv.classList.add('card-player-info');
-            playerInfoDiv.innerHTML = `<span class="user-icon">👤</span><span class="player-name-back">${playerName}</span>`;
-            backContentDiv.appendChild(playerInfoDiv);
-
-            // Add role label
-            const roleLabelDiv = document.createElement('div');
-            roleLabelDiv.classList.add('card-role-label');
-            if (isSpy) {
-                roleLabelDiv.innerHTML = `<span class="spy-text">${t('roles.spy')}</span>`;
-            } else {
-                roleLabelDiv.textContent = t('roles.civilian');
-            }
-            backContentDiv.appendChild(roleLabelDiv);
-
-            // Add location if not a spy
-            if (!isSpy) {
-                const locationNameDiv = document.createElement('div');
-                locationNameDiv.classList.add('card-location-name');
-                locationNameDiv.textContent = card.dataset.location;
-                backContentDiv.appendChild(locationNameDiv);
-            }
-
-            setTimeout(() => {
-                card.classList.remove("flipped");
-                setTimeout(() => {
-                    backContentDiv.innerHTML = ""; // Clear back content when flipped back
-                }, 300);
-            }, 2000); // Card stays flipped for 2 seconds
-        }, 100);
-    }
-
-    function createCards(numCards, names) {
-        cardsContainer.innerHTML = "";
-
-        for (let i = 0; i < numCards; i++) {
-            const card = document.createElement("div");
-            card.classList.add("card");
-            card.id = `card-${i + 1}`;
-
-            const front = document.createElement("div");
-            front.classList.add("front");
-            
-            const frontPlayerInfo = document.createElement('div');
-            frontPlayerInfo.classList.add('card-player-info');
-            frontPlayerInfo.innerHTML = `<span class="user-icon">👤</span><span class="player-name-front">${names[i]}</span>`;
-            front.appendChild(frontPlayerInfo);
-            card.appendChild(front);
-
-            const back = document.createElement("div");
-            back.classList.add("back");
-            card.appendChild(back);
-
-            cardsContainer.appendChild(card);
-        }
-    }
-
     function shuffleArray(array) {
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -862,56 +710,380 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    function assignRoles(numPlayers, numSpies) {
-        const cards = Array.from(document.querySelectorAll(".card"));
-        if (cards.length === 0) {
-            alert(t('alerts.cardsNotCreated'));
-            return false;
-        }
-
+    function generateGameData(numPlayers, numSpies, names) {
         const playerIndices = Array.from({ length: numPlayers }, (_, i) => i);
         shuffleArray(playerIndices);
-
         const spyIndices = playerIndices.slice(0, numSpies);
 
         const randomLocation = getRandomLocation();
         if (randomLocation === "UNKNOWN LOCATION (No categories selected)") {
-            return false;
+            return null;
         }
 
-    // record last assigned location for potential removal on replay
-    window.lastAssignedLocation = randomLocation;
-
-        cards.forEach((card, index) => {
-            if (spyIndices.includes(index)) {
-                card.dataset.spy = "true";
-            } else {
-                card.dataset.spy = "false";
-                card.dataset.location = randomLocation;
-            }
-        });
-        return true;
+        window.lastAssignedLocation = randomLocation;
+        
+        const data = [];
+        for (let i = 0; i < numPlayers; i++) {
+            const isSpy = spyIndices.includes(i);
+            data.push({
+                name: names[i],
+                isSpy: isSpy,
+                location: randomLocation
+            });
+        }
+        return data;
     }
 
-    // UI helper: check whether pool has any locations left and update the in-game controls
-    function checkPoolAvailability() {
-        if (!noPlacesMessage || !restartButton) return;
+    function showNextCard() {
+        cardsContainer.innerHTML = "";
 
-        if (currentLocationsPool.length === 0) {
-            // disable replay and show message
-            restartButton.disabled = true;
-            noPlacesMessage.style.display = 'block';
-        } else {
-            restartButton.disabled = false;
-            noPlacesMessage.style.display = 'none';
+        if (currentPlayerIndex >= gameCardsData.length) {
+            // All players have seen their cards
+            revealTitle.classList.add('hidden');
+            commenceCountdownButton.classList.remove('hidden');
+            commenceCountdownButton.classList.add('fade-in'); // Add fade-in animation
+            commenceCountdownButton.disabled = false;
+            return;
         }
+
+        const playerData = gameCardsData[currentPlayerIndex];
+        
+        const card = document.createElement("div");
+        card.classList.add("card");
+        card.classList.add("slide-in"); // Add animation class
+        card.id = `card-${currentPlayerIndex}`;
+
+        // Remove slide-in class after animation to allow transform transition (flip) to work
+        card.addEventListener('animationend', () => {
+            card.classList.remove('slide-in');
+        }, { once: true });
+
+        // Front
+        const front = document.createElement("div");
+        front.classList.add("front");
+        const frontPlayerInfo = document.createElement('div');
+        frontPlayerInfo.classList.add('card-player-info');
+        frontPlayerInfo.innerHTML = `<span class="user-icon">👤</span><span class="player-name-front">${playerData.name}</span>`;
+        front.appendChild(frontPlayerInfo);
+        
+        card.appendChild(front);
+
+        // Back
+        const back = document.createElement("div");
+        back.classList.add("back");
+        
+        const backPlayerInfo = document.createElement('div');
+        backPlayerInfo.classList.add('card-player-info');
+        backPlayerInfo.innerHTML = `<span class="user-icon">👤</span><span class="player-name-back">${playerData.name}</span>`;
+        back.appendChild(backPlayerInfo);
+
+        const roleLabelDiv = document.createElement('div');
+        roleLabelDiv.classList.add('card-role-label');
+        if (playerData.isSpy) {
+            roleLabelDiv.innerHTML = `<span class="spy-text">${t('roles.spy')}</span>`;
+        } else {
+            roleLabelDiv.textContent = t('roles.civilian');
+        }
+        back.appendChild(roleLabelDiv);
+
+        if (!playerData.isSpy) {
+            const locationNameDiv = document.createElement('div');
+            locationNameDiv.classList.add('card-location-name');
+            locationNameDiv.textContent = playerData.location;
+            back.appendChild(locationNameDiv);
+        }
+
+        card.appendChild(back);
+        
+        card.addEventListener("click", cardClickHandler);
+        cardsContainer.appendChild(card);
+    }
+
+    function cardClickHandler(event) {
+        const card = event.currentTarget;
+        
+        // If card is already flipped (showing back), this click dismisses it
+        if (card.classList.contains("flipped")) {
+            // Dismiss card logic
+            card.classList.remove("slide-in");
+            card.classList.add("slide-out");
+            
+            setTimeout(() => {
+                currentPlayerIndex++;
+                showNextCard();
+            }, 300);
+            return;
+        }
+
+        // Otherwise flip to show content
+        card.classList.add("flipped");
     }
 
     function startActualCountdown() {
+        // Show countdown display
+        countdownElement.classList.remove('hidden');
+        countdownElement.classList.add('fade-in');
         startCountdown(gameDurationSeconds);
         commenceCountdownButton.classList.add('hidden');
-        commenceCountdownButton.disabled = true;
+        
+        // Hide "Ayarları değiştir" button when game starts
+        // resetButton.classList.add('hidden');
     }
+
+    // Initialize display and inputs on load
+    gameDurationSeconds = calculateRecommendedDuration();
+    updatePlayerCountDisplay();
+    updateSpyCountDisplay();
+    updateDurationDisplay();
+    updateRecommendedSpyCount();
+    updateRecommendedDurationDisplay();
+
+
+    // Event Listeners for Player Count Buttons
+    document.getElementById('decrease-players').addEventListener('click', () => {
+        if (playerCount > MIN_PLAYERS) {
+            playerCount--;
+            updatePlayerCountDisplay();
+        }
+    });
+
+    document.getElementById('increase-players').addEventListener('click', () => {
+        if (playerCount < MAX_PLAYERS) {
+            playerCount++;
+            updatePlayerCountDisplay();
+        }
+    });
+
+    // Event Listeners for Spy Count Buttons
+    document.getElementById('decrease-spies').addEventListener('click', () => {
+        if (spyCount > MIN_SPIES) {
+            spyCount--;
+            updateSpyCountDisplay();
+        }
+    });
+
+    document.getElementById('increase-spies').addEventListener('click', () => {
+        const maxAllowedSpies = playerCount - 1;
+        if (spyCount < maxAllowedSpies) {
+            spyCount++;
+            updateSpyCountDisplay();
+        }
+    });
+
+    // Event Listeners for Duration Count Buttons
+    document.getElementById('decrease-duration').addEventListener('click', () => {
+        if (gameDurationSeconds - DURATION_STEP_SECONDS >= MIN_DURATION_SECONDS) {
+            gameDurationSeconds -= DURATION_STEP_SECONDS;
+            updateDurationDisplay();
+        } else {
+            gameDurationSeconds = MIN_DURATION_SECONDS;
+            updateDurationDisplay();
+        }
+    });
+
+    // Location Pool Logic
+    function updateLocationPool() {
+        currentLocationsPool = [];
+        const categoryToggles = document.querySelectorAll('.category-toggle');
+        categoryToggles.forEach(toggle => {
+            if (toggle.checked) {
+                const categoryKey = toggle.value;
+                const langLocations = (locationsByLang[currentLang] || locationsByLang['tr']);
+                if (langLocations && langLocations[categoryKey]) {
+                    currentLocationsPool.push(...langLocations[categoryKey]);
+                }
+            }
+        });
+
+        // If custom category selected, include custom places entered by the user
+        const customToggle = document.querySelector('.category-toggle[value="custom"]');
+        if (customToggle && customToggle.checked && customPlacesContainer) {
+            const inputs = customPlacesContainer.querySelectorAll('input[type="text"]');
+            inputs.forEach(inp => {
+                const val = inp.value.trim();
+                if (val) currentLocationsPool.push(val);
+            });
+        }
+    }
+
+    // Category Toggle Logic
+    document.querySelectorAll('.category-box').forEach(box => {
+        box.addEventListener('click', function(e) {
+            // Prevent triggering if clicking directly on the checkbox (it handles itself)
+            if (e.target.type === 'checkbox') return;
+
+            const checkbox = this.querySelector('.category-toggle');
+            checkbox.checked = !checkbox.checked;
+            
+            // Visual update
+            if (checkbox.checked) {
+                this.classList.add('selected');
+            } else {
+                this.classList.remove('selected');
+            }
+
+            // Show/Hide custom inputs if "custom" category toggled
+            if (checkbox.value === 'custom') {
+                if (checkbox.checked) {
+                    customPlacesContainer.classList.remove('hidden');
+                    ensureCustomInputsInitialized();
+                } else {
+                    customPlacesContainer.classList.add('hidden');
+                }
+            }
+        });
+    });
+
+    // Also listen for direct checkbox changes (just in case)
+    document.querySelectorAll('.category-toggle').forEach(toggle => {
+        toggle.addEventListener('change', function() {
+            const box = this.closest('.category-box');
+            if (this.checked) {
+                box.classList.add('selected');
+            } else {
+                box.classList.remove('selected');
+            }
+             if (this.value === 'custom') {
+                if (this.checked) {
+                    customPlacesContainer.classList.remove('hidden');
+                    ensureCustomInputsInitialized();
+                } else {
+                    customPlacesContainer.classList.add('hidden');
+                }
+            }
+        });
+    });
+
+    // Initialize category visual state based on default checked attributes
+    document.querySelectorAll('.category-toggle').forEach(toggle => {
+        if (toggle.checked) {
+            const box = toggle.closest('.category-box');
+            if (box) box.classList.add('selected');
+        }
+    });
+
+    // Player Count Controls
+    document.getElementById('decrease-players').addEventListener('click', () => {
+        if (playerCount > MIN_PLAYERS) {
+            playerCount--;
+            updatePlayerCountDisplay();
+        }
+    });
+
+    document.getElementById('increase-players').addEventListener('click', () => {
+        if (playerCount < MAX_PLAYERS) {
+            playerCount++;
+            updatePlayerCountDisplay();
+        }
+    });
+
+    // Spy Count Controls
+    document.getElementById('decrease-spies').addEventListener('click', () => {
+        if (spyCount > MIN_SPIES) {
+            spyCount--;
+            updateSpyCountDisplay();
+        }
+    });
+
+    document.getElementById('increase-spies').addEventListener('click', () => {
+        const maxAllowedSpies = playerCount - 1;
+        if (spyCount < maxAllowedSpies) {
+            spyCount++;
+            updateSpyCountDisplay();
+        }
+    });
+
+    // Duration Controls
+    document.getElementById('decrease-duration').addEventListener('click', () => {
+        if (gameDurationSeconds - DURATION_STEP_SECONDS >= MIN_DURATION_SECONDS) {
+            gameDurationSeconds -= DURATION_STEP_SECONDS;
+            updateDurationDisplay();
+        } else {
+            gameDurationSeconds = MIN_DURATION_SECONDS;
+            updateDurationDisplay();
+        }
+    });
+
+    // Location Pool Logic
+    function updateLocationPool() {
+        currentLocationsPool = [];
+        const categoryToggles = document.querySelectorAll('.category-toggle');
+        categoryToggles.forEach(toggle => {
+            if (toggle.checked) {
+                const categoryKey = toggle.value;
+                const langLocations = (locationsByLang[currentLang] || locationsByLang['tr']);
+                if (langLocations && langLocations[categoryKey]) {
+                    currentLocationsPool.push(...langLocations[categoryKey]);
+                }
+            }
+        });
+
+        // If custom category selected, include custom places entered by the user
+        const customToggle = document.querySelector('.category-toggle[value="custom"]');
+        if (customToggle && customToggle.checked && customPlacesContainer) {
+            const inputs = customPlacesContainer.querySelectorAll('input[type="text"]');
+            inputs.forEach(inp => {
+                const val = inp.value.trim();
+                if (val) currentLocationsPool.push(val);
+            });
+        }
+    }
+
+    // Category Toggle Logic
+    document.querySelectorAll('.category-box').forEach(box => {
+        box.addEventListener('click', function(e) {
+            // Prevent triggering if clicking directly on the checkbox (it handles itself)
+            if (e.target.type === 'checkbox') return;
+
+            const checkbox = this.querySelector('.category-toggle');
+            checkbox.checked = !checkbox.checked;
+            
+            // Visual update
+            if (checkbox.checked) {
+                this.classList.add('selected');
+            } else {
+                this.classList.remove('selected');
+            }
+
+            // Show/Hide custom inputs if "custom" category toggled
+            if (checkbox.value === 'custom') {
+                if (checkbox.checked) {
+                    customPlacesContainer.classList.remove('hidden');
+                    ensureCustomInputsInitialized();
+                } else {
+                    customPlacesContainer.classList.add('hidden');
+                }
+            }
+        });
+    });
+
+    // Also listen for direct checkbox changes (just in case)
+    document.querySelectorAll('.category-toggle').forEach(toggle => {
+        toggle.addEventListener('change', function() {
+            const box = this.closest('.category-box');
+            if (this.checked) {
+                box.classList.add('selected');
+            } else {
+                box.classList.remove('selected');
+            }
+             if (this.value === 'custom') {
+                if (this.checked) {
+                    customPlacesContainer.classList.remove('hidden');
+                    ensureCustomInputsInitialized();
+                } else {
+                    customPlacesContainer.classList.add('hidden');
+                }
+            }
+        });
+    });
+
+    // Initialize category visual state based on default checked attributes
+    document.querySelectorAll('.category-toggle').forEach(toggle => {
+        if (toggle.checked) {
+            const box = toggle.closest('.category-box');
+            if (box) box.classList.add('selected');
+        }
+    });
 
     // Main Game Flow Functions
     function initializeGame() {
@@ -934,9 +1106,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const names = Array.from(nameInputs).map((input, index) => {
             const trimmedName = input.value.trim();
             if (trimmedName === '') {
-                const defaultName = t('playerNamePlaceholder', { n: index + 1 });
-                input.value = defaultName;
-                return defaultName;
+                // Use "Player n" as default value, not placeholder text
+                return t('playerNamePlaceholder', { n: index + 1 });
             }
             return trimmedName;
         });
@@ -960,10 +1131,10 @@ document.addEventListener("DOMContentLoaded", function() {
         lastSpyCount = currentNumSpies;
         lastGameDurationSeconds = currentDurationSeconds;
 
-            // Initialize removedLocations set if needed
-            if (typeof removedLocations === 'undefined' || removedLocations === null) {
-                window.removedLocations = new Set();
-            }
+        // Initialize removedLocations set if needed
+        if (typeof removedLocations === 'undefined' || removedLocations === null) {
+            window.removedLocations = new Set();
+        }
 
         // Hide settings, show game interface
         titleInfoSection.classList.add('hidden');
@@ -973,35 +1144,40 @@ document.addEventListener("DOMContentLoaded", function() {
         // Scroll to the top of the page
         window.scrollTo(0, 0);
 
-        resetCountdownDisplay(); // Display initial time, but don't start countdown yet
-
-        // Show and enable the "BAŞLA!" button
-        commenceCountdownButton.classList.remove('hidden');
-        commenceCountdownButton.disabled = false;
+        resetCountdownDisplay(); 
+        countdownElement.classList.add('hidden'); // Hide timer initially
+        
+        // Hide "BAŞLA!" button initially
+        commenceCountdownButton.classList.add('hidden');
         
         // Hide "Casusları Göster" button and "Tekrar Oyna" until needed
         showSpiesButton.classList.add('hidden');
         showSpiesButton.disabled = true;
         restartButton.classList.add('hidden');
+        winnerSelectionContainer.classList.add('hidden');
+        
+        // Show "Ayarları değiştir" initially (before game starts)
+        resetButton.classList.remove('hidden');
+        resetButton.classList.add('fade-in');
 
-        createCards(currentNumPlayers, names);
-        const rolesAssigned = assignRoles(currentNumPlayers, currentNumSpies);
+        // Show Reveal Title
+        revealTitle.classList.remove('hidden');
+        revealTitle.classList.add('fade-in');
 
-        if (!rolesAssigned) {
+        // Generate Data
+        gameCardsData = generateGameData(currentNumPlayers, currentNumSpies, names);
+        if (!gameCardsData) {
+            // Error handling if no location
             gameInterfaceSection.classList.add('hidden');
             titleInfoSection.classList.remove('hidden');
             gameParametersSection.classList.remove('hidden');
-            cardsContainer.innerHTML = "";
             return;
         }
 
-        const cards = document.querySelectorAll(".card");
-        cards.forEach((card) => {
-            card.addEventListener("click", cardClickHandler);
-        });
-
-        // Show "Tekrar Oyna" button after game setup
-        restartButton.classList.remove('hidden');
+        // Start Sequence
+        currentPlayerIndex = 0;
+        showNextCard();
+        updateScoreboard();
     }
 
     function resetGame() {
@@ -1018,6 +1194,8 @@ document.addEventListener("DOMContentLoaded", function() {
         showSpiesButton.classList.add('hidden');
         showSpiesButton.disabled = true;
         restartButton.classList.add('hidden'); // Hide restart button when going back to settings
+        winnerSelectionContainer.classList.add('hidden');
+        
         // Clear removed locations and UI hints when returning to settings
         if (window.removedLocations instanceof Set) window.removedLocations.clear();
         if (noPlacesMessage) noPlacesMessage.style.display = 'none';
@@ -1038,6 +1216,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         resetCountdownDisplay();
+        countdownElement.classList.add('hidden');
         cardsContainer.innerHTML = "";
 
         // Ensure currentLocationsPool is updated based on saved category selections
@@ -1052,40 +1231,88 @@ document.addEventListener("DOMContentLoaded", function() {
         if (currentLocationsPool.length === 0) {
             // Disable replay and inform user
             if (noPlacesMessage) noPlacesMessage.style.display = 'block';
-            if (restartButton) restartButton.disabled = true;
+            if (restartButton) {
+                restartButton.disabled = true;
+                restartButton.classList.add('hidden'); // Hide the button completely
+            }
             return;
         }
 
-        // Show and enable the "BAŞLA!" button again
-        commenceCountdownButton.classList.remove('hidden');
-        commenceCountdownButton.disabled = false;
+        // Hide "BAŞLA!" button
+        commenceCountdownButton.classList.add('hidden');
 
         // Hide "Casusları Göster" button, it should only appear when timer ends
         showSpiesButton.classList.add('hidden');
         showSpiesButton.disabled = true;
+        winnerSelectionContainer.classList.add('hidden');
 
-        // Re-create cards with stored data
-        createCards(lastPlayerCount, lastPlayersNames);
-        const rolesAssigned = assignRoles(lastPlayerCount, lastSpyCount);
+        // Show Reveal Title
+        revealTitle.classList.remove('hidden');
+        revealTitle.classList.add('fade-in');
 
-        if (!rolesAssigned) {
-            // This case is unlikely if initializeGame() already passed this check
-            // If it happens, go back to initial screen.
+        // Generate Data
+        gameCardsData = generateGameData(lastPlayerCount, lastSpyCount, lastPlayersNames);
+        if (!gameCardsData) {
             resetGame();
             return;
         }
 
-        const cards = document.querySelectorAll(".card");
-        cards.forEach((card) => {
-            card.addEventListener("click", cardClickHandler);
-        });
+        // Start Sequence
+        currentPlayerIndex = 0;
+        showNextCard();
 
-        // Ensure "Tekrar Oyna" button remains visible
-        restartButton.classList.remove('hidden');
+        // Ensure "Tekrar Oyna" button remains hidden until game starts
+        restartButton.classList.add('hidden');
 
         // Hide top banner while in-game
         const bannerElRestart = document.getElementById('top-banner');
         if (bannerElRestart) bannerElRestart.style.display = 'none';
+    }
+
+    // Scoreboard Logic
+    function updateScoreboard() {
+        scoreboardContainer.innerHTML = `<h4>${t('scoreboardTitle')}</h4>`;
+        const table = document.createElement('table');
+        table.classList.add('scoreboard-table');
+        
+        // Sort scores descending
+        const sortedPlayers = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+        
+        // If no scores yet, show all current players with 0
+        if (sortedPlayers.length === 0 && lastPlayersNames.length > 0) {
+             lastPlayersNames.forEach(name => {
+                 if (scores[name] === undefined) scores[name] = 0;
+             });
+        }
+
+        // Re-sort after potential init
+        const finalSorted = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
+
+        finalSorted.forEach(player => {
+            const row = document.createElement('tr');
+            row.innerHTML = `<td>${player}</td><td>${scores[player]}</td>`;
+            table.appendChild(row);
+        });
+        scoreboardContainer.appendChild(table);
+    }
+
+    function handleWin(winnerType) {
+        // winnerType: 'civilians' or 'spies'
+        gameCardsData.forEach(player => {
+            if (winnerType === 'civilians' && !player.isSpy) {
+                scores[player.name] = (scores[player.name] || 0) + 1;
+            } else if (winnerType === 'spies' && player.isSpy) {
+                scores[player.name] = (scores[player.name] || 0) + 1;
+            }
+        });
+        updateScoreboard();
+        winnerSelectionContainer.classList.add('hidden');
+
+        // Show restart and reset buttons
+        restartButton.classList.remove('hidden');
+        restartButton.classList.add('fade-in');
+        resetButton.classList.remove('hidden');
+        resetButton.classList.add('fade-in');
     }
 
     // Event Listeners
@@ -1115,43 +1342,54 @@ document.addEventListener("DOMContentLoaded", function() {
     applyTranslations();
 
     showSpiesButton.addEventListener('click', () => {
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.classList.add('flipped'); // Flip all cards
-            const isSpy = card.dataset.spy === "true";
-            const playerName = card.querySelector('.player-name-front').textContent;
-            const backContentDiv = card.querySelector(".back");
+        cardsContainer.innerHTML = ''; // Clear any existing cards
 
-            backContentDiv.innerHTML = ''; // Clear previous content
+        // Create a wrapper for reveal cards to ensure they stack or align properly
+        const revealWrapper = document.createElement('div');
+        revealWrapper.style.display = 'flex';
+        revealWrapper.style.flexDirection = 'column';
+        revealWrapper.style.alignItems = 'center';
+        revealWrapper.style.gap = '10px';
+        revealWrapper.style.width = '100%';
 
-            // Add player info to the back
-            const playerInfoDiv = document.createElement('div');
-            playerInfoDiv.classList.add('card-player-info');
-            playerInfoDiv.innerHTML = `<span class="user-icon">👤</span><span class="player-name-back">${playerName}</span>`;
-            backContentDiv.appendChild(playerInfoDiv);
+        // 1. Location Card
+        const locationCard = document.createElement('div');
+        locationCard.classList.add('reveal-card');
+        locationCard.innerHTML = `
+            <h3>Mekan</h3>
+            <div class="content">${window.lastAssignedLocation}</div>
+        `;
+        revealWrapper.appendChild(locationCard);
 
-            // Add role label
-            const roleLabelDiv = document.createElement('div');
-            roleLabelDiv.classList.add('card-role-label');
-            if (isSpy) {
-                roleLabelDiv.innerHTML = `<span class="spy-text">${t('roles.spy')}</span>`;
-            } else {
-                roleLabelDiv.textContent = t('roles.civilian');
-            }
-            backContentDiv.appendChild(roleLabelDiv);
-
-            // Add location if not a spy
-            if (!isSpy) {
-                const locationNameDiv = document.createElement('div');
-                locationNameDiv.classList.add('card-location-name');
-                locationNameDiv.textContent = card.dataset.location;
-                backContentDiv.appendChild(locationNameDiv);
-            }
-
-            // Remove click listener from this card to prevent further individual flips/unflips
-            card.removeEventListener('click', cardClickHandler);
+        // 2. Spies Card
+        const spies = gameCardsData.filter(p => p.isSpy).map(p => p.name);
+        const spiesCard = document.createElement('div');
+        spiesCard.classList.add('reveal-card');
+        
+        let spiesHtml = '<div class="spy-list">';
+        spies.forEach(spyName => {
+            spiesHtml += `<div class="spy-name">🕵️ ${spyName}</div>`;
         });
+        spiesHtml += '</div>';
+
+        spiesCard.innerHTML = `
+            <h3>Casuslar</h3>
+            ${spiesHtml}
+        `;
+        revealWrapper.appendChild(spiesCard);
+        
+        cardsContainer.appendChild(revealWrapper);
+
         showSpiesButton.classList.add('hidden'); // Hide the button after use
         showSpiesButton.disabled = true;
+
+        // Show winner selection buttons
+        winnerSelectionContainer.classList.remove('hidden');
+        winnerSelectionContainer.classList.add('fade-in');
     });
+
+    // Winner Selection Listeners
+    document.getElementById('civilians-win-btn').addEventListener('click', () => handleWin('civilians'));
+    document.getElementById('spies-win-btn').addEventListener('click', () => handleWin('spies'));
+
 });

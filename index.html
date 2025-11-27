@@ -5,7 +5,7 @@
     <title>Casus Kim Oyna</title>
     <meta charset="UTF-8">
     <meta name="description" content="Casus Kim? Oyunu - Casusları Bul ve Kazan!">
-    <meta name="keywords" content="Casus kim, casus kim oyna, casus kim oyunu, casus kim online, casus oyunu oyna">
+    <meta name="keywords" content="Casus kim, casus kim oyna, casus kim oyunu, casus kim online, casus oyunu oyna, spy game, spyfall, spyfall türkçe, spyfall oyna, spyfall türkçe oyna">
     <meta name="author" content="densdev">
     <link rel="icon" href="casus-icon-black.png" type="image/x-icon">
     <link rel="icon" href="casus-icon-white.png" type="image/x-icon" media="(prefers-color-scheme: dark)">
@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,700,900" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8c71c4d8b8.js" crossorigin="anonymous"></script>
+    <link rel="canonical" href="https://casuskim.net/" />
 </head>
 
 <body>
@@ -26,22 +27,21 @@
                 söylediklerini dinleyerek bu yer ismini doğru tahmin etmeye çalışırlar. Köylüler ise süre dolmadan casusların kim
                 olduğunu bulmaya çalışırlar.
             </p>
+            <div class="language-select-wrapper">
+                <label id="language-label" for="language-select"></label>
+                <select id="language-select" aria-label="Select language">
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="it">Italiano</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </div>
         </section>
 
         <!-- SECTION 2: Game Parameters -->
         <section id="game-parameters-section" class="game-section">
             <h3 class="section-title">Oyun Ayarları</h3>
-
-                        <div class="language-select-wrapper">
-                            <label id="language-label" for="language-select"></label>
-                            <select id="language-select" aria-label="Select language">
-                                <option value="tr">Türkçe</option>
-                                <option value="en">English</option>
-                                <option value="fr">Français</option>
-                                <option value="it">Italiano</option>
-                                <option value="de">Deutsch</option>
-                            </select>
-                        </div>
 
             <div class="param-group counter-selection-group">
                 <div class="counter-row">
@@ -117,6 +117,13 @@
                 </div>
                 <!-- Custom places inputs (hidden until "Özel" is selected) -->
                 <div id="custom-places-container" class="custom-places-group hidden"></div>
+
+                <div class="in-game-options">
+                    <input type="checkbox" id="remove-played-toggle" class="toggle-input" checked>
+                    <label for="remove-played-toggle" class="toggle-label">
+                        <span class="switch-text">Tekrar oynarken aynı mekan gelmesin</span>
+                    </label>
+                </div>
             </div>
 
 
@@ -125,28 +132,32 @@
 
         <!-- SECTION 3: Main Game Interface -->
         <section id="game-interface-section" class="game-section hidden">
-            <p id="countdown" class="accent-color countdown-display">06:00</p>
+            <h3 id="reveal-title" class="hidden">Let's see who you are...</h3>
+            <p id="countdown" class="countdown-display">06:00</p>
             <button id="commence-countdown-button" class="action-button hidden"
                 style="margin-bottom: 20px;">BAŞLA!</button>
             <div id="cards-container"></div>
+            
+            <p id="no-places-message" class="info-text" style="display:none;">Havuz boşaldı; yeni bir tur başlatmak için kategori seçimlerini veya ayarları değiştirin.</p>
+
             <div class="game-buttons-wrapper">
               <button id="restart-button" class="action-button hidden"><i class="fa-solid fa-rotate-right"></i> &nbsp;Tekrar Oyna</button>
-              <button id="show-spies-button" class="action-button hidden">Casusları Göster</button>
               <button id="reset-button" class="action-button reset-game-button"><i class="fa-solid fa-sliders"></i> &nbsp; Ayarları değiştir</button>
             </div>
-                        <div class="in-game-options" style="margin-top:12px;">
-                            <label class="switch-label">
-                                <input type="checkbox" id="remove-played-toggle">
-                                <span class="switch-slider"></span>
-                                <span class="switch-text">Oynanmış mekanı havuzdan çıkar (Tekrar Oynama)</span>
-                            </label>
-                            <p id="no-places-message" class="info-text" style="display:none;margin-top:8px;color:#ffb3b0;">Havuz boşaldı; yeni bir tur başlatmak için kategori seçimlerini veya ayarları değiştirin.</p>
-                        </div>
+
+            <button id="show-spies-button" class="action-button hidden" style="margin-top: 20px;">Casusları Göster</button>
+
+            <div id="winner-selection-container" class="hidden">
+                <button id="civilians-win-btn" class="winner-btn">Köylüler Kazandı</button>
+                <button id="spies-win-btn" class="winner-btn">Casuslar Kazandı</button>
+            </div>
+            
+            <div id="scoreboard-container"></div>
         </section>
 
         <p class="footer-text">
-            Casus Kim v2 25w24c | © 2025 <a href="https://dens.dev" target="_blank">densdev</a> <br>
-            Alexandr Ushan'ın Spyfall oyunu üzerine kurulmuştur.
+            <b>Casus Kim?</b> v3 25w48a | &copy; 2025 <a href="https://dens.dev" target="_blank" class="accent-color" style="text-decoration: none;">densdev</a><br>
+            <span id="footer-credits">Alexandr Ushan'ın Spyfall oyunu üzerine kurulmuştur.</span>
         </p>
     </div>
 
