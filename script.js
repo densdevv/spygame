@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 middleAges: 'Orta Çağ',
                 turkey: 'Türkiye',
                 europe: 'Avrupa',
-                saintJoseph: 'Saint-Joseph',
+                saintJoseph: 'SJ',
                 naughty: '+18',
                 custom: 'Özel'
             },
@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 middleAges: 'Middle Ages',
                 turkey: 'Turkey',
                 europe: 'Europe',
-                saintJoseph: 'Saint-Joseph',
+                saintJoseph: 'SJ',
                 naughty: '+18',
                 custom: 'Custom'
             },
@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 middleAges: 'Moyen Âge',
                 turkey: 'Turquie',
                 europe: 'Europe',
-                saintJoseph: 'Saint-Joseph',
+                saintJoseph: 'SJ',
                 naughty: '+18',
                 custom: 'Personnalisé'
             },
@@ -382,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 middleAges: 'Medioevo',
                 turkey: 'Turchia',
                 europe: 'Europa',
-                saintJoseph: 'Saint-Joseph',
+                saintJoseph: 'SJ',
                 naughty: '+18',
                 custom: 'Personalizzato'
             },
@@ -426,7 +426,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 middleAges: 'Mittelalter',
                 turkey: 'Türkei',
                 europe: 'Europa',
-                saintJoseph: 'Saint-Joseph',
+                saintJoseph: 'SJ',
                 naughty: '+18',
                 custom: 'Benutzerdefiniert'
             },
@@ -906,156 +906,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Category Toggle Logic
-    document.querySelectorAll('.category-box').forEach(box => {
-        box.addEventListener('click', function(e) {
-            // Prevent triggering if clicking directly on the checkbox (it handles itself)
-            if (e.target.type === 'checkbox') return;
+    // Category Toggle Logic handled by label and change listener
 
-            const checkbox = this.querySelector('.category-toggle');
-            checkbox.checked = !checkbox.checked;
-            
-            // Visual update
-            if (checkbox.checked) {
-                this.classList.add('selected');
-            } else {
-                this.classList.remove('selected');
-            }
-
-            // Show/Hide custom inputs if "custom" category toggled
-            if (checkbox.value === 'custom') {
-                if (checkbox.checked) {
-                    customPlacesContainer.classList.remove('hidden');
-                    ensureCustomInputsInitialized();
-                } else {
-                    customPlacesContainer.classList.add('hidden');
-                }
-            }
-        });
-    });
-
-    // Also listen for direct checkbox changes (just in case)
-    document.querySelectorAll('.category-toggle').forEach(toggle => {
-        toggle.addEventListener('change', function() {
-            const box = this.closest('.category-box');
-            if (this.checked) {
-                box.classList.add('selected');
-            } else {
-                box.classList.remove('selected');
-            }
-             if (this.value === 'custom') {
-                if (this.checked) {
-                    customPlacesContainer.classList.remove('hidden');
-                    ensureCustomInputsInitialized();
-                } else {
-                    customPlacesContainer.classList.add('hidden');
-                }
-            }
-        });
-    });
-
-    // Initialize category visual state based on default checked attributes
-    document.querySelectorAll('.category-toggle').forEach(toggle => {
-        if (toggle.checked) {
-            const box = toggle.closest('.category-box');
-            if (box) box.classList.add('selected');
-        }
-    });
-
-    // Player Count Controls
-    document.getElementById('decrease-players').addEventListener('click', () => {
-        if (playerCount > MIN_PLAYERS) {
-            playerCount--;
-            updatePlayerCountDisplay();
-        }
-    });
-
-    document.getElementById('increase-players').addEventListener('click', () => {
-        if (playerCount < MAX_PLAYERS) {
-            playerCount++;
-            updatePlayerCountDisplay();
-        }
-    });
-
-    // Spy Count Controls
-    document.getElementById('decrease-spies').addEventListener('click', () => {
-        if (spyCount > MIN_SPIES) {
-            spyCount--;
-            updateSpyCountDisplay();
-        }
-    });
-
-    document.getElementById('increase-spies').addEventListener('click', () => {
-        const maxAllowedSpies = playerCount - 1;
-        if (spyCount < maxAllowedSpies) {
-            spyCount++;
-            updateSpyCountDisplay();
-        }
-    });
-
-    // Duration Controls
-    document.getElementById('decrease-duration').addEventListener('click', () => {
-        if (gameDurationSeconds - DURATION_STEP_SECONDS >= MIN_DURATION_SECONDS) {
-            gameDurationSeconds -= DURATION_STEP_SECONDS;
-            updateDurationDisplay();
-        } else {
-            gameDurationSeconds = MIN_DURATION_SECONDS;
-            updateDurationDisplay();
-        }
-    });
-
-    // Location Pool Logic
-    function updateLocationPool() {
-        currentLocationsPool = [];
-        const categoryToggles = document.querySelectorAll('.category-toggle');
-        categoryToggles.forEach(toggle => {
-            if (toggle.checked) {
-                const categoryKey = toggle.value;
-                const langLocations = (locationsByLang[currentLang] || locationsByLang['tr']);
-                if (langLocations && langLocations[categoryKey]) {
-                    currentLocationsPool.push(...langLocations[categoryKey]);
-                }
-            }
-        });
-
-        // If custom category selected, include custom places entered by the user
-        const customToggle = document.querySelector('.category-toggle[value="custom"]');
-        if (customToggle && customToggle.checked && customPlacesContainer) {
-            const inputs = customPlacesContainer.querySelectorAll('input[type="text"]');
-            inputs.forEach(inp => {
-                const val = inp.value.trim();
-                if (val) currentLocationsPool.push(val);
-            });
-        }
-    }
-
-    // Category Toggle Logic
-    document.querySelectorAll('.category-box').forEach(box => {
-        box.addEventListener('click', function(e) {
-            // Prevent triggering if clicking directly on the checkbox (it handles itself)
-            if (e.target.type === 'checkbox') return;
-
-            const checkbox = this.querySelector('.category-toggle');
-            checkbox.checked = !checkbox.checked;
-            
-            // Visual update
-            if (checkbox.checked) {
-                this.classList.add('selected');
-            } else {
-                this.classList.remove('selected');
-            }
-
-            // Show/Hide custom inputs if "custom" category toggled
-            if (checkbox.value === 'custom') {
-                if (checkbox.checked) {
-                    customPlacesContainer.classList.remove('hidden');
-                    ensureCustomInputsInitialized();
-                } else {
-                    customPlacesContainer.classList.add('hidden');
-                }
-            }
-        });
-    });
 
     // Also listen for direct checkbox changes (just in case)
     document.querySelectorAll('.category-toggle').forEach(toggle => {
