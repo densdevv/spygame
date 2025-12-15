@@ -1,176 +1,151 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     // Location lists per language. 'tr' is original Turkish; other languages are approximate translations.
     const locationsByLang = {
-      tr: {
-        dailyLife: [
-            "Süpermarket", "Park", "Sinema", "Okul", "Hastane", "Restoran", "Otel", "Havalimanı",
-            "Banka", "Sahil", "Kahveci", "Camii", "Sirk", "Mahkeme", "Fabrika", "Orman", "Göl",
-            "Deniz", "Köy", "Oto Sanayi", "Kütüphane", "Müze", "Dershane", "Karakol",
-            "Tuvalet", "Vergi Dairesi",
-        ],
-        sciFi: [
-            "Paralel Evren", "Atlantis", "Hogwarts", "Dünya'nın Çekirdeği", "Uzay İstasyonu",
-            "Mars", "Yıldız Gemisi", "Galaksi", "Kara Delik", "Buzul Çağı", "Kıyamet Sonrası Dünya",
-        ],
-        middleAges: [
-            "Şato", "Zindan", "Pazar Yeri", "Kilise", "Köy Meydanı", "İpek Yolu", "Kervansaray",
-            "Osmanlı Sarayı", "Bizans İmparatorluğu", "Viking Köyü", "Kılıç Ustası'nın Atölyesi",
-            "Şövalye Turnuvası", "Cadı İnfazı", "Köylü Evi", "Köy Çeşmesi","Ticaret Kervanı",
-        ],
-        turkey: [
-            "İstanbul", "Kadıköy", "Konya", "Heybeliada", "Anıtkabir", "Uludağ", "Çanakkale",
-            "Bodrum", "TBMM", "Kız Kulesi", "Efes Antik Kenti", "Pamukkale", "Kapadokya",
-            "Nasreddin Hoca Heykeli", "Ayasofya", "İstanbul Boğazı", "Topkapı Sarayı",
-            "Galata Kulesi", "Süleymaniye Camii", "Beyoğlu", "Kalkan", "Fethiye", "Antalya",
-        ],
-        europe: [
-            "Londra", "Paris", "Yunanistan", "Berlin", "Roma", "Barselona", "Amsterdam",
-            "Viyana", "Prag", "Budapeşte", "Stockholm", "Cenevre", "Kopenhag", "Brüksel",
-            "Zürih", "Dublin", "Oslo", "Helsinki", "Lizbon", "Madrid", "Atina",
-            "Moskova", "Sankt Petersburg", "Krakow", "Dubrovnik", "Edinburgh", "Venedik",
-        ],
-        naughty: [
-          "F4ke Taxi", "Genelev", "Yatak Odası", "Küvet", "Banyo", "Balkon", "Moda Sahili",
-          "Er0tik Shop", "Amsterdam Redl1ght", "Esk0rt", "Çıplaklar Plajı", "Striptiz Kulübü",
-          "0rgy Partisi", "Br4zzers Stüdyosu", "P0rnHub",
-        ],
-      },
-      en: {
-        dailyLife: [
-            "Supermarket","Park","Cinema","School","Hospital","Restaurant","Hotel","Airport",
-            "Bank","Beach","Coffee Shop","Mosque","Circus","Court","Factory","Forest","Lake",
-            "Sea","Village","Auto Repair","Library","Museum","Tuition Center","Police Station",
-            "Toilet","Tax Office",
-        ],
-        sciFi: [
-            "Parallel Universe","Atlantis","Hogwarts","Earth's Core","Space Station",
-            "Mars","Starship","Galaxy","Black Hole","Ice Age","Post-Apocalyptic World",
-        ],
-        middleAges: [
-            "Castle","Dungeon","Market","Church","Village Square","Silk Road","Caravanserai",
-            "Ottoman Palace","Byzantine Empire","Viking Village","Swordsmith's Workshop",
-            "Knight Tournament","Witch Execution","Peasant House","Village Fountain","Trading Caravan",
-        ],
-        turkey: [
-            "Istanbul","Kadıköy","Konya","Heybeliada","Anıtkabir","Uludağ","Çanakkale",
-            "Bodrum","Parliament","Maiden's Tower","Ephesus","Pamukkale","Cappadocia",
-            "Nasreddin Hodja Statue","Hagia Sophia","Bosphorus","Topkapı Palace",
-            "Galata Tower","Süleymaniye Mosque","Beyoğlu","Kalkan","Fethiye","Antalya",
-        ],
-        europe: [
-            "London","Paris","Greece","Berlin","Rome","Barcelona","Amsterdam",
-            "Vienna","Prague","Budapest","Stockholm","Geneva","Copenhagen","Brussels",
-            "Zurich","Dublin","Oslo","Helsinki","Lisbon","Madrid","Athens",
-            "Moscow","Saint Petersburg","Krakow","Dubrovnik","Edinburgh","Venice",
-        ],
-        naughty: [
-          "Fake Taxi","Brothel","Bedroom","Bathtub","Bathroom","Balcony","Fashion Beach",
-          "Erotic Shop","Red Light District","Escort","Nudist Beach","Strip Club",
-          "Orgy Party","Adult Studio","PornHub",
-        ],
-      },
-      fr: {
-        dailyLife: [
-            "Supermarché","Parc","Cinéma","École","Hôpital","Restaurant","Hôtel","Aéroport",
-            "Banque","Plage","Café","Mosquée","Cirque","Tribunal","Usine","Forêt","Lac",
-            "Mer","Village","Garage","Bibliothèque","Musée","Centre de soutien","Commissariat",
-            "Toilettes","Service des impôts",
-        ],
-        sciFi: [
-            "Univers Parallèle","Atlantide","Poudlard","Noyau de la Terre","Station Spatiale",
-            "Mars","Vaisseau Spatial","Galaxie","Trou Noir","Ère Glaciaire","Monde Post-Apocalyptique",
-        ],
-        middleAges: [
-            "Château","Donjon","Marché","Église","Place du Village","Route de la Soie","Caravansérail",
-            "Palais Ottoman","Empire Byzantin","Village Viking","Atelier du Forgeron",
-            "Tournoi de Chevaliers","Exécution de Sorcière","Maison Paysanne","Fontaine du Village","Caravane Commerciale",
-        ],
-        turkey: [
-            "Istanbul","Kadıköy","Konya","Heybeliada","Anıtkabir","Uludağ","Çanakkale",
-            "Bodrum","Parlement","Tour de la Jeune Fille","Éphèse","Pamukkale","Cappadoce",
-            "Statue de Nasreddin Hoca","Sainte-Sophie","Bosphore","Palais de Topkapı",
-            "Tour de Galata","Mosquée Süleymaniye","Beyoğlu","Kalkan","Fethiye","Antalya",
-        ],
-        europe: [
-            "Londres","Paris","Grèce","Berlin","Rome","Barcelone","Amsterdam",
-            "Vienne","Prague","Budapest","Stockholm","Genève","Copenhague","Bruxelles",
-            "Zurich","Dublin","Oslo","Helsinki","Lisbonne","Madrid","Athènes",
-            "Moscou","Saint-Pétersbourg","Cracovie","Dubrovnik","Édimbourg","Venise",
-        ],
-        naughty: [
-          "Fake Taxi","Maison Close","Chambre","Baignoire","Salle de Bain","Balcon","Plage de Mode",
-          "Boutique Érotique","Quartier Rouge","Escorte","Plage Nudiste","Club de Strip-tease",
-          "Partie Fine","Studio Adulte","PornHub",
-        ],
-      },
-      it: {
-        dailyLife: [
-            "Supermercato","Parco","Cinema","Scuola","Ospedale","Ristorante","Hotel","Aeroporto",
-            "Banca","Spiaggia","Caffetteria","Moschea","Circo","Tribunale","Fabbrica","Foresta","Lago",
-            "Mare","Villaggio","Autofficina","Biblioteca","Museo","Centro Ripetizioni","Stazione di Polizia",
-            "Bagno","Ufficio delle Imposte",
-        ],
-        sciFi: [
-            "Universo Parallelo","Atlantide","Hogwarts","Nucleo della Terra","Stazione Spaziale",
-            "Marte","Astronave","Galassia","Buco Nero","Era Glaciale","Mondo Post-Apocalittico",
-        ],
-        middleAges: [
-            "Castello","Prigione","Mercato","Chiesa","Piazza del Villaggio","Via della Seta","Caravanserraglio",
-            "Palazzo Ottomano","Impero Bizantino","Villaggio Vichingo","Bottega del Fabbro",
-            "Torneo di Cavalieri","Esecuzione della Strega","Casa Contadina","Fontana del Villaggio","Carovana Commerciale",
-        ],
-        turkey: [
-            "Istanbul","Kadıköy","Konya","Heybeliada","Anıtkabir","Uludağ","Çanakkale",
-            "Bodrum","Parlamento","Torre di Leandro","Efeso","Pamukkale","Cappadocia",
-            "Statua di Nasreddin Hoca","Santa Sofia","Bosforo","Palazzo Topkapı",
-            "Torre di Galata","Moschea di Solimano","Beyoğlu","Kalkan","Fethiye","Antalya",
-        ],
-        europe: [
-            "Londra","Parigi","Grecia","Berlino","Roma","Barcellona","Amsterdam",
-            "Vienna","Praga","Budapest","Stoccolma","Ginevra","Copenaghen","Bruxelles",
-            "Zurigo","Dublino","Oslo","Helsinki","Lisbona","Madrid","Atene",
-            "Mosca","San Pietroburgo","Cracovia","Dubrovnik","Edimburgo","Venezia",
-        ],
-        naughty: [
-          "Fake Taxi","Bordello","Camera da Letto","Vasca da Bagno","Bagno","Balcone","Spiaggia alla Moda",
-          "Negozio Erotico","Quartiere a Luci Rosse","Escort","Spiaggia Nudista","Strip Club",
-          "Orgia","Studio per Adulti","PornHub",
-        ],
-      },
-      de: {
-        dailyLife: [
-            "Supermarkt","Park","Kino","Schule","Krankenhaus","Restaurant","Hotel","Flughafen",
-            "Bank","Strand","Café","Moschee","Zirkus","Gericht","Fabrik","Wald","See",
-            "Meer","Dorf","Autowerkstatt","Bibliothek","Museum","Nachhilfezentrum","Polizeistation",
-            "Toilette","Finanzamt",
-        ],
-        sciFi: [
-            "Paralleluniversum","Atlantis","Hogwarts","Erdkern","Raumstation",
-            "Mars","Raumschiff","Galaxie","Schwarzes Loch","Eiszeit","Postapokalyptische Welt",
-        ],
-        middleAges: [
-            "Schloss","Verlies","Markt","Kirche","Dorfplatz","Seidenstraße","Karawanserei",
-            "Osmanischer Palast","Byzantinisches Reich","Wikingerdorf","Schmiedewerkstatt",
-            "Ritterturnier","Hexenhinrichtung","Bauernhaus","Dorfbrunnen","Handelskarawane",
-        ],
-        turkey: [
-            "Istanbul","Kadıköy","Konya","Heybeliada","Anıtkabir","Uludağ","Çanakkale",
-            "Bodrum","Parlament","Leanderturm","Ephesos","Pamukkale","Kappadokien",
-            "Nasreddin Hodscha Statue","Hagia Sophia","Bosporus","Topkapı-Palast",
-            "Galataturm","Süleymaniye-Moschee","Beyoğlu","Kalkan","Fethiye","Antalya",
-        ],
-        europe: [
-            "London","Paris","Griechenland","Berlin","Rom","Barcelona","Amsterdam",
-            "Wien","Prag","Budapest","Stockholm","Genf","Kopenhagen","Brüssel",
-            "Zürich","Dublin","Oslo","Helsinki","Lissabon","Madrid","Athen",
-            "Moskau","Sankt Petersburg","Krakau","Dubrovnik","Edinburgh","Venedig",
-        ],
-        naughty: [
-          "Fake Taxi","Bordell","Schlafzimmer","Badewanne","Badezimmer","Balkon","Modestrand",
-          "Erotikshop","Rotlichtviertel","Escort","FKK-Strand","Stripclub",
-          "Orgie","Erwachsenenstudio","PornHub",
-        ],
-      },
+        tr: {
+            dailyLife: [
+                "Süpermarket", "Park", "Sinema", "Okul", "Hastane", "Restoran", "Otel", "Havalimanı",
+                "Banka", "Sahil", "Kahveci", "Camii", "Sirk", "Mahkeme", "Fabrika", "Orman", "Göl",
+                "Deniz", "Köy", "Oto Sanayi", "Kütüphane", "Müze", "Dershane", "Karakol",
+                "Tuvalet", "Vergi Dairesi",
+            ],
+            sciFi: [
+                "Paralel Evren", "Atlantis", "Hogwarts", "Dünya'nın Çekirdeği", "Uzay İstasyonu",
+                "Mars", "Yıldız Gemisi", "Galaksi", "Kara Delik", "Buzul Çağı", "Kıyamet Sonrası Dünya",
+            ],
+            middleAges: [
+                "Şato", "Zindan", "Pazar Yeri", "Kilise", "Köy Meydanı", "İpek Yolu", "Kervansaray",
+                "Osmanlı Sarayı", "Bizans İmparatorluğu", "Viking Köyü", "Kılıç Ustası'nın Atölyesi",
+                "Şövalye Turnuvası", "Cadı İnfazı", "Köylü Evi", "Köy Çeşmesi", "Ticaret Kervanı",
+            ],
+            turkey: [
+                "İstanbul", "Kadıköy", "Konya", "Heybeliada", "Anıtkabir", "Uludağ", "Çanakkale",
+                "Bodrum", "TBMM", "Kız Kulesi", "Efes Antik Kenti", "Pamukkale", "Kapadokya",
+                "Nasreddin Hoca Heykeli", "Ayasofya", "İstanbul Boğazı", "Topkapı Sarayı",
+                "Galata Kulesi", "Süleymaniye Camii", "Beyoğlu", "Kalkan", "Fethiye", "Antalya",
+            ],
+            europe: [
+                "Londra", "Paris", "Yunanistan", "Berlin", "Roma", "Barselona", "Amsterdam",
+                "Viyana", "Prag", "Budapeşte", "Stockholm", "Cenevre", "Kopenhag", "Brüksel",
+                "Zürih", "Dublin", "Oslo", "Helsinki", "Lizbon", "Madrid", "Atina",
+                "Moskova", "Sankt Petersburg", "Krakow", "Dubrovnik", "Edinburgh", "Venedik",
+            ],
+        },
+        en: {
+            dailyLife: [
+                "Supermarket", "Park", "Cinema", "School", "Hospital", "Restaurant", "Hotel", "Airport",
+                "Bank", "Beach", "Coffee Shop", "Mosque", "Circus", "Court", "Factory", "Forest", "Lake",
+                "Sea", "Village", "Auto Repair", "Library", "Museum", "Tuition Center", "Police Station",
+                "Toilet", "Tax Office",
+            ],
+            sciFi: [
+                "Parallel Universe", "Atlantis", "Hogwarts", "Earth's Core", "Space Station",
+                "Mars", "Starship", "Galaxy", "Black Hole", "Ice Age", "Post-Apocalyptic World",
+            ],
+            middleAges: [
+                "Castle", "Dungeon", "Market", "Church", "Village Square", "Silk Road", "Caravanserai",
+                "Ottoman Palace", "Byzantine Empire", "Viking Village", "Swordsmith's Workshop",
+                "Knight Tournament", "Witch Execution", "Peasant House", "Village Fountain", "Trading Caravan",
+            ],
+            turkey: [
+                "Istanbul", "Kadıköy", "Konya", "Heybeliada", "Anıtkabir", "Uludağ", "Çanakkale",
+                "Bodrum", "Parliament", "Maiden's Tower", "Ephesus", "Pamukkale", "Cappadocia",
+                "Nasreddin Hodja Statue", "Hagia Sophia", "Bosphorus", "Topkapı Palace",
+                "Galata Tower", "Süleymaniye Mosque", "Beyoğlu", "Kalkan", "Fethiye", "Antalya",
+            ],
+            europe: [
+                "London", "Paris", "Greece", "Berlin", "Rome", "Barcelona", "Amsterdam",
+                "Vienna", "Prague", "Budapest", "Stockholm", "Geneva", "Copenhagen", "Brussels",
+                "Zurich", "Dublin", "Oslo", "Helsinki", "Lisbon", "Madrid", "Athens",
+                "Moscow", "Saint Petersburg", "Krakow", "Dubrovnik", "Edinburgh", "Venice",
+            ],
+        },
+        fr: {
+            dailyLife: [
+                "Supermarché", "Parc", "Cinéma", "École", "Hôpital", "Restaurant", "Hôtel", "Aéroport",
+                "Banque", "Plage", "Café", "Mosquée", "Cirque", "Tribunal", "Usine", "Forêt", "Lac",
+                "Mer", "Village", "Garage", "Bibliothèque", "Musée", "Centre de soutien", "Commissariat",
+                "Toilettes", "Service des impôts",
+            ],
+            sciFi: [
+                "Univers Parallèle", "Atlantide", "Poudlard", "Noyau de la Terre", "Station Spatiale",
+                "Mars", "Vaisseau Spatial", "Galaxie", "Trou Noir", "Ère Glaciaire", "Monde Post-Apocalyptique",
+            ],
+            middleAges: [
+                "Château", "Donjon", "Marché", "Église", "Place du Village", "Route de la Soie", "Caravansérail",
+                "Palais Ottoman", "Empire Byzantin", "Village Viking", "Atelier du Forgeron",
+                "Tournoi de Chevaliers", "Exécution de Sorcière", "Maison Paysanne", "Fontaine du Village", "Caravane Commerciale",
+            ],
+            turkey: [
+                "Istanbul", "Kadıköy", "Konya", "Heybeliada", "Anıtkabir", "Uludağ", "Çanakkale",
+                "Bodrum", "Parlement", "Tour de la Jeune Fille", "Éphèse", "Pamukkale", "Cappadoce",
+                "Statue de Nasreddin Hoca", "Sainte-Sophie", "Bosphore", "Palais de Topkapı",
+                "Tour de Galata", "Mosquée Süleymaniye", "Beyoğlu", "Kalkan", "Fethiye", "Antalya",
+            ],
+            europe: [
+                "Londres", "Paris", "Grèce", "Berlin", "Rome", "Barcelone", "Amsterdam",
+                "Vienne", "Prague", "Budapest", "Stockholm", "Genève", "Copenhague", "Bruxelles",
+                "Zurich", "Dublin", "Oslo", "Helsinki", "Lisbonne", "Madrid", "Athènes",
+                "Moscou", "Saint-Pétersbourg", "Cracovie", "Dubrovnik", "Édimbourg", "Venise",
+            ],
+        },
+        it: {
+            dailyLife: [
+                "Supermercato", "Parco", "Cinema", "Scuola", "Ospedale", "Ristorante", "Hotel", "Aeroporto",
+                "Banca", "Spiaggia", "Caffetteria", "Moschea", "Circo", "Tribunale", "Fabbrica", "Foresta", "Lago",
+                "Mare", "Villaggio", "Autofficina", "Biblioteca", "Museo", "Centro Ripetizioni", "Stazione di Polizia",
+                "Bagno", "Ufficio delle Imposte",
+            ],
+            sciFi: [
+                "Universo Parallelo", "Atlantide", "Hogwarts", "Nucleo della Terra", "Stazione Spaziale",
+                "Marte", "Astronave", "Galassia", "Buco Nero", "Era Glaciale", "Mondo Post-Apocalittico",
+            ],
+            middleAges: [
+                "Castello", "Prigione", "Mercato", "Chiesa", "Piazza del Villaggio", "Via della Seta", "Caravanserraglio",
+                "Palazzo Ottomano", "Impero Bizantino", "Villaggio Vichingo", "Bottega del Fabbro",
+                "Torneo di Cavalieri", "Esecuzione della Strega", "Casa Contadina", "Fontana del Villaggio", "Carovana Commerciale",
+            ],
+            turkey: [
+                "Istanbul", "Kadıköy", "Konya", "Heybeliada", "Anıtkabir", "Uludağ", "Çanakkale",
+                "Bodrum", "Parlamento", "Torre di Leandro", "Efeso", "Pamukkale", "Cappadocia",
+                "Statua di Nasreddin Hoca", "Santa Sofia", "Bosforo", "Palazzo Topkapı",
+                "Torre di Galata", "Moschea di Solimano", "Beyoğlu", "Kalkan", "Fethiye", "Antalya",
+            ],
+            europe: [
+                "Londra", "Parigi", "Grecia", "Berlino", "Roma", "Barcellona", "Amsterdam",
+                "Vienna", "Praga", "Budapest", "Stoccolma", "Ginevra", "Copenaghen", "Bruxelles",
+                "Zurigo", "Dublino", "Oslo", "Helsinki", "Lisbona", "Madrid", "Atene",
+                "Mosca", "San Pietroburgo", "Cracovia", "Dubrovnik", "Edimburgo", "Venezia",
+            ],
+        },
+        de: {
+            dailyLife: [
+                "Supermarkt", "Park", "Kino", "Schule", "Krankenhaus", "Restaurant", "Hotel", "Flughafen",
+                "Bank", "Strand", "Café", "Moschee", "Zirkus", "Gericht", "Fabrik", "Wald", "See",
+                "Meer", "Dorf", "Autowerkstatt", "Bibliothek", "Museum", "Nachhilfezentrum", "Polizeistation",
+                "Toilette", "Finanzamt",
+            ],
+            sciFi: [
+                "Paralleluniversum", "Atlantis", "Hogwarts", "Erdkern", "Raumstation",
+                "Mars", "Raumschiff", "Galaxie", "Schwarzes Loch", "Eiszeit", "Postapokalyptische Welt",
+            ],
+            middleAges: [
+                "Schloss", "Verlies", "Markt", "Kirche", "Dorfplatz", "Seidenstraße", "Karawanserei",
+                "Osmanischer Palast", "Byzantinisches Reich", "Wikingerdorf", "Schmiedewerkstatt",
+                "Ritterturnier", "Hexenhinrichtung", "Bauernhaus", "Dorfbrunnen", "Handelskarawane",
+            ],
+            turkey: [
+                "Istanbul", "Kadıköy", "Konya", "Heybeliada", "Anıtkabir", "Uludağ", "Çanakkale",
+                "Bodrum", "Parlament", "Leanderturm", "Ephesos", "Pamukkale", "Kappadokien",
+                "Nasreddin Hodscha Statue", "Hagia Sophia", "Bosporus", "Topkapı-Palast",
+                "Galataturm", "Süleymaniye-Moschee", "Beyoğlu", "Kalkan", "Fethiye", "Antalya",
+            ],
+            europe: [
+                "London", "Paris", "Griechenland", "Berlin", "Rom", "Barcelona", "Amsterdam",
+                "Wien", "Prag", "Budapest", "Stockholm", "Genf", "Kopenhagen", "Brüssel",
+                "Zürich", "Dublin", "Oslo", "Helsinki", "Lissabon", "Madrid", "Athen",
+                "Moskau", "Sankt Petersburg", "Krakau", "Dubrovnik", "Edinburgh", "Venedig",
+            ],
+        },
     };
 
     // Constants
@@ -457,11 +432,11 @@ document.addEventListener("DOMContentLoaded", function() {
         playerCountDisplay.textContent = playerCount;
         updateMaxSpyCount();
         updateRecommendedSpyCount();
-        
+
         gameDurationSeconds = calculateRecommendedDuration();
-        updateDurationDisplay(); 
+        updateDurationDisplay();
         updateRecommendedDurationDisplay();
-        
+
         generateNameInputs();
     }
 
@@ -667,7 +642,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 showSpiesButton.classList.remove('hidden'); // Show the "Casusları Göster" button
                 showSpiesButton.classList.add('fade-in');
                 showSpiesButton.disabled = false;
-                
+
                 // Ensure other buttons are hidden
                 winnerSelectionContainer.classList.add('hidden');
                 restartButton.classList.add('hidden');
@@ -721,7 +696,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         window.lastAssignedLocation = randomLocation;
-        
+
         const data = [];
         for (let i = 0; i < numPlayers; i++) {
             const isSpy = spyIndices.includes(i);
@@ -747,7 +722,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         const playerData = gameCardsData[currentPlayerIndex];
-        
+
         const card = document.createElement("div");
         card.classList.add("card");
         card.classList.add("slide-in"); // Add animation class
@@ -765,13 +740,13 @@ document.addEventListener("DOMContentLoaded", function() {
         frontPlayerInfo.classList.add('card-player-info');
         frontPlayerInfo.innerHTML = `<span class="user-icon">👤</span><span class="player-name-front">${playerData.name}</span>`;
         front.appendChild(frontPlayerInfo);
-        
+
         card.appendChild(front);
 
         // Back
         const back = document.createElement("div");
         back.classList.add("back");
-        
+
         const backPlayerInfo = document.createElement('div');
         backPlayerInfo.classList.add('card-player-info');
         backPlayerInfo.innerHTML = `<span class="user-icon">👤</span><span class="player-name-back">${playerData.name}</span>`;
@@ -794,20 +769,20 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         card.appendChild(back);
-        
+
         card.addEventListener("click", cardClickHandler);
         cardsContainer.appendChild(card);
     }
 
     function cardClickHandler(event) {
         const card = event.currentTarget;
-        
+
         // If card is already flipped (showing back), this click dismisses it
         if (card.classList.contains("flipped")) {
             // Dismiss card logic
             card.classList.remove("slide-in");
             card.classList.add("slide-out");
-            
+
             setTimeout(() => {
                 currentPlayerIndex++;
                 showNextCard();
@@ -825,7 +800,7 @@ document.addEventListener("DOMContentLoaded", function() {
         countdownElement.classList.add('fade-in');
         startCountdown(gameDurationSeconds);
         commenceCountdownButton.classList.add('hidden');
-        
+
         // Hide "Ayarları değiştir" button when game starts
         // resetButton.classList.add('hidden');
     }
@@ -911,14 +886,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Also listen for direct checkbox changes (just in case)
     document.querySelectorAll('.category-toggle').forEach(toggle => {
-        toggle.addEventListener('change', function() {
+        toggle.addEventListener('change', function () {
             const box = this.closest('.category-box');
             if (this.checked) {
                 box.classList.add('selected');
             } else {
                 box.classList.remove('selected');
             }
-             if (this.value === 'custom') {
+            if (this.value === 'custom') {
                 if (this.checked) {
                     customPlacesContainer.classList.remove('hidden');
                     ensureCustomInputsInitialized();
@@ -996,18 +971,18 @@ document.addEventListener("DOMContentLoaded", function() {
         // Scroll to the top of the page
         window.scrollTo(0, 0);
 
-        resetCountdownDisplay(); 
+        resetCountdownDisplay();
         countdownElement.classList.add('hidden'); // Hide timer initially
-        
+
         // Hide "BAŞLA!" button initially
         commenceCountdownButton.classList.add('hidden');
-        
+
         // Hide "Casusları Göster" button and "Tekrar Oyna" until needed
         showSpiesButton.classList.add('hidden');
         showSpiesButton.disabled = true;
         restartButton.classList.add('hidden');
         winnerSelectionContainer.classList.add('hidden');
-        
+
         // Show "Ayarları değiştir" initially (before game starts)
         resetButton.classList.remove('hidden');
         resetButton.classList.add('fade-in');
@@ -1039,7 +1014,7 @@ document.addEventListener("DOMContentLoaded", function() {
         titleInfoSection.classList.remove('hidden');
         gameParametersSection.classList.remove('hidden');
         gameInterfaceSection.classList.add('hidden');
-        
+
         commenceCountdownButton.classList.remove('hidden');
         commenceCountdownButton.disabled = false;
 
@@ -1047,7 +1022,7 @@ document.addEventListener("DOMContentLoaded", function() {
         showSpiesButton.disabled = true;
         restartButton.classList.add('hidden'); // Hide restart button when going back to settings
         winnerSelectionContainer.classList.add('hidden');
-        
+
         // Clear removed locations and UI hints when returning to settings
         if (window.removedLocations instanceof Set) window.removedLocations.clear();
         if (noPlacesMessage) noPlacesMessage.style.display = 'none';
@@ -1126,15 +1101,15 @@ document.addEventListener("DOMContentLoaded", function() {
         scoreboardContainer.innerHTML = `<h4>${t('scoreboardTitle')}</h4>`;
         const table = document.createElement('table');
         table.classList.add('scoreboard-table');
-        
+
         // Sort scores descending
         const sortedPlayers = Object.keys(scores).sort((a, b) => scores[b] - scores[a]);
-        
+
         // If no scores yet, show all current players with 0
         if (sortedPlayers.length === 0 && lastPlayersNames.length > 0) {
-             lastPlayersNames.forEach(name => {
-                 if (scores[name] === undefined) scores[name] = 0;
-             });
+            lastPlayersNames.forEach(name => {
+                if (scores[name] === undefined) scores[name] = 0;
+            });
         }
 
         // Re-sort after potential init
@@ -1217,7 +1192,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const spies = gameCardsData.filter(p => p.isSpy).map(p => p.name);
         const spiesCard = document.createElement('div');
         spiesCard.classList.add('reveal-card');
-        
+
         let spiesHtml = '<div class="spy-list">';
         spies.forEach(spyName => {
             spiesHtml += `<div class="spy-name">🕵️ ${spyName}</div>`;
@@ -1229,7 +1204,7 @@ document.addEventListener("DOMContentLoaded", function() {
             ${spiesHtml}
         `;
         revealWrapper.appendChild(spiesCard);
-        
+
         cardsContainer.appendChild(revealWrapper);
 
         showSpiesButton.classList.add('hidden'); // Hide the button after use
