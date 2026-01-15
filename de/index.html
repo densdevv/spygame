@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>Wer ist der Spion - Spyfall Online Spielen</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Wer ist der Spion? - Finden Sie die Spione und gewinnen Sie!">
+    <meta name="keywords"
+        content="wer ist der spion, spyfall, spyfall spiel, spionagespiel, spyfall online, spionagespiel online">
+    <meta name="author" content="densdev">
+    <link rel="icon" href="../casus-icon-black.png" type="image/x-icon">
+    <link rel="icon" href="../casus-icon-white.png" type="image/x-icon" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,300,400,500,700,900" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8c71c4d8b8.js" crossorigin="anonymous"></script>
+    <link rel="canonical" href="https://casuskim.net/de/" />
+    <link rel="alternate" hreflang="tr" href="https://casuskim.net/" />
+    <link rel="alternate" hreflang="en" href="https://casuskim.net/en/" />
+    <link rel="alternate" hreflang="fr" href="https://casuskim.net/fr/" />
+    <link rel="alternate" hreflang="it" href="https://casuskim.net/it/" />
+    <link rel="alternate" hreflang="de" href="https://casuskim.net/de/" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7682644437547089"
+        crossorigin="anonymous"></script>
+
+<body>
+    <div class="page-wrapper">
+       <!-- SECTION 1: Title & Info -->
+        <section id="title-info-section" class="game-section">
+            <h2 class="accent-color">Wer ist der Spion?</h2>
+            <div class="language-select-wrapper">
+                <label id="language-label" for="language-select"></label>
+                <select id="language-select" aria-label="Sprache wählen">
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="it">Italiano</option>
+                    <option value="de" selected>Deutsch</option>
+                </select>
+            </div>
+
+            <div class="info-links" style="margin-top:18px; display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+                <a id="howto-btn" class="action-button" href="howto.html">Wie spielt man?</a>
+                <a id="faq-btn" class="action-button" href="faq.html">F.A.Q.</a>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Game Parameters -->
+        <section id="game-parameters-section" class="game-section">
+            <h3 class="section-title">Spieleinstellungen</h3>
+
+            <div class="param-group counter-selection-group">
+                <div class="counter-row">
+                    <div class="counter-item">
+                        <label for="player-count-display">Spieleranzahl</label>
+                        <div class="counter-control">
+                            <button type="button" class="decrease-button" id="decrease-players">-</button>
+                            <span id="player-count-display" class="count-display">4</span>
+                            <button type="button" class="increase-button" id="increase-players">+</button>
+                        </div>
+                    </div>
+                    <div class="counter-item">
+                        <label for="spy-count-display">Spionanzahl</label>
+                        <div class="counter-control">
+                            <button type="button" class="decrease-button" id="decrease-spies">-</button>
+                            <span id="spy-count-display" class="count-display">1</span>
+                            <button type="button" class="increase-button" id="increase-spies">+</button>
+                        </div>
+                        <p id="recommended-spy-count" class="info-text small-info">Empfohlen: 1</p>
+                    </div>
+                    <div class="counter-item">
+                        <label for="duration-display">Dauer</label>
+                        <div class="counter-control">
+                            <button type="button" class="decrease-button" id="decrease-duration">-</button>
+                            <span id="duration-display" class="count-display">05:00</span>
+                            <button type="button" class="increase-button" id="increase-duration">+</button>
+                        </div>
+                        <p id="recommended-duration-count" class="info-text small-info">Empfohlen: 05:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="name-inputs-container" class="param-group name-inputs-group">
+                <!-- Name input fields will be dynamically added here by JavaScript -->
+            </div>
+
+            <div id="location-categories" class="param-group category-group">
+                <h4 class="category-title accent-color">Spielkategorien</h4>
+                <p>Sie können alle gewünschten Kategorien auswählen.</p>
+                <div class="category-grid">
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="dailyLife" checked>
+                        <span>Nachbarschaft</span>
+                    </label>
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="turkey">
+                        <span>Türkische Städte</span>
+                    </label>
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="europe">
+                        <span>Europäische Städte</span>
+                    </label>
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="billionaires">
+                        <span>Milliardäre</span>
+                    </label>
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="football">
+                        <span>Fußball-Legenden</span>
+                    </label>
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="mythology">
+                        <span>Mythologie</span>
+                    </label>
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="globalArtists">
+                        <span>Künstler Weltweit</span>
+                    </label>
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="professions">
+                        <span>Berufe</span>
+                    </label>
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="yks">
+                        <span>YKS</span>
+                    </label>
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="epfl">
+                        <span>EPFL Campus</span>
+                    </label>
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="saintJoseph">
+                        <span>SJ Campus</span>
+                    </label>
+                    <label class="category-box">
+                        <input type="checkbox" class="category-toggle" value="custom">
+                        <span>✨ Benutzerdefiniert</span>
+                    </label>
+                </div>
+                <!-- Custom places inputs (hidden until "Benutzerdefiniert" is selected) -->
+                <div id="custom-places-container" class="custom-places-group hidden"></div>
+
+                <div class="in-game-options">
+                    <input type="checkbox" id="remove-played-toggle" class="toggle-input" checked>
+                    <label for="remove-played-toggle" class="toggle-label">
+                        <span class="switch-text">Keine Wiederholung</span>
+                    </label>
+                </div>
+            </div>
+
+
+            <button id="start-button" class="action-button">SPIELEN!</button>
+        </section>
+
+        <!-- SECTION 3: Main Game Interface -->
+        <section id="game-interface-section" class="game-section hidden">
+            <h3 id="reveal-title" class="hidden">Mal sehen, wer du bist...</h3>
+            <p id="countdown" class="countdown-display">06:00</p>
+
+            <div class="game-controls-wrapper">
+                <button id="commence-countdown-button" class="game-action-button hidden">STARTEN!</button>
+                <button id="spy-guess-button" class="game-action-button hidden">Spion hat erraten!</button>
+            </div>
+
+            <div id="cards-container"></div>
+
+            <p id="no-places-message" class="info-text" style="display:none;">Der Pool ist leer; ändern Sie die Kategorieauswahl oder die Einstellungen, um eine neue Runde zu beginnen.</p>
+
+            <div id="voting-container" class="hidden"></div>
+
+            <div class="game-buttons-wrapper">
+                <button id="show-spies-button" class="game-action-button hidden">Spione Anzeigen</button>
+                <button id="restart-button" class="game-action-button hidden"><i class="fa-solid fa-rotate-right"></i>
+                    Nochmal Spielen</button>
+                <button id="reset-button" class="game-action-button reset-game-button"><i
+                        class="fa-solid fa-sliders"></i> Einstellungen</button>
+            </div>
+
+            <div id="winner-selection-container" class="hidden">
+                <button id="civilians-win-btn" class="winner-btn">Zivilisten haben gewonnen</button>
+                <button id="spies-win-btn" class="winner-btn">Spione haben gewonnen</button>
+            </div>
+
+            <div id="scoreboard-container"></div>
+        </section>
+
+        <p class="footer-text">
+            <b>Wer ist der Spion?</b> v3 26w03a | &copy;2026 <a href="https://dens.dev" target="_blank" class="accent-color"
+                style="text-decoration: none;">densdev</a><br>
+            <span id="footer-credits">Basierend auf dem Spyfall-Spiel von Alexandr Ushan.</span>
+        </p>
+    </div>
+
+    <script src="../script.js"></script>
+</body>
+
+</html>

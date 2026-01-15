@@ -35,6 +35,16 @@ body {
   overflow-x: hidden;
 }
 
+h3, h2, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
 @keyframes gradientBG {
   0% {
     background-position: 0% 50%;
@@ -125,8 +135,7 @@ body {
 #title-info-section h2 {
   font-size: 2.5rem;
   margin-top: 0;
-  margin-bottom: 15px;
-  text-shadow: 0 0 8px rgba(230, 68, 62, 0.5);
+  text-shadow: none;
 }
 
 #title-info-section p {
@@ -150,8 +159,6 @@ body {
   font-size: 2rem;
   color: var(--accent-color);
   margin-top: 0;
-  margin-bottom: 25px;
-  border-bottom: 1px solid var(--subtle-border-color);
   padding-bottom: 10px;
   text-shadow: 0 0 10px rgba(230, 68, 62, 0.3);
 }
@@ -303,30 +310,38 @@ body {
 
 .category-grid {
   display: grid;
-  columns: 3;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
   gap: 10px;
-  max-width: 500px;
+  min-width: 450px;
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+  padding: 0 10px;
 }
 
 .category-box {
   background-color: var(--card-bg-color);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 15px 10px;
+  padding: 12px 8px;
   text-align: center;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease, color 0.2s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 60px;
+  display: grid;
+  place-items: center;
+  min-height: 70px;
   position: relative;
   color: #ddd;
-  font-size: 0.95rem;
   user-select: none;
+}
+
+.category-box span {
+  font-size: 1rem;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .category-box:hover {
@@ -356,7 +371,7 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   padding: 12px 25px;
-  background-color: rgba(230, 68, 62, 0.15); /* More subtle background */
+  background-color: rgba(230, 68, 62, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   color: var(--text-color);
@@ -370,6 +385,11 @@ body {
   box-shadow: none;
   position: relative;
   overflow: hidden;
+  height: 48px;
+  line-height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .action-button:hover {
@@ -384,6 +404,109 @@ body {
   border-color: #791b17;
   transform: translateY(0);
   box-shadow: none;
+}
+
+/* Voting UI — match the main action button style for consistency */
+.vote-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px;
+}
+
+.vote-name {
+  font-weight: 600;
+  color: var(--text-color);
+  min-width: 90px;
+  text-align: left;
+}
+
+.vote-status {
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.vote-out-button {
+  /* reuse action button sizing and feel */
+  font-size: 1rem;
+  padding: 8px 16px;
+  background-color: rgba(230, 68, 62, 0.12);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vote-out-button:hover {
+  background-color: rgba(230, 68, 62, 0.45);
+  border-color: #ff6660;
+  transform: translateY(-2px);
+}
+
+.vote-out-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+/* Game interface action buttons - consistent sizing */
+.game-action-button {
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 12px 28px;
+  background-color: rgba(230, 68, 62, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 8px;
+  box-shadow: none;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.game-action-button:hover {
+  background-color: rgba(230, 68, 62, 0.45);
+  border-color: #ff6660;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 68, 62, 0.2);
+}
+
+.game-action-button:active {
+  background-color: rgba(121, 27, 23, 0.6);
+  border-color: #791b17;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.game-controls-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.game-buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  width: 100%;
 }
 
 /* Specific styling for Start Button to match compartments width and have shiny effect */
@@ -441,7 +564,7 @@ body {
   background-color: transparent;
   border: none;
   box-shadow: none;
-  padding: 0;
+  padding: 60px 20px 40px 20px;
   text-align: center;
   width: 100vw;
   min-height: 80vh;
@@ -449,7 +572,7 @@ body {
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 

@@ -3,149 +3,384 @@ document.addEventListener("DOMContentLoaded", function () {
     const locationsByLang = {
         tr: {
             dailyLife: [
-                "Süpermarket", "Park", "Sinema", "Okul", "Hastane", "Restoran", "Otel", "Havalimanı",
-                "Banka", "Sahil", "Kahveci", "Camii", "Sirk", "Mahkeme", "Fabrika", "Orman", "Göl",
-                "Deniz", "Köy", "Oto Sanayi", "Kütüphane", "Müze", "Dershane", "Karakol",
-                "Tuvalet", "Vergi Dairesi",
-            ],
-            sciFi: [
-                "Paralel Evren", "Atlantis", "Hogwarts", "Dünya'nın Çekirdeği", "Uzay İstasyonu",
-                "Mars", "Yıldız Gemisi", "Galaksi", "Kara Delik", "Buzul Çağı", "Kıyamet Sonrası Dünya",
-            ],
-            middleAges: [
-                "Şato", "Zindan", "Pazar Yeri", "Kilise", "Köy Meydanı", "İpek Yolu", "Kervansaray",
-                "Osmanlı Sarayı", "Bizans İmparatorluğu", "Viking Köyü", "Kılıç Ustası'nın Atölyesi",
-                "Şövalye Turnuvası", "Cadı İnfazı", "Köylü Evi", "Köy Çeşmesi", "Ticaret Kervanı",
+                "Bakkal", "Kasap", "Manav", "Kıraathane", "Halı Saha", "Camii", "Park", "Eczane", "Berber", "Terzi",
+                "Muhtarlık", "Karakol", "Sağlık Ocağı", "Pastane", "Fırın", "Okul Bahçesi", "Çay Bahçesi", "Taksi Durağı",
+                "Pazar Yeri", "Otobüs Durağı", "Çocuk Parkı", "Çöp Konteyneri", "Apartman Girişi", "Çatı Katı",
+                "Bodrum Katı", "Garaj", "Oto Yıkama", "Kırtasiye", "Tekel Bayii", "Büfe", "İnternet Kafe", "Spor Salonu",
+                "Veteriner", "Düğün Salonu", "Noter", "PTT", "Bankamatik", "Simitçi Arabası",
+                "Bilardo Salonu", "Kuyumcu", "Çilingir", "Yufkacı"
             ],
             turkey: [
-                "İstanbul", "Kadıköy", "Konya", "Heybeliada", "Anıtkabir", "Uludağ", "Çanakkale",
-                "Bodrum", "TBMM", "Kız Kulesi", "Efes Antik Kenti", "Pamukkale", "Kapadokya",
-                "Nasreddin Hoca Heykeli", "Ayasofya", "İstanbul Boğazı", "Topkapı Sarayı",
-                "Galata Kulesi", "Süleymaniye Camii", "Beyoğlu", "Kalkan", "Fethiye", "Antalya",
+                "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
+                "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa",
+                "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan",
+                "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta",
+                "Mersin", "İstanbul", "İzmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir",
+                "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla",
+                "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop",
+                "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat",
+                "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın",
+                "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
             ],
             europe: [
-                "Londra", "Paris", "Yunanistan", "Berlin", "Roma", "Barselona", "Amsterdam",
-                "Viyana", "Prag", "Budapeşte", "Stockholm", "Cenevre", "Kopenhag", "Brüksel",
-                "Zürih", "Dublin", "Oslo", "Helsinki", "Lizbon", "Madrid", "Atina",
-                "Moskova", "Sankt Petersburg", "Krakow", "Dubrovnik", "Edinburgh", "Venedik",
+                "Paris", "Londra", "Roma", "Berlin", "Madrid", "Barselona", "Amsterdam", "Viyana", "Prag", "Budapeşte",
+                "Atina", "Lizbon", "Brüksel", "Kopenhag", "Stockholm", "Oslo", "Helsinki", "Zürih", "Cenevre", "Lozan",
+                "Venedik", "Floransa", "Milano", "Münih", "Frankfurt", "Varşova", "Dubrovnik", "Santorini",
+                "Mikonos", "İbiza", "Nice", "Lyon", "Marsilya", "Edinburgh", "Dublin", "Lüksemburg", "Monako", "Vatikan",
+                "Reykjavik", "Porto", "Sevilla", "Salzburg"
             ],
+            billionaires: [
+                "Elon Musk", "Jeff Bezos", "Bill Gates", "Mark Zuckerberg", "Warren Buffett", "Larry Page", "Michael Bloomberg", 
+                "Jim Walton", "Michael Dell", "Jensen Huang"
+            ],
+            football: [
+                "Pelé", "Diego Maradona", "Lionel Messi", "Cristiano Ronaldo", "Johan Cruyff", "Zinedine Zidane", "Ronaldinho",
+                "Ronaldo Nazário", "Franz Beckenbauer", "Michel Platini", "Gerd Müller", "Eusebio", "George Best", "Roberto Baggio",
+                "Marco van Basten", "Thierry Henry", "Lev Yashin", "Gianluigi Buffon", "Iker Casillas", "Paolo Maldini",
+                "Roberto Carlos", "Cafu", "Xavi", "Andres Iniesta", "Luka Modric", "Zlatan Ibrahimovic", "Neymar", "Erling Haaland",
+                "Kylian Mbappé", "Alex de Souza", "Gheorghe Hagi",  "Arda Güler", "Mauro Icardi", "Edin Dzeko"
+            ],
+            mythology: [
+                "Zeus", "Hera", "Poseidon", "Hades", "Athena", "Apollo", "Artemis", "Ares", "Afrodit", "Hephaestus",
+                "Hermes", "Hestia", "Dionysos", "Herkül", "Aşil", "Medusa", "Perseus", "Pandora", "Prometheus", 
+                "Odin", "Thor", "Loki", "Freya", "Eros", "Cupid", "Pegasus"
+            ],
+            globalArtists: [
+                "Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo", "Salvador Dalí", "Frida Kahlo",
+                "Claude Monet", "Johannes Vermeer", "Rembrandt", "Andy Warhol", "Michael Jackson", "Freddie Mercury",
+                "Elvis Presley", "Madonna", "Beyoncé", "Taylor Swift", "Lady Gaga", "Rihanna", "David Bowie", "Prince",
+                "Elton John", "Paul McCartney", "John Lennon", "Bob Dylan", "Frank Sinatra", "Steven Spielberg", "Christopher Nolan",
+                "Quentin Tarantino", "Martin Scorsese", "Meryl Streep", "Tom Hanks", "Robert De Niro", "Al Pacino",
+                "Leonardo DiCaprio", "Brad Pitt", "Angelina Jolie", "Johnny Depp", "Morgan Freeman", "Denzel Washington", "Scarlett Johansson"
+            ],
+            professions: [
+                "Doktor", "Mühendis", "Öğretmen", "Avukat", "Pilot", "Mimar", "Polis", "İtfaiyeci", "Hemşire", "Diş Hekimi",
+                "Eczacı", "Psikolog", "Yazılımcı", "Veri Bilimci", "Grafik Tasarımcı", "Şef Aşçı", "Garson", "Kaptan",
+                "Şoför", "Çiftçi", "Bahçıvan", "Marangoz", "Tesisatçı", "Elektrikçi", "Kaynakçı", "Terzi", "Berber", "Kuyumcu",
+                "Emlakçı", "Gazeteci", "Fotoğrafçı", "Kütüphaneci", "Arkeolog", "Astronom", "Biyolog", "Kimyager", "Fizikçi",
+                "Matematikçi", "Ekonomist", "Diplomat"
+            ],
+            yks: [
+                "Mert Hoca", "Eyüp B", "Rehber Matematik", "Görkem Şahin", "Selin Hoca", "Dr. Biyoloji", "VIP Fizik",
+                "Özcan Aykın", "Rüştü Hoca", "Kadir Gümüş", "Benim Hocam", "Gri Koç", "Hocalara Geldik", "ÖSYM Başkanı",
+                "Mezuna Kalmak", "Limit-Türev-İntegral", "Paragraf Sorusu", "TYT", "AYT", "YDT"
+            ],
+            epfl: [
+                "Rolex Learning Center", "SwissTech Convention Center", "Musée Bolo", "BC Binası", "EPFL Tabelası", "Food Trucks",
+                "Alpine", "Arcadie", "Batochimie", "Double Deck", "Agora", "Atrium", "EPFL Metro", "EPFL Migros", "L'Esplanade",
+                "Öğrenci İşleri", "La Diagonale", "Sat", "AGEPoly Boutique", "EPFL Innovation Park"
+            ],
+            saintJoseph: [
+                "Meryem Ana Heykeli", "Saint-Joseph Heykeli", "Medyatek", "Türk Müdür Odası", "TDE Zümresi", "Öğretmenler Odası",
+                "Fırın Binası", "FRC Atölyesi", "Halı Saha", "Petit Quartier", "Grand Quartier", "Kantin", "Tuvaletler", "Resim Atölyesi",
+                "Müzik Atölyesi", "BAOBAB", "Frer Henri Salonu", "Tırmanma Duvarı", "Ön Bahçe", "Orman", "Revir", "Yemekhane"
+            ],
+            custom: []
         },
         en: {
             dailyLife: [
-                "Supermarket", "Park", "Cinema", "School", "Hospital", "Restaurant", "Hotel", "Airport",
-                "Bank", "Beach", "Coffee Shop", "Mosque", "Circus", "Court", "Factory", "Forest", "Lake",
-                "Sea", "Village", "Auto Repair", "Library", "Museum", "Tuition Center", "Police Station",
-                "Toilet", "Tax Office",
-            ],
-            sciFi: [
-                "Parallel Universe", "Atlantis", "Hogwarts", "Earth's Core", "Space Station",
-                "Mars", "Starship", "Galaxy", "Black Hole", "Ice Age", "Post-Apocalyptic World",
-            ],
-            middleAges: [
-                "Castle", "Dungeon", "Market", "Church", "Village Square", "Silk Road", "Caravanserai",
-                "Ottoman Palace", "Byzantine Empire", "Viking Village", "Swordsmith's Workshop",
-                "Knight Tournament", "Witch Execution", "Peasant House", "Village Fountain", "Trading Caravan",
+                "Grocer", "Butcher", "Greengrocer", "Teahouse", "Mini Pitch", "Mosque", "Park", "Pharmacy", "Barber", "Tailor",
+                "Municipal Office", "Police Station", "Health Clinic", "Pastry Shop", "Bakery", "School Courtyard", "Tea Garden", "Taxi Stand",
+                "Market", "Bus Stop", "Playground", "Trash Bin", "Apartment Entrance", "Rooftop",
+                "Basement", "Garage", "Car Wash", "Stationery", "Alcohol Store", "Snack Bar", "Internet Cafe", "Gym",
+                "Veterinary", "Wedding Hall", "Notary", "Post Office", "ATM", "Bagel Cart",
+                "Billiard Hall", "Jeweler", "Locksmith", "Flatbread Seller"
             ],
             turkey: [
-                "Istanbul", "Kadıköy", "Konya", "Heybeliada", "Anıtkabir", "Uludağ", "Çanakkale",
-                "Bodrum", "Parliament", "Maiden's Tower", "Ephesus", "Pamukkale", "Cappadocia",
-                "Nasreddin Hodja Statue", "Hagia Sophia", "Bosphorus", "Topkapı Palace",
-                "Galata Tower", "Süleymaniye Mosque", "Beyoğlu", "Kalkan", "Fethiye", "Antalya",
+                "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
+                "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa",
+                "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan",
+                "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta",
+                "Mersin", "Istanbul", "Izmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir",
+                "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla",
+                "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop",
+                "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat",
+                "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın",
+                "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
             ],
             europe: [
-                "London", "Paris", "Greece", "Berlin", "Rome", "Barcelona", "Amsterdam",
-                "Vienna", "Prague", "Budapest", "Stockholm", "Geneva", "Copenhagen", "Brussels",
-                "Zurich", "Dublin", "Oslo", "Helsinki", "Lisbon", "Madrid", "Athens",
-                "Moscow", "Saint Petersburg", "Krakow", "Dubrovnik", "Edinburgh", "Venice",
+                "Paris", "London", "Rome", "Berlin", "Madrid", "Barcelona", "Amsterdam", "Vienna", "Prague", "Budapest",
+                "Athens", "Lisbon", "Brussels", "Copenhagen", "Stockholm", "Oslo", "Helsinki", "Zurich", "Geneva", "Lausanne",
+                "Venice", "Florence", "Milan", "Munich", "Frankfurt", "Warsaw", "Dubrovnik", "Santorini",
+                "Mykonos", "Ibiza", "Nice", "Lyon", "Marseille", "Edinburgh", "Dublin", "Luxembourg", "Monaco", "Vatican",
+                "Reykjavik", "Porto", "Seville", "Salzburg"
             ],
+            billionaires: [
+                "Elon Musk", "Jeff Bezos", "Bill Gates", "Mark Zuckerberg", "Warren Buffett", "Larry Page", "Michael Bloomberg", 
+                "Jim Walton", "Michael Dell", "Jensen Huang"
+            ],
+            football: [
+                "Pelé", "Diego Maradona", "Lionel Messi", "Cristiano Ronaldo", "Johan Cruyff", "Zinedine Zidane", "Ronaldinho",
+                "Ronaldo Nazário", "Franz Beckenbauer", "Michel Platini", "Gerd Müller", "Eusebio", "George Best", "Roberto Baggio",
+                "Marco van Basten", "Thierry Henry", "Lev Yashin", "Gianluigi Buffon", "Iker Casillas", "Paolo Maldini",
+                "Roberto Carlos", "Cafu", "Xavi", "Andres Iniesta", "Luka Modric", "Zlatan Ibrahimovic", "Neymar", "Erling Haaland",
+                "Kylian Mbappé", "Alex de Souza", "Gheorghe Hagi", "Arda Güler", "Mauro Icardi", "Edin Dzeko"
+            ],
+            mythology: [
+                "Zeus", "Hera", "Poseidon", "Hades", "Athena", "Apollo", "Artemis", "Ares", "Aphrodite", "Hephaestus",
+                "Hermes", "Hestia", "Dionysus", "Hercules", "Achilles", "Medusa", "Perseus", "Pandora", "Prometheus", 
+                "Odin", "Thor", "Loki", "Freya", "Eros", "Cupid", "Pegasus"
+            ],
+            globalArtists: [
+                "Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo", "Salvador Dalí", "Frida Kahlo",
+                "Claude Monet", "Johannes Vermeer", "Rembrandt", "Andy Warhol", "Michael Jackson", "Freddie Mercury",
+                "Elvis Presley", "Madonna", "Beyoncé", "Taylor Swift", "Lady Gaga", "Rihanna", "David Bowie", "Prince",
+                "Elton John", "Paul McCartney", "John Lennon", "Bob Dylan", "Frank Sinatra", "Steven Spielberg", "Christopher Nolan",
+                "Quentin Tarantino", "Martin Scorsese", "Meryl Streep", "Tom Hanks", "Robert De Niro", "Al Pacino",
+                "Leonardo DiCaprio", "Brad Pitt", "Angelina Jolie", "Johnny Depp", "Morgan Freeman", "Denzel Washington", "Scarlett Johansson"
+            ],
+            professions: [
+                "Doctor", "Engineer", "Teacher", "Lawyer", "Pilot", "Architect", "Police Officer", "Firefighter", "Nurse", "Dentist",
+                "Pharmacist", "Psychologist", "Software Developer", "Data Scientist", "Graphic Designer", "Chef", "Waiter", "Captain",
+                "Driver", "Farmer", "Gardener", "Carpenter", "Plumber", "Electrician", "Welder", "Tailor", "Barber", "Jeweler",
+                "Real Estate Agent", "Journalist", "Photographer", "Librarian", "Archaeologist", "Astronomer", "Biologist", "Chemist", "Physicist",
+                "Mathematician", "Economist", "Diplomat"
+            ],
+            yks: [
+                "Mert Hoca", "Eyüp B", "Rehber Matematik", "Görkem Şahin", "Selin Hoca", "Dr. Biyoloji", "VIP Fizik",
+                "Özcan Aykın", "Rüştü Hoca", "Kadir Gümüş", "Benim Hocam", "Gri Koç", "Hocalara Geldik", "ÖSYM President",
+                "Retaking Year", "Limit-Derivative-Integral", "Paragraph Question", "TYT", "AYT", "YDT"
+            ],
+            epfl: [
+                "Rolex Learning Center", "SwissTech Convention Center", "Musée Bolo", "BC Building", "EPFL Signboard", "Food Trucks",
+                "Alpine", "Arcadie", "Batochimie", "Double Deck", "Agora", "Atrium", "EPFL Metro", "EPFL Migros", "L'Esplanade",
+                "Student Affairs", "La Diagonale", "Sat", "AGEPoly Boutique", "EPFL Innovation Park"
+            ],
+            saintJoseph: [
+                "Mary Statue", "Saint-Joseph Statue", "Mediatek", "Turkish Director's Office", "TDE Department", "Teachers' Room",
+                "Bakery Building", "FRC Workshop", "Mini Pitch", "Petit Quartier", "Grand Quartier", "Canteen", "Restrooms", "Art Studio",
+                "Music Studio", "BAOBAB", "Frère Henri Hall", "Climbing Wall", "Front Garden", "Forest", "Infirmary", "Dining Hall"
+            ],
+            custom: []
         },
         fr: {
             dailyLife: [
-                "Supermarché", "Parc", "Cinéma", "École", "Hôpital", "Restaurant", "Hôtel", "Aéroport",
-                "Banque", "Plage", "Café", "Mosquée", "Cirque", "Tribunal", "Usine", "Forêt", "Lac",
-                "Mer", "Village", "Garage", "Bibliothèque", "Musée", "Centre de soutien", "Commissariat",
-                "Toilettes", "Service des impôts",
-            ],
-            sciFi: [
-                "Univers Parallèle", "Atlantide", "Poudlard", "Noyau de la Terre", "Station Spatiale",
-                "Mars", "Vaisseau Spatial", "Galaxie", "Trou Noir", "Ère Glaciaire", "Monde Post-Apocalyptique",
-            ],
-            middleAges: [
-                "Château", "Donjon", "Marché", "Église", "Place du Village", "Route de la Soie", "Caravansérail",
-                "Palais Ottoman", "Empire Byzantin", "Village Viking", "Atelier du Forgeron",
-                "Tournoi de Chevaliers", "Exécution de Sorcière", "Maison Paysanne", "Fontaine du Village", "Caravane Commerciale",
+                "Épicier", "Boucher", "Marchand de légumes", "Salon de thé", "Terrain de mini-foot", "Mosquée", "Parc", "Pharmacie", "Barbier", "Tailleur",
+                "Mairie", "Poste de police", "Clinique de santé", "Pâtisserie", "Boulangerie", "Cour d'école", "Jardin de thé", "Arrêt de taxi",
+                "Marché", "Arrêt d'autobus", "Aire de jeux", "Poubelle", "Entrée d'immeuble", "Toit",
+                "Sous-sol", "Garage", "Lavage de voitures", "Papeterie", "Débit de boissons alcoolisées", "Snack-bar", "Cybercafé", "Salle de sport",
+                "Vétérinaire", "Salle des fêtes", "Notaire", "Bureau de poste", "Distributeur automatique", "Chariot à pain",
+                "Salle de billard", "Bijouterie", "Serrurier", "Vendeur de pâtes levées"
             ],
             turkey: [
-                "Istanbul", "Kadıköy", "Konya", "Heybeliada", "Anıtkabir", "Uludağ", "Çanakkale",
-                "Bodrum", "Parlement", "Tour de la Jeune Fille", "Éphèse", "Pamukkale", "Cappadoce",
-                "Statue de Nasreddin Hoca", "Sainte-Sophie", "Bosphore", "Palais de Topkapı",
-                "Tour de Galata", "Mosquée Süleymaniye", "Beyoğlu", "Kalkan", "Fethiye", "Antalya",
+                "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
+                "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa",
+                "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan",
+                "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta",
+                "Mersin", "Istanbul", "Izmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir",
+                "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla",
+                "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop",
+                "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat",
+                "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın",
+                "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
             ],
             europe: [
-                "Londres", "Paris", "Grèce", "Berlin", "Rome", "Barcelone", "Amsterdam",
-                "Vienne", "Prague", "Budapest", "Stockholm", "Genève", "Copenhague", "Bruxelles",
-                "Zurich", "Dublin", "Oslo", "Helsinki", "Lisbonne", "Madrid", "Athènes",
-                "Moscou", "Saint-Pétersbourg", "Cracovie", "Dubrovnik", "Édimbourg", "Venise",
+                "Paris", "Londres", "Rome", "Berlin", "Madrid", "Barcelone", "Amsterdam", "Vienne", "Prague", "Budapest",
+                "Athènes", "Lisbonne", "Bruxelles", "Copenhague", "Stockholm", "Oslo", "Helsinki", "Zurich", "Genève", "Lausanne",
+                "Venise", "Florence", "Milan", "Munich", "Francfort", "Varsovie", "Dubrovnik", "Santorin",
+                "Mykonos", "Ibiza", "Nice", "Lyon", "Marseille", "Édimbourg", "Dublin", "Luxembourg", "Monaco", "Vatican",
+                "Reykjavik", "Porto", "Séville", "Salzbourg"
             ],
+            billionaires: [
+                "Elon Musk", "Jeff Bezos", "Bill Gates", "Mark Zuckerberg", "Warren Buffett", "Larry Page", "Michael Bloomberg", 
+                "Jim Walton", "Michael Dell", "Jensen Huang"
+            ],
+            football: [
+                "Pelé", "Diego Maradona", "Lionel Messi", "Cristiano Ronaldo", "Johan Cruyff", "Zinedine Zidane", "Ronaldinho",
+                "Ronaldo Nazário", "Franz Beckenbauer", "Michel Platini", "Gerd Müller", "Eusebio", "George Best", "Roberto Baggio",
+                "Marco van Basten", "Thierry Henry", "Lev Yashin", "Gianluigi Buffon", "Iker Casillas", "Paolo Maldini",
+                "Roberto Carlos", "Cafu", "Xavi", "Andres Iniesta", "Luka Modric", "Zlatan Ibrahimovic", "Neymar", "Erling Haaland",
+                "Kylian Mbappé", "Alex de Souza", "Gheorghe Hagi", "Arda Güler", "Mauro Icardi", "Edin Dzeko"
+            ],
+            mythology: [
+                "Zeus", "Héra", "Poséidon", "Hadès", "Athéna", "Apollon", "Artémis", "Arès", "Aphrodite", "Héphaïstos",
+                "Hermès", "Hestia", "Dionysos", "Hercule", "Achille", "Méduse", "Persée", "Pandore", "Prométhée", 
+                "Odin", "Thor", "Loki", "Freyja", "Éros", "Cupidon", "Pégase"
+            ],
+            globalArtists: [
+                "Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelange", "Salvador Dalí", "Frida Kahlo",
+                "Claude Monet", "Johannes Vermeer", "Rembrandt", "Andy Warhol", "Michael Jackson", "Freddie Mercury",
+                "Elvis Presley", "Madonna", "Beyoncé", "Taylor Swift", "Lady Gaga", "Rihanna", "David Bowie", "Prince",
+                "Elton John", "Paul McCartney", "John Lennon", "Bob Dylan", "Frank Sinatra", "Steven Spielberg", "Christopher Nolan",
+                "Quentin Tarantino", "Martin Scorsese", "Meryl Streep", "Tom Hanks", "Robert De Niro", "Al Pacino",
+                "Leonardo DiCaprio", "Brad Pitt", "Angelina Jolie", "Johnny Depp", "Morgan Freeman", "Denzel Washington", "Scarlett Johansson"
+            ],
+            professions: [
+                "Médecin", "Ingénieur", "Professeur", "Avocat", "Pilote", "Architecte", "Agent de police", "Pompier", "Infirmière", "Dentiste",
+                "Pharmacien", "Psychologue", "Développeur logiciel", "Data scientist", "Designer graphique", "Chef cuisinier", "Serveur", "Capitaine",
+                "Chauffeur", "Agriculteur", "Jardinier", "Charpentier", "Plombier", "Électricien", "Soudeur", "Tailleur", "Barbier", "Bijoutier",
+                "Agent immobilier", "Journaliste", "Photographe", "Bibliothécaire", "Archéologue", "Astronome", "Biologiste", "Chimiste", "Physicien",
+                "Mathématicien", "Économiste", "Diplomate"
+            ],
+            yks: [
+                "Mert Hoca", "Eyüp B", "Rehber Matematik", "Görkem Şahin", "Selin Hoca", "Dr. Biyoloji", "VIP Fizik",
+                "Özcan Aykın", "Rüştü Hoca", "Kadir Gümüş", "Benim Hocam", "Gri Koç", "Hocalara Geldik", "Président ÖSYM",
+                "Année de rattrapage", "Limite-Dérivée-Intégrale", "Question de paragraphe", "TYT", "AYT", "YDT"
+            ],
+            epfl: [
+                "Rolex Learning Center", "SwissTech Convention Center", "Musée Bolo", "Bâtiment BC", "Pancarte EPFL", "Camions de nourriture",
+                "Alpine", "Arcadie", "Batochimie", "Double Deck", "Agora", "Atrium", "EPFL Metro", "EPFL Migros", "L'Esplanade",
+                "Affaires étudiantes", "La Diagonale", "Sat", "AGEPoly Boutique", "EPFL Innovation Park"
+            ],
+            saintJoseph: [
+                "Statue de Marie", "Statue de Saint-Joseph", "Médiathèque", "Bureau du Directeur turc", "Département TDE", "Salle des professeurs",
+                "Bâtiment de boulangerie", "Atelier FRC", "Terrain de mini-foot", "Petit Quartier", "Grand Quartier", "Cantine", "Toilettes", "Studio d'art",
+                "Studio de musique", "BAOBAB", "Salle Frère Henri", "Mur d'escalade", "Jardin avant", "Forêt", "Infirmerie", "Salle à manger"
+            ],
+            custom: []
         },
         it: {
             dailyLife: [
-                "Supermercato", "Parco", "Cinema", "Scuola", "Ospedale", "Ristorante", "Hotel", "Aeroporto",
-                "Banca", "Spiaggia", "Caffetteria", "Moschea", "Circo", "Tribunale", "Fabbrica", "Foresta", "Lago",
-                "Mare", "Villaggio", "Autofficina", "Biblioteca", "Museo", "Centro Ripetizioni", "Stazione di Polizia",
-                "Bagno", "Ufficio delle Imposte",
-            ],
-            sciFi: [
-                "Universo Parallelo", "Atlantide", "Hogwarts", "Nucleo della Terra", "Stazione Spaziale",
-                "Marte", "Astronave", "Galassia", "Buco Nero", "Era Glaciale", "Mondo Post-Apocalittico",
-            ],
-            middleAges: [
-                "Castello", "Prigione", "Mercato", "Chiesa", "Piazza del Villaggio", "Via della Seta", "Caravanserraglio",
-                "Palazzo Ottomano", "Impero Bizantino", "Villaggio Vichingo", "Bottega del Fabbro",
-                "Torneo di Cavalieri", "Esecuzione della Strega", "Casa Contadina", "Fontana del Villaggio", "Carovana Commerciale",
+                "Drogheria", "Macellaio", "Verduraio", "Sala da tè", "Campo di mini-calcio", "Moschea", "Parco", "Farmacia", "Barbiere", "Sarto",
+                "Municipio", "Stazione di polizia", "Clinica sanitaria", "Pasticceria", "Panetteria", "Cortile della scuola", "Giardino del tè", "Fermata dei taxi",
+                "Mercato", "Fermata dell'autobus", "Parco giochi", "Cestino dei rifiuti", "Ingresso del condominio", "Terrazza",
+                "Seminterrato", "Garage", "Lavaggio auto", "Cartoleria", "Negozio di alcolici", "Tavola calda", "Cybercafé", "Palestra",
+                "Veterinario", "Sala ricevimenti", "Notaio", "Ufficio postale", "Bancomat", "Carrello di pane",
+                "Sala da biliardo", "Gioielleria", "Serraturista", "Venditore di focaccia"
             ],
             turkey: [
-                "Istanbul", "Kadıköy", "Konya", "Heybeliada", "Anıtkabir", "Uludağ", "Çanakkale",
-                "Bodrum", "Parlamento", "Torre di Leandro", "Efeso", "Pamukkale", "Cappadocia",
-                "Statua di Nasreddin Hoca", "Santa Sofia", "Bosforo", "Palazzo Topkapı",
-                "Torre di Galata", "Moschea di Solimano", "Beyoğlu", "Kalkan", "Fethiye", "Antalya",
+                "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
+                "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa",
+                "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan",
+                "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta",
+                "Mersin", "Istanbul", "Izmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir",
+                "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla",
+                "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop",
+                "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat",
+                "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın",
+                "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
             ],
             europe: [
-                "Londra", "Parigi", "Grecia", "Berlino", "Roma", "Barcellona", "Amsterdam",
-                "Vienna", "Praga", "Budapest", "Stoccolma", "Ginevra", "Copenaghen", "Bruxelles",
-                "Zurigo", "Dublino", "Oslo", "Helsinki", "Lisbona", "Madrid", "Atene",
-                "Mosca", "San Pietroburgo", "Cracovia", "Dubrovnik", "Edimburgo", "Venezia",
+                "Parigi", "Londra", "Roma", "Berlino", "Madrid", "Barcellona", "Amsterdam", "Vienna", "Praga", "Budapest",
+                "Atene", "Lisbona", "Bruxelles", "Copenaghen", "Stoccolma", "Oslo", "Helsinki", "Zurigo", "Ginevra", "Losanna",
+                "Venezia", "Firenze", "Milano", "Monaco", "Francoforte", "Varsavia", "Dubrovnik", "Santorini",
+                "Mykonos", "Ibiza", "Nizza", "Lione", "Marsiglia", "Edimburgo", "Dublino", "Lussemburgo", "Monaco", "Vaticano",
+                "Reykjavik", "Porto", "Siviglia", "Salisburgo"
             ],
+            billionaires: [
+                "Elon Musk", "Jeff Bezos", "Bill Gates", "Mark Zuckerberg", "Warren Buffett", "Larry Page", "Michael Bloomberg", 
+                "Jim Walton", "Michael Dell", "Jensen Huang"
+            ],
+            football: [
+                "Pelé", "Diego Maradona", "Lionel Messi", "Cristiano Ronaldo", "Johan Cruyff", "Zinedine Zidane", "Ronaldinho",
+                "Ronaldo Nazário", "Franz Beckenbauer", "Michel Platini", "Gerd Müller", "Eusebio", "George Best", "Roberto Baggio",
+                "Marco van Basten", "Thierry Henry", "Lev Yashin", "Gianluigi Buffon", "Iker Casillas", "Paolo Maldini",
+                "Roberto Carlos", "Cafu", "Xavi", "Andres Iniesta", "Luka Modric", "Zlatan Ibrahimovic", "Neymar", "Erling Haaland",
+                "Kylian Mbappé", "Alex de Souza", "Gheorghe Hagi", "Arda Güler", "Mauro Icardi", "Edin Dzeko"
+            ],
+            mythology: [
+                "Zeus", "Hera", "Poseidone", "Ade", "Atena", "Apollo", "Artemide", "Ares", "Afrodite", "Efesto",
+                "Ermes", "Estia", "Dioniso", "Ercole", "Achille", "Medusa", "Perseo", "Pandora", "Prometeo", 
+                "Odino", "Thor", "Loki", "Freyja", "Eros", "Cupido", "Pegaso"
+            ],
+            globalArtists: [
+                "Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo", "Salvador Dalí", "Frida Kahlo",
+                "Claude Monet", "Johannes Vermeer", "Rembrandt", "Andy Warhol", "Michael Jackson", "Freddie Mercury",
+                "Elvis Presley", "Madonna", "Beyoncé", "Taylor Swift", "Lady Gaga", "Rihanna", "David Bowie", "Prince",
+                "Elton John", "Paul McCartney", "John Lennon", "Bob Dylan", "Frank Sinatra", "Steven Spielberg", "Christopher Nolan",
+                "Quentin Tarantino", "Martin Scorsese", "Meryl Streep", "Tom Hanks", "Robert De Niro", "Al Pacino",
+                "Leonardo DiCaprio", "Brad Pitt", "Angelina Jolie", "Johnny Depp", "Morgan Freeman", "Denzel Washington", "Scarlett Johansson"
+            ],
+            professions: [
+                "Medico", "Ingegnere", "Insegnante", "Avvocato", "Pilota", "Architetto", "Agente di polizia", "Pompiere", "Infermiera", "Dentista",
+                "Farmacista", "Psicologo", "Sviluppatore software", "Data scientist", "Designer grafico", "Chef", "Cameriere", "Capitano",
+                "Autista", "Agricoltore", "Giardiniere", "Falegname", "Idraulico", "Elettricista", "Saldatore", "Sarto", "Barbiere", "Gioielliere",
+                "Agente immobiliare", "Giornalista", "Fotografo", "Bibliotecario", "Archeologo", "Astronomo", "Biologo", "Chimico", "Fisico",
+                "Matematico", "Economista", "Diplomatico"
+            ],
+            yks: [
+                "Mert Hoca", "Eyüp B", "Rehber Matematik", "Görkem Şahin", "Selin Hoca", "Dr. Biyoloji", "VIP Fizik",
+                "Özcan Aykın", "Rüştü Hoca", "Kadir Gümüş", "Benim Hocam", "Gri Koç", "Hocalara Geldik", "Presidente ÖSYM",
+                "Anno di ripetizione", "Limite-Derivata-Integrale", "Domanda di paragrafo", "TYT", "AYT", "YDT"
+            ],
+            epfl: [
+                "Rolex Learning Center", "SwissTech Convention Center", "Musée Bolo", "Edificio BC", "Cartello EPFL", "Camion di cibo",
+                "Alpine", "Arcadie", "Batochimie", "Double Deck", "Agora", "Atrium", "EPFL Metro", "EPFL Migros", "L'Esplanade",
+                "Affari studenteschi", "La Diagonale", "Sat", "AGEPoly Boutique", "EPFL Innovation Park"
+            ],
+            saintJoseph: [
+                "Statua della Madonna", "Statua di San Giuseppe", "Mediateca", "Ufficio Direttore Turco", "Dipartimento TDE", "Sala insegnanti",
+                "Edificio panetteria", "Laboratorio FRC", "Campo di mini-calcio", "Petit Quartier", "Grand Quartier", "Mensa", "Bagni", "Studio d'arte",
+                "Studio musicale", "BAOBAB", "Sala Frère Henri", "Muro d'arrampicata", "Giardino anteriore", "Bosco", "Infermeria", "Sala da pranzo"
+            ],
+            custom: []
         },
         de: {
             dailyLife: [
-                "Supermarkt", "Park", "Kino", "Schule", "Krankenhaus", "Restaurant", "Hotel", "Flughafen",
-                "Bank", "Strand", "Café", "Moschee", "Zirkus", "Gericht", "Fabrik", "Wald", "See",
-                "Meer", "Dorf", "Autowerkstatt", "Bibliothek", "Museum", "Nachhilfezentrum", "Polizeistation",
-                "Toilette", "Finanzamt",
-            ],
-            sciFi: [
-                "Paralleluniversum", "Atlantis", "Hogwarts", "Erdkern", "Raumstation",
-                "Mars", "Raumschiff", "Galaxie", "Schwarzes Loch", "Eiszeit", "Postapokalyptische Welt",
-            ],
-            middleAges: [
-                "Schloss", "Verlies", "Markt", "Kirche", "Dorfplatz", "Seidenstraße", "Karawanserei",
-                "Osmanischer Palast", "Byzantinisches Reich", "Wikingerdorf", "Schmiedewerkstatt",
-                "Ritterturnier", "Hexenhinrichtung", "Bauernhaus", "Dorfbrunnen", "Handelskarawane",
+                "Lebensmittelhändler", "Fleischer", "Gemüsehändler", "Teestube", "Kleinfeld", "Moschee", "Park", "Apotheke", "Friseur", "Schneider",
+                "Gemeindeamt", "Polizeiwache", "Gesundheitsklinik", "Konditorei", "Bäckerei", "Schulhof", "Teegarten", "Taxistand",
+                "Markt", "Bushaltestelle", "Spielplatz", "Mülleimer", "Wohnungseingang", "Dachterrasse",
+                "Kellergeschoß", "Garage", "Autowäsche", "Schreibwarenhandlung", "Alkoholladen", "Imbiss", "Internet-Café", "Fitnessstudio",
+                "Tierarzt", "Hochzeitssaal", "Notar", "Postamt", "Geldautomat", "Brezel-Wagen",
+                "Billardhalle", "Juwelier", "Schlüsseldienst", "Fladenbrotverkäufer"
             ],
             turkey: [
-                "Istanbul", "Kadıköy", "Konya", "Heybeliada", "Anıtkabir", "Uludağ", "Çanakkale",
-                "Bodrum", "Parlament", "Leanderturm", "Ephesos", "Pamukkale", "Kappadokien",
-                "Nasreddin Hodscha Statue", "Hagia Sophia", "Bosporus", "Topkapı-Palast",
-                "Galataturm", "Süleymaniye-Moschee", "Beyoğlu", "Kalkan", "Fethiye", "Antalya",
+                "Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin",
+                "Aydın", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa",
+                "Çanakkale", "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan",
+                "Erzurum", "Eskişehir", "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta",
+                "Mersin", "Istanbul", "Izmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir",
+                "Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin", "Muğla",
+                "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun", "Siirt", "Sinop",
+                "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak", "Van", "Yozgat",
+                "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın",
+                "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"
             ],
             europe: [
-                "London", "Paris", "Griechenland", "Berlin", "Rom", "Barcelona", "Amsterdam",
-                "Wien", "Prag", "Budapest", "Stockholm", "Genf", "Kopenhagen", "Brüssel",
-                "Zürich", "Dublin", "Oslo", "Helsinki", "Lissabon", "Madrid", "Athen",
-                "Moskau", "Sankt Petersburg", "Krakau", "Dubrovnik", "Edinburgh", "Venedig",
+                "Paris", "London", "Rom", "Berlin", "Madrid", "Barcelona", "Amsterdam", "Wien", "Prag", "Budapest",
+                "Athen", "Lissabon", "Brüssel", "Kopenhagen", "Stockholm", "Oslo", "Helsinki", "Zürich", "Genf", "Lausanne",
+                "Venedig", "Florenz", "Mailand", "München", "Frankfurt", "Warschau", "Dubrovnik", "Santorin",
+                "Mykonos", "Ibiza", "Nizza", "Lyon", "Marseille", "Edinburgh", "Dublin", "Luxemburg", "Monaco", "Vatikan",
+                "Reykjavik", "Porto", "Sevilla", "Salzburg"
             ],
-        },
+            billionaires: [
+                "Elon Musk", "Jeff Bezos", "Bill Gates", "Mark Zuckerberg", "Warren Buffett", "Larry Page", "Michael Bloomberg", 
+                "Jim Walton", "Michael Dell", "Jensen Huang"
+            ],
+            football: [
+                "Pelé", "Diego Maradona", "Lionel Messi", "Cristiano Ronaldo", "Johan Cruyff", "Zinedine Zidane", "Ronaldinho",
+                "Ronaldo Nazário", "Franz Beckenbauer", "Michel Platini", "Gerd Müller", "Eusebio", "George Best", "Roberto Baggio",
+                "Marco van Basten", "Thierry Henry", "Lev Yashin", "Gianluigi Buffon", "Iker Casillas", "Paolo Maldini",
+                "Roberto Carlos", "Cafu", "Xavi", "Andres Iniesta", "Luka Modric", "Zlatan Ibrahimovic", "Neymar", "Erling Haaland",
+                "Kylian Mbappé", "Alex de Souza", "Gheorghe Hagi", "Arda Güler", "Mauro Icardi", "Edin Dzeko"
+            ],
+            mythology: [
+                "Zeus", "Hera", "Poseidon", "Hades", "Athena", "Apollo", "Artemis", "Ares", "Aphrodite", "Hephaistos",
+                "Hermes", "Hestia", "Dionysos", "Herkules", "Achilles", "Medusa", "Perseus", "Pandora", "Prometheus", 
+                "Odin", "Thor", "Loki", "Freya", "Eros", "Cupido", "Pegasus"
+            ],
+            globalArtists: [
+                "Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Michelangelo", "Salvador Dalí", "Frida Kahlo",
+                "Claude Monet", "Johannes Vermeer", "Rembrandt", "Andy Warhol", "Michael Jackson", "Freddie Mercury",
+                "Elvis Presley", "Madonna", "Beyoncé", "Taylor Swift", "Lady Gaga", "Rihanna", "David Bowie", "Prince",
+                "Elton John", "Paul McCartney", "John Lennon", "Bob Dylan", "Frank Sinatra", "Steven Spielberg", "Christopher Nolan",
+                "Quentin Tarantino", "Martin Scorsese", "Meryl Streep", "Tom Hanks", "Robert De Niro", "Al Pacino",
+                "Leonardo DiCaprio", "Brad Pitt", "Angelina Jolie", "Johnny Depp", "Morgan Freeman", "Denzel Washington", "Scarlett Johansson"
+            ],
+            professions: [
+                "Arzt", "Ingenieur", "Lehrer", "Anwalt", "Pilot", "Architekt", "Polizist", "Feuerwehrmann", "Krankenschwester", "Zahnarzt",
+                "Apotheker", "Psychologe", "Softwareentwickler", "Data Scientist", "Grafikdesigner", "Küchenchef", "Kellner", "Kapitän",
+                "Fahrer", "Bauer", "Gärtner", "Zimmermann", "Klempner", "Elektriker", "Schweißer", "Schneider", "Friseur", "Juwelier",
+                "Makler", "Journalist", "Fotograf", "Bibliothekar", "Archäologe", "Astronom", "Biologe", "Chemiker", "Physiker",
+                "Mathematiker", "Ökonom", "Diplomat"
+            ],
+            yks: [
+                "Mert Hoca", "Eyüp B", "Rehber Matematik", "Görkem Şahin", "Selin Hoca", "Dr. Biyoloji", "VIP Fizik",
+                "Özcan Aykın", "Rüştü Hoca", "Kadir Gümüş", "Benim Hocam", "Gri Koç", "Hocalara Geldik", "ÖSYM-Präsident",
+                "Wiederholungsjahr", "Grenzwert-Ableitung-Integral", "Absatzfrage", "TYT", "AYT", "YDT"
+            ],
+            epfl: [
+                "Rolex Learning Center", "SwissTech Convention Center", "Musée Bolo", "BC-Gebäude", "EPFL-Schild", "Essensverkäufer",
+                "Alpine", "Arcadie", "Batochimie", "Double Deck", "Agora", "Atrium", "EPFL Metro", "EPFL Migros", "L'Esplanade",
+                "Studentenangelegenheiten", "La Diagonale", "Sat", "AGEPoly Boutique", "EPFL Innovation Park"
+            ],
+            saintJoseph: [
+                "Marienskulptur", "Josef-Skulptur", "Mediathek", "Büro Türkischer Direktor", "TDE-Abteilung", "Lehrerzimmer",
+                "Backstube", "FRC-Werkstatt", "Kleinfeld", "Petit Quartier", "Grand Quartier", "Kantine", "Toiletten", "Kunststudio",
+                "Musikstudio", "BAOBAB", "Bruder-Heinrich-Saal", "Kletterwand", "Vorgarten", "Wald", "Krankenstation", "Speisesaal"
+            ],
+            custom: []
+        }
     };
 
     // Constants
@@ -182,6 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gameInterfaceSection = document.getElementById('game-interface-section');
     const countdownElement = document.getElementById('countdown');
     const commenceCountdownButton = document.getElementById('commence-countdown-button');
+    const spyGuessButton = document.getElementById('spy-guess-button');
     const cardsContainer = document.getElementById('cards-container');
     const restartButton = document.getElementById('restart-button');
     const resetButton = document.getElementById('reset-button');
@@ -192,22 +428,26 @@ document.addEventListener("DOMContentLoaded", function () {
     const languageSelect = document.getElementById('language-select');
     const revealTitle = document.getElementById('reveal-title'); // New element
     const scoreboardContainer = document.getElementById('scoreboard-container'); // New element
+    const footerCreditsEl = document.getElementById('footer-credits'); // Footer element
     const winnerSelectionContainer = document.getElementById('winner-selection-container'); // New element
 
     // Localization Data
     const i18n = {
         tr: {
             title: 'Casus Kim?',
-            description: 'Oyunda herkese rastgele atanan iki rol vardır: Köylüler ve casuslar. <br>Köylülere bir yer ismi verilir. Casuslar ise bu yer ismini bilmezler. Casuslar, köylülerin söylediklerini dinleyerek bu yer ismini doğru tahmin etmeye çalışırlar. Köylüler ise süre dolmadan casusların kim olduğunu bulmaya çalışırlar.',
+            description: 'Oyunda herkese rastgele atanan iki rol vardır: Köylüler ve casuslar. <br>Köylülere bir yer veya insan ismi verilir. Casuslar ise bunu bilmezler. Casuslar, köylülerin söylediklerini dinleyerek bu yer veya insan ismini doğru tahmin etmeye çalışırlar. Köylüler ise süre dolmadan casusların kim olduğunu bulmaya çalışırlar.',
             settingsTitle: 'Oyun Ayarları',
             playerCountLabel: 'Oyuncu Sayısı',
             spyCountLabel: 'Casus Sayısı',
             durationLabel: 'Süre',
-            categoryTitle: 'Mekan Kategorileri',
+            recommended: 'Önerilen',
+            spyGuessed: 'Casus bildi!',
+            categoryTitle: 'Oyun Kategorileri',
             categoryInfo: 'İstediğiniz tüm kategorileri seçebilirsiniz.',
             startButton: 'OYNA!',
             commenceButton: 'BAŞLA!',
             showSpiesButton: 'Casusları Göster',
+            voteOut: 'Oyundan Çıkar',
             restartButton: 'Tekrar Oyna',
             resetButton: 'Ayarlar',
             playerNamePlaceholder: 'Oyuncu {n}',
@@ -220,38 +460,50 @@ document.addEventListener("DOMContentLoaded", function () {
                 cardsNotCreated: 'Kartlar oluşturulamadı!'
             },
             categories: {
-                dailyLife: 'Günlük Hayat',
-                sciFi: 'Bilim Kurgu',
-                middleAges: 'Orta Çağ',
-                turkey: 'Türkiye',
-                europe: 'Avrupa',
-                saintJoseph: 'SJ',
-                naughty: '+18',
-                custom: 'Özel'
+                dailyLife: 'Mahalle',
+                turkey: 'Türkiye Şehirleri',
+                europe: 'Avrupa Şehirleri',
+                saintJoseph: 'SJ Kampüsü',
+                epfl: 'EPFL Kampüsü',
+                yks: 'YKS',
+                billionaires: 'Milyarderler',
+                football: 'Efsane Futbolcular',
+                mythology: 'Mitoloji',
+                globalArtists: 'Dünya Sanatçıları',
+                professions: 'Meslekler',
+                custom: '✨ Kendin Belirle'
             },
-            switchText: 'Tekrar oynarken aynı mekan gelmesin',
+            switchText: 'Tekrar yok',
             noPlacesMessage: 'Havuz boşaldı; yeni bir tur başlatmak için kategori seçimlerini veya ayarları değiştirin.',
             roles: { spy: 'Casus sensin', civilian: 'Köylüsün' },
             languageLabel: 'Dil',
             banner: '🎉 casus.dens.dev artık casuskim.net!',
             revealTitle: 'Bakalım kimsin...',
+            locationLabel: 'Mekan',
+            spiesLabel: 'Casuslar',
+            howTo: 'Nasıl Oynanır?',
+            faq: 'S.S.S.',
             civiliansWin: 'Köylüler Kazandı',
             spiesWin: 'Casuslar Kazandı',
             scoreboardTitle: 'Skor Tablosu',
             footerCredits: 'Alexandr Ushan\'ın Spyfall oyunu üzerine kurulmuştur.'
         },
+        // Add button labels for static info links
         en: {
             title: 'Who is the Spy?',
-            description: 'There are two roles randomly assigned to everyone in the game: Civilians and Spies. <br>Civilians are given a place name. Spies do not know this place name. Spies try to guess this place name correctly by listening to what the civilians say. Civilians try to find out who the spies are before the time runs out.',
+            description: 'There are two roles randomly assigned to everyone in the game: Civilians and Spies. <br>Civilians are given a place or person name. Spies do not know it. Spies try to guess this place or person name correctly by listening to what the civilians say. Civilians try to find out who the spies are before the time runs out.',
             settingsTitle: 'Game Settings',
             playerCountLabel: 'Player Count',
             spyCountLabel: 'Spy Count',
             durationLabel: 'Duration',
-            categoryTitle: 'Location Categories',
+            recommended: 'Recommended',
+            spyGuessed: 'Spy guessed!',
+            categoryTitle: 'Game Categories',
             categoryInfo: 'You can select all the categories you want.',
             startButton: 'PLAY!',
             commenceButton: 'START!',
             showSpiesButton: 'Show Spies',
+            voteOut: 'Vote Out',
             restartButton: 'Play Again',
             resetButton: 'Settings',
             playerNamePlaceholder: 'Player {n}',
@@ -264,21 +516,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 cardsNotCreated: 'Cards could not be created!'
             },
             categories: {
-                dailyLife: 'Daily Life',
-                sciFi: 'Sci-Fi',
-                middleAges: 'Middle Ages',
-                turkey: 'Turkey',
-                europe: 'Europe',
-                saintJoseph: 'SJ',
-                naughty: '+18',
-                custom: 'Custom'
+                dailyLife: 'Neighborhood',
+                turkey: 'Turkish Cities',
+                europe: 'European Cities',
+                billionaires: 'Billionaires',
+                football: 'Legendary Footballers',
+                mythology: 'Mythology',
+                globalArtists: 'World Artists',
+                professions: 'Professions',
+                yks: 'YKS',
+                epfl: 'EPFL Campus',
+                saintJoseph: 'SJ Campus',
+                custom: '✨ Custom'
             },
-            switchText: 'Don\'t replay the same location',
+            switchText: 'No repeats',
             noPlacesMessage: 'Pool is empty; change category selections or settings to start a new round.',
             roles: { spy: 'You are the Spy', civilian: 'You are a Civilian' },
             languageLabel: 'Language',
             banner: '🎉 casus.dens.dev is now casuskim.net!',
             revealTitle: "Let's see who you are...",
+            locationLabel: 'Location',
+            spiesLabel: 'Spies',
+            howTo: 'How to Play?',
+            faq: 'F.A.Q.',
             civiliansWin: 'Civilians Won',
             spiesWin: 'Spies Won',
             scoreboardTitle: 'Scoreboard',
@@ -286,16 +546,19 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         fr: {
             title: 'Qui est l\'Espion ?',
-            description: 'Il y a deux rôles attribués au hasard à tout le monde dans le jeu : Civils et Espions. <br>Les civils reçoivent un nom de lieu. Les espions ne connaissent pas ce nom de lieu. Les espions essaient de deviner correctement ce nom de lieu en écoutant ce que disent les civils. Les civils essaient de découvrir qui sont les espions avant la fin du temps imparti.',
+            description: 'Il y a deux rôles attribués au hasard à tout le monde dans le jeu : Civils et Espions. <br>Les civils reçoivent un nom de lieu ou un nom de personne. Les espions ne connaissent pas ce dernier. Les espions essaient de deviner correctement ce nom de lieu ou ce nom de personne en écoutant ce que disent les civils. Les civils essaient de découvrir qui sont les espions avant la fin du temps imparti.',
             settingsTitle: 'Paramètres du Jeu',
             playerCountLabel: 'Nombre de Joueurs',
             spyCountLabel: 'Nombre d\'Espions',
             durationLabel: 'Durée',
-            categoryTitle: 'Catégories de Lieux',
+            recommended: 'Recommandé',
+            spyGuessed: 'L\'espion a deviné !',
+            categoryTitle: 'Catégories de Jeu',
             categoryInfo: 'Vous pouvez sélectionner toutes les catégories que vous souhaitez.',
             startButton: 'JOUER !',
             commenceButton: 'COMMENCER !',
             showSpiesButton: 'Montrer les Espions',
+            voteOut: 'Exclure',
             restartButton: 'Rejouer',
             resetButton: 'Paramètres',
             playerNamePlaceholder: 'Joueur {n}',
@@ -308,21 +571,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 cardsNotCreated: 'Les cartes n\'ont pas pu être créées !'
             },
             categories: {
-                dailyLife: 'Vie Quotidienne',
-                sciFi: 'Science-Fiction',
-                middleAges: 'Moyen Âge',
-                turkey: 'Turquie',
-                europe: 'Europe',
-                saintJoseph: 'SJ',
-                naughty: '+18',
-                custom: 'Personnalisé'
+                dailyLife: 'Quartier',
+                turkey: 'Villes Turques',
+                europe: 'Villes Européennes',
+                billionaires: 'Milliardaires',
+                football: 'Légendes du Football',
+                mythology: 'Mythologie',
+                globalArtists: 'Artistes Mondiaux',
+                professions: 'Professions',
+                yks: 'YKS',
+                epfl: 'Campus EPFL',
+                saintJoseph: 'Campus SJ',
+                custom: '✨ Personnalisé'
             },
-            switchText: 'Ne pas rejouer le même lieu',
+            switchText: 'Pas de répétition',
             noPlacesMessage: 'Le pool est vide ; changez les sélections de catégories ou les paramètres pour commencer une nouvelle manche.',
             roles: { spy: 'Tu es l\'Espion', civilian: 'Tu es un Civil' },
             languageLabel: 'Langue',
             banner: '🎉 casus.dens.dev est maintenant casuskim.net !',
             revealTitle: 'Voyons qui tu es...',
+                locationLabel: 'Lieu',
+                spiesLabel: 'Espions',
+                howTo: 'Comment Jouer?',
+                faq: 'F.A.Q.',
             civiliansWin: 'Les Civils ont Gagné',
             spiesWin: 'Les Espions ont Gagné',
             scoreboardTitle: 'Tableau des Scores',
@@ -330,16 +601,19 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         it: {
             title: 'Chi è la Spia?',
-            description: 'Ci sono due ruoli assegnati casualmente a tutti nel gioco: Civili e Spie. <br>Ai civili viene dato un nome di luogo. Le spie non conoscono questo nome di luogo. Le spie cercano di indovinare correttamente questo nome di luogo ascoltando ciò che dicono i civili. I civili cercano di scoprire chi sono le spie prima che scada il tempo.',
+            description: 'Ci sono due ruoli assegnati casualmente a tutti nel gioco: Civili e Spie. <br>Ai civili viene dato un nome di luogo o un nome di persona. Le spie non conoscono questo nome. Le spie cercano di indovinare correttamente questo nome di luogo o persona ascoltando ciò che dicono i civili. I civili cercano di scoprire chi sono le spie prima che scada il tempo.',
             settingsTitle: 'Impostazioni di Gioco',
             playerCountLabel: 'Numero di Giocatori',
             spyCountLabel: 'Numero di Spie',
             durationLabel: 'Durata',
-            categoryTitle: 'Categorie di Luoghi',
+            recommended: 'Consigliato',
+            spyGuessed: 'La spia ha indovinato!',
+            categoryTitle: 'Categorie di Gioco',
             categoryInfo: 'Puoi selezionare tutte le categorie che desideri.',
             startButton: 'GIOCA!',
             commenceButton: 'INIZIA!',
             showSpiesButton: 'Mostra Spie',
+            voteOut: 'Elimina',
             restartButton: 'Gioca Ancora',
             resetButton: 'Impostazioni',
             playerNamePlaceholder: 'Giocatore {n}',
@@ -352,21 +626,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 cardsNotCreated: 'Impossibile creare le carte!'
             },
             categories: {
-                dailyLife: 'Vita Quotidiana',
-                sciFi: 'Fantascienza',
-                middleAges: 'Medioevo',
-                turkey: 'Turchia',
-                europe: 'Europa',
-                saintJoseph: 'SJ',
-                naughty: '+18',
-                custom: 'Personalizzato'
+                dailyLife: 'Quartiere',
+                turkey: 'Città Turche',
+                europe: 'Città Europee',
+                billionaires: 'Miliardari',
+                football: 'Leggende del Calcio',
+                mythology: 'Mitologia',
+                globalArtists: 'Artisti Mondiali',
+                professions: 'Professioni',
+                yks: 'YKS',
+                epfl: 'Campus EPFL',
+                saintJoseph: 'Campus SJ',
+                custom: '✨ Personalizzato'
             },
-            switchText: 'Non ripetere lo stesso luogo',
+            switchText: 'Nessuna ripetizione',
             noPlacesMessage: 'Il pool è vuoto; cambia le selezioni delle categorie o le impostazioni per iniziare un nuovo round.',
             roles: { spy: 'Sei la Spia', civilian: 'Sei un Civile' },
             languageLabel: 'Lingua',
             banner: '🎉 casus.dens.dev è ora casuskim.net!',
             revealTitle: 'Vediamo chi sei...',
+                locationLabel: 'Luogo',
+                spiesLabel: 'Spie',
+                howTo: 'Come si Gioca?',
+                faq: 'FAQ',
             civiliansWin: 'I Civili hanno Vinto',
             spiesWin: 'Le Spie hanno Vinto',
             scoreboardTitle: 'Tabellone Punti',
@@ -374,16 +656,19 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         de: {
             title: 'Wer ist der Spion?',
-            description: 'Es gibt zwei Rollen, die jedem im Spiel zufällig zugewiesen werden: Zivilisten und Spione. <br>Zivilisten erhalten einen Ortsnamen. Spione kennen diesen Ortsnamen nicht. Spione versuchen, diesen Ortsnamen richtig zu erraten, indem sie zuhören, was die Zivilisten sagen. Zivilisten versuchen herauszufinden, wer die Spione sind, bevor die Zeit abläuft.',
+            description: 'Es gibt zwei Rollen, die jedem im Spiel zufällig zugewiesen werden: Zivilisten und Spione. <br>Zivilisten erhalten einen Ortsnamen oder einen Personennamen. Spione kennen diesen Namen nicht. Spione versuchen, diesen Ortsnamen oder Personennamen richtig zu erraten, indem sie zuhören, was die Zivilisten sagen. Zivilisten versuchen herauszufinden, wer die Spione sind, bevor die Zeit abläuft.',
             settingsTitle: 'Spieleinstellungen',
             playerCountLabel: 'Spieleranzahl',
             spyCountLabel: 'Spionanzahl',
             durationLabel: 'Dauer',
-            categoryTitle: 'Ortkategorien',
+            recommended: 'Empfohlen',
+            spyGuessed: 'Spion hat erraten!',
+            categoryTitle: 'Spielkategorien',
             categoryInfo: 'Sie können alle gewünschten Kategorien auswählen.',
             startButton: 'SPIELEN!',
             commenceButton: 'STARTEN!',
             showSpiesButton: 'Spione Anzeigen',
+            voteOut: 'Rauswerfen',
             restartButton: 'Nochmal Spielen',
             resetButton: 'Einstellungen',
             playerNamePlaceholder: 'Spieler {n}',
@@ -396,21 +681,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 cardsNotCreated: 'Karten konnten nicht erstellt werden!'
             },
             categories: {
-                dailyLife: 'Alltag',
-                sciFi: 'Sci-Fi',
-                middleAges: 'Mittelalter',
-                turkey: 'Türkei',
-                europe: 'Europa',
-                saintJoseph: 'SJ',
-                naughty: '+18',
-                custom: 'Benutzerdefiniert'
+                dailyLife: 'Nachbarschaft',
+                turkey: 'Türkische Städte',
+                europe: 'Europäische Städte',
+                billionaires: 'Milliardäre',
+                football: 'Fußball-Legenden',
+                mythology: 'Mythologie',
+                globalArtists: 'Künstler Weltweit',
+                professions: 'Berufe',
+                yks: 'YKS',
+                epfl: 'EPFL Campus',
+                saintJoseph: 'SJ Campus',
+                custom: '✨ Benutzerdefiniert'
             },
-            switchText: 'Gleichen Ort nicht erneut spielen',
+            switchText: 'Keine Wiederholung',
             noPlacesMessage: 'Der Pool ist leer; ändern Sie die Kategorieauswahl oder die Einstellungen, um eine neue Runde zu beginnen.',
             roles: { spy: 'Du bist der Spion', civilian: 'Du bist ein Zivilist' },
             languageLabel: 'Sprache',
             banner: '🎉 casus.dens.dev ist jetzt casuskim.net!',
             revealTitle: 'Mal sehen, wer du bist...',
+                locationLabel: 'Ort',
+                spiesLabel: 'Spione',
+                howTo: 'Wie spielt man?',
+                faq: 'F.A.Q.',
             civiliansWin: 'Zivilisten haben Gewonnen',
             spiesWin: 'Spione haben Gewonnen',
             scoreboardTitle: 'Punktetabelle',
@@ -418,7 +711,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     };
 
-    let currentLang = 'tr';
+    // Add localized labels for Privacy and Terms (keeps translation edits centralized)
+    i18n.tr.privacy = 'Gizlilik Politikası';
+    i18n.tr.terms = 'Kullanım Şartları';
+
+    i18n.en.privacy = 'Privacy Policy';
+    i18n.en.terms = 'Terms & Conditions';
+
+    i18n.fr.privacy = 'Politique de Confidentialité';
+    i18n.fr.terms = 'Conditions d\'utilisation';
+
+    i18n.it.privacy = 'Informativa sulla Privacy';
+    i18n.it.terms = 'Termini e Condizioni';
+
+    i18n.de.privacy = 'Datenschutzrichtlinie';
+    i18n.de.terms = 'Geschäftsbedingungen';
+
+    // Detect language from URL path (robust for subpaths like /en/howto.html)
+    function detectLanguageFromUrl() {
+        const path = window.location.pathname;
+        // Split path and take the first segment after the leading '/'
+        const parts = path.split('/');
+        const candidate = parts.length > 1 ? parts[1] : '';
+        const supported = ['tr', 'en', 'fr', 'it', 'de'];
+        return supported.includes(candidate) ? candidate : 'tr';
+    }
+
+    let currentLang = detectLanguageFromUrl();
 
     // Helper functions for time formatting
     function secondsToMMSS(totalSeconds) {
@@ -450,7 +769,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateRecommendedSpyCount() {
         const recommended = Math.max(1, Math.floor(playerCount / 4));
-        recommendedSpyCount.textContent = `Önerilen: ${recommended}`;
+        recommendedSpyCount.textContent = `${t('recommended')}: ${recommended}`;
     }
 
     function calculateRecommendedDuration() {
@@ -462,7 +781,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateRecommendedDurationDisplay() {
         const recommended = calculateRecommendedDuration();
-        recommendedDurationDisplay.textContent = `Önerilen: ${secondsToMMSS(recommended)}`;
+        recommendedDurationDisplay.textContent = `${t('recommended')}: ${secondsToMMSS(recommended)}`;
     }
 
     function updateMaxSpyCount() {
@@ -540,6 +859,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Buttons
         if (startButton) startButton.textContent = t('startButton');
         if (commenceCountdownButton) commenceCountdownButton.textContent = t('commenceButton');
+        if (spyGuessButton) spyGuessButton.textContent = t('spyGuessed');
         if (showSpiesButton) showSpiesButton.textContent = t('showSpiesButton');
         if (restartButton) restartButton.innerHTML = `<i class="fa-solid fa-rotate-right"></i> &nbsp;${t('restartButton')}`;
         if (resetButton) resetButton.innerHTML = `<i class="fa-solid fa-sliders"></i> &nbsp; ${t('resetButton')}`;
@@ -552,6 +872,20 @@ document.addEventListener("DOMContentLoaded", function () {
         // Reveal Title
         const revealTitleEl = document.getElementById('reveal-title');
         if (revealTitleEl) revealTitleEl.textContent = t('revealTitle');
+
+        // Info buttons (HowTo / FAQ)
+        const howToBtn = document.getElementById('howto-btn');
+        const faqBtn = document.getElementById('faq-btn');
+        if (howToBtn) {
+            howToBtn.textContent = t('howTo');
+            howToBtn.href = `/${currentLang}/howto.html`;
+            howToBtn.setAttribute('aria-label', t('howTo'));
+        }
+        if (faqBtn) {
+            faqBtn.textContent = t('faq');
+            faqBtn.href = `/${currentLang}/faq.html`;
+            faqBtn.setAttribute('aria-label', t('faq'));
+        }
 
         // Winner Buttons
         const civWinBtn = document.getElementById('civilians-win-btn');
@@ -574,10 +908,58 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Footer credits
-        const footerCreditsEl = document.getElementById('footer-credits');
         if (footerCreditsEl) {
             footerCreditsEl.textContent = t('footerCredits');
         }
+
+        // Footer links: Privacy & Terms (inject localized anchors)
+        const footerTextEl = document.querySelector('.footer-text');
+        if (footerTextEl) {
+            // ensure we have container for links
+            let privacyLink = document.getElementById('footer-privacy');
+            let termsLink = document.getElementById('footer-terms');
+
+            if (!privacyLink) {
+                privacyLink = document.createElement('a');
+                privacyLink.id = 'footer-privacy';
+                privacyLink.className = 'accent-color';
+                privacyLink.style.marginLeft = '8px';
+                privacyLink.style.textDecoration = 'none';
+                footerTextEl.appendChild(document.createTextNode(' | '));
+                footerTextEl.appendChild(privacyLink);
+            }
+            if (!termsLink) {
+                termsLink = document.createElement('a');
+                termsLink.id = 'footer-terms';
+                termsLink.className = 'accent-color';
+                termsLink.style.marginLeft = '8px';
+                termsLink.style.textDecoration = 'none';
+                footerTextEl.appendChild(document.createTextNode(' | '));
+                footerTextEl.appendChild(termsLink);
+            }
+
+            // set texts and hrefs
+            privacyLink.textContent = t('privacy');
+            privacyLink.href = `/${currentLang}/privacy.html`;
+            privacyLink.target = '_self';
+
+            termsLink.textContent = t('terms');
+            termsLink.href = `/${currentLang}/terms.html`;
+            termsLink.target = '_self';
+        }
+
+        // Update recommended tooltips with new language
+        updateRecommendedSpyCount();
+        updateRecommendedDurationDisplay();
+
+        // Update existing player name placeholders
+        const existingInputs = document.querySelectorAll('#name-inputs-container input[type="text"]');
+        existingInputs.forEach((input, index) => {
+            // Only update if it's still showing the default placeholder logic or empty
+            // Actually, we should just update the placeholder attribute. 
+            // If the user typed something, it won't disappear.
+            input.placeholder = t('playerNamePlaceholder', { n: index + 1 });
+        });
     }
 
     // Custom Inputs Logic
@@ -638,15 +1020,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (timeRemaining <= 0) {
                 countdownElement.textContent = "00:00";
+                // Stop the animation and reveal end-game cards, but do NOT
+                // award points until host presses one of the winner buttons.
                 cancelAnimationFrame(animationFrameId);
-                showSpiesButton.classList.remove('hidden'); // Show the "Casusları Göster" button
-                showSpiesButton.classList.add('fade-in');
-                showSpiesButton.disabled = false;
+                endRound();
 
-                // Ensure other buttons are hidden
-                winnerSelectionContainer.classList.add('hidden');
-                restartButton.classList.add('hidden');
-                resetButton.classList.add('hidden');
+                // Ensure spy-guess button is hidden
+                if (spyGuessButton) {
+                    spyGuessButton.classList.add('hidden');
+                    spyGuessButton.disabled = true;
+                }
+
+                // The endRound() call already reveals location and spies,
+                // so hide/disable the 'Show Spies' button on timeout to avoid duplication.
+                if (showSpiesButton) {
+                    showSpiesButton.classList.add('hidden');
+                    showSpiesButton.disabled = true;
+                }
+
+                // Hide restart/reset until host decides
+                if (restartButton) restartButton.classList.add('hidden');
+                if (resetButton) resetButton.classList.add('hidden');
                 return;
             }
 
@@ -718,6 +1112,7 @@ document.addEventListener("DOMContentLoaded", function () {
             commenceCountdownButton.classList.remove('hidden');
             commenceCountdownButton.classList.add('fade-in'); // Add fade-in animation
             commenceCountdownButton.disabled = false;
+            if (spyGuessButton) spyGuessButton.classList.add('hidden'); // Ensure it starts hidden
             return;
         }
 
@@ -774,6 +1169,46 @@ document.addEventListener("DOMContentLoaded", function () {
         cardsContainer.appendChild(card);
     }
 
+    // Voting system removed: no per-player voting during countdown.
+
+    function endRound() {
+        // Stop the countdown animation if running
+        cancelAnimationFrame(animationFrameId);
+
+        // Reveal Location and Spies to all players (always show end-game cards)
+        cardsContainer.innerHTML = '';
+
+        const revealWrapper = document.createElement('div');
+        revealWrapper.style.display = 'flex';
+        revealWrapper.style.flexDirection = 'column';
+        revealWrapper.style.alignItems = 'center';
+        revealWrapper.style.gap = '10px';
+        revealWrapper.style.width = '100%';
+
+        const locationCard = document.createElement('div');
+        locationCard.classList.add('reveal-card');
+        locationCard.innerHTML = `<h3>${t('locationLabel')}</h3><div class="content">${window.lastAssignedLocation}</div>`;
+        revealWrapper.appendChild(locationCard);
+
+        const spies = gameCardsData.filter(p => p.isSpy).map(p => p.name);
+        const spiesCard = document.createElement('div');
+        spiesCard.classList.add('reveal-card');
+        let spiesHtml = '<div class="spy-list">';
+        spies.forEach(spyName => {
+            spiesHtml += `<div class="spy-name">🕵️ ${spyName}</div>`;
+        });
+        spiesHtml += '</div>';
+        spiesCard.innerHTML = `<h3>${t('spiesLabel')}</h3>${spiesHtml}`;
+        revealWrapper.appendChild(spiesCard);
+
+        cardsContainer.appendChild(revealWrapper);
+
+        // Show winner selection buttons so host can choose who won. Points
+        // are awarded only after one of these buttons is pressed.
+        winnerSelectionContainer.classList.remove('hidden');
+        winnerSelectionContainer.classList.add('fade-in');
+    }
+
     function cardClickHandler(event) {
         const card = event.currentTarget;
 
@@ -800,9 +1235,19 @@ document.addEventListener("DOMContentLoaded", function () {
         countdownElement.classList.add('fade-in');
         startCountdown(gameDurationSeconds);
         commenceCountdownButton.classList.add('hidden');
+        // Hide the spy-guess button during active countdown flow
+        if (spyGuessButton) {
+            spyGuessButton.classList.add('hidden');
+            spyGuessButton.disabled = true;
+        }
 
         // Hide "Ayarları değiştir" button when game starts
         // resetButton.classList.add('hidden');
+
+        // Show winner selection buttons so host can decide outcome at any time
+        if (winnerSelectionContainer) {
+            winnerSelectionContainer.classList.remove('hidden');
+        }
     }
 
     // Initialize display and inputs on load
@@ -852,6 +1297,16 @@ document.addEventListener("DOMContentLoaded", function () {
             updateDurationDisplay();
         } else {
             gameDurationSeconds = MIN_DURATION_SECONDS;
+            updateDurationDisplay();
+        }
+    });
+
+    document.getElementById('increase-duration').addEventListener('click', () => {
+        if (gameDurationSeconds + DURATION_STEP_SECONDS <= MAX_DURATION_SECONDS) {
+            gameDurationSeconds += DURATION_STEP_SECONDS;
+            updateDurationDisplay();
+        } else {
+            gameDurationSeconds = MAX_DURATION_SECONDS;
             updateDurationDisplay();
         }
     });
@@ -976,6 +1431,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Hide "BAŞLA!" button initially
         commenceCountdownButton.classList.add('hidden');
+        if (spyGuessButton) spyGuessButton.classList.add('hidden');
 
         // Hide "Casusları Göster" button and "Tekrar Oyna" until needed
         showSpiesButton.classList.add('hidden');
@@ -1001,6 +1457,8 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Voting system removed; nothing to reset here.
+
         // Start Sequence
         currentPlayerIndex = 0;
         showNextCard();
@@ -1017,6 +1475,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         commenceCountdownButton.classList.remove('hidden');
         commenceCountdownButton.disabled = false;
+        if (spyGuessButton) spyGuessButton.classList.add('hidden');
 
         showSpiesButton.classList.add('hidden');
         showSpiesButton.disabled = true;
@@ -1033,6 +1492,7 @@ document.addEventListener("DOMContentLoaded", function () {
             bannerElReset.textContent = txt || '';
             bannerElReset.style.display = txt ? 'block' : 'none';
         }
+        // Voting system removed; nothing to reset here.
     }
 
     function restartGameSameSettings() {
@@ -1067,6 +1527,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Hide "BAŞLA!" button
         commenceCountdownButton.classList.add('hidden');
+        if (spyGuessButton) spyGuessButton.classList.add('hidden');
 
         // Hide "Casusları Göster" button, it should only appear when timer ends
         showSpiesButton.classList.add('hidden');
@@ -1087,6 +1548,8 @@ document.addEventListener("DOMContentLoaded", function () {
         // Start Sequence
         currentPlayerIndex = 0;
         showNextCard();
+
+        // Voting system removed; no per-player voting state to reset.
 
         // Ensure "Tekrar Oyna" button remains hidden until game starts
         restartButton.classList.add('hidden');
@@ -1159,16 +1622,21 @@ document.addEventListener("DOMContentLoaded", function () {
         languageSelect.value = currentLang;
         languageSelect.addEventListener('change', (e) => {
             currentLang = e.target.value;
+            // Update URL to reflect language change
+            window.history.pushState({ lang: currentLang }, '', `/${currentLang}/`);
             applyTranslations();
             updateLocationPool();
         });
-        // apply initial translations
-        applyTranslations();
     }
-    // Ensure translations applied even if languageSelect wasn't found above
+    // Apply initial translations once
     applyTranslations();
 
     showSpiesButton.addEventListener('click', () => {
+        if (!gameCardsData || gameCardsData.length === 0) {
+            alert(t('alerts.playFirst'));
+            return;
+        }
+
         cardsContainer.innerHTML = ''; // Clear any existing cards
 
         // Create a wrapper for reveal cards to ensure they stack or align properly
@@ -1183,7 +1651,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const locationCard = document.createElement('div');
         locationCard.classList.add('reveal-card');
         locationCard.innerHTML = `
-            <h3>Mekan</h3>
+            <h3>${t('locationLabel')}</h3>
             <div class="content">${window.lastAssignedLocation}</div>
         `;
         revealWrapper.appendChild(locationCard);
@@ -1200,7 +1668,7 @@ document.addEventListener("DOMContentLoaded", function () {
         spiesHtml += '</div>';
 
         spiesCard.innerHTML = `
-            <h3>Casuslar</h3>
+            <h3>${t('spiesLabel')}</h3>
             ${spiesHtml}
         `;
         revealWrapper.appendChild(spiesCard);
@@ -1216,7 +1684,19 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Winner Selection Listeners
-    document.getElementById('civilians-win-btn').addEventListener('click', () => handleWin('civilians'));
-    document.getElementById('spies-win-btn').addEventListener('click', () => handleWin('spies'));
+    document.getElementById('civilians-win-btn').addEventListener('click', () => {
+        // Stop countdown, reveal end-game cards (if not already), then award points
+        cancelAnimationFrame(animationFrameId);
+        endRound();
+        handleWin('civilians');
+    });
+
+    document.getElementById('spies-win-btn').addEventListener('click', () => {
+        cancelAnimationFrame(animationFrameId);
+        endRound();
+        handleWin('spies');
+    });
+
+    // Spy guess button removed from active flow; host should use winner buttons.
 
 });
