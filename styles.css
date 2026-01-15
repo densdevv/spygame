@@ -310,9 +310,11 @@ a {
 
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  /* Responsive columns: create as many columns as fit, each at least 120px */
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 10px;
-  min-width: 450px;
+  /* allow grid to shrink on small viewports */
+  min-width: 0;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
